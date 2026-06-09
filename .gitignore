@@ -1,0 +1,44 @@
+# Secrets
+.env
+
+# Local assistant/tool settings
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# C++ Build
+plugin/build/
+build/
+*.obj
+*.o
+*.lib
+*.dll
+*.vst3
+*.component
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+
+# Runtime state (auto-generated)
+studio_memory.db
+studio_memory.db-shm
+studio_memory.db-wal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp audio captures
+*.flac
+*.wav

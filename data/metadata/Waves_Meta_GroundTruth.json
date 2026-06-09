@@ -1,0 +1,3754 @@
+[
+  {
+    "name": "API-2500",
+    "category": "Compressor",
+    "tags": [
+      "vca",
+      "analog",
+      "aggressive",
+      "punch",
+      "transparent",
+      "thick",
+      "parallel",
+      "sidechain",
+      "mix bus",
+      "bus",
+      "vocal",
+      "drum"
+    ],
+    "description": "Modeled API 2500 stereo bus compressor. VCA topology with Thrust circuit that filters bass from the detector for bass-preserving compression. Controls: Threshold, Attack (0.03-30ms), Release (0.05-3s), Ratio (1.5-10:1 plus Infinity), Knee (Old=hard, New=soft, both analog), Output Gain, Thrust (sidechain HPF). Character: punchy, aggressive, thick. Adds weight and slam. Choose over SSLComp when you want more aggressive punch on drum bus. Best for: drum bus (slam), rock/hip-hop mix bus, parallel compression, synth groups. Not ideal for transparent limiting or delicate vocals."
+  },
+  {
+    "name": "API-550A",
+    "category": "EQ",
+    "tags": [
+      "aggressive",
+      "punch",
+      "thick",
+      "surgical",
+      "subtle",
+      "vocal",
+      "drum",
+      "guitar",
+      "snare",
+      "eq",
+      "neve",
+      "api"
+    ],
+    "description": "Modeled API 550A 3-band EQ with proportional Q (Q narrows as boost increases — subtle boosts are broad, large boosts are focused). Fixed frequency points per band with 5 choices each. Band 1: 50-400Hz, Band 2: 0.4-3.2kHz, Band 3: 1.5-16kHz. +/-12dB per band. Character: punchy, bold, forward, never harsh. The API sound is thick and rock-oriented. Choose over Neve EQ when you want more aggressive, in-your-face midrange. Best for: drums (especially snare/toms), electric guitars, rock vocals. Less surgical than parametric EQs."
+  },
+  {
+    "name": "API-550B",
+    "category": "EQ",
+    "tags": [
+      "punch",
+      "clean",
+      "vocal",
+      "eq",
+      "api"
+    ],
+    "description": "Modeled API 550B 4-band EQ with proportional Q. Extended version of 550A with 4 bands instead of 3. Band 1: 30-400Hz, Band 2: 75Hz-2.5kHz, Band 3: 0.4-7kHz, Band 4: 2-20kHz. +/-12dB per band. Same punchy API character but more flexible with overlapping mid bands for detailed sculpting. Choose over 550A when you need finer midrange control with two mid bands. Best for: vocals needing both low-mid cleanup and upper-mid presence, full-range instruments, complex tonal shaping while keeping that bold API sound."
+  },
+  {
+    "name": "API-560",
+    "category": "EQ",
+    "tags": [
+      "punch",
+      "thin",
+      "musical",
+      "lo fi",
+      "drum",
+      "guitar",
+      "overhead",
+      "live",
+      "eq",
+      "api"
+    ],
+    "description": "Modeled API 560 graphic EQ with 10 bands (31Hz to 16kHz, octave spacing). +/-12dB per band with proportional Q. Character: punchy, musical, fast workflow — just grab and push. No frequency/Q knobs to fiddle with. Choose over parametric EQs when you want fast, intuitive tonal shaping without overthinking. Best for: quick guitar tone fixes, drum overhead shaping, live-sound-style broad EQ moves, lo-fi character. Less precise than parametric but more musical and immediate for broad strokes."
+  },
+  {
+    "name": "Abbey Road Chambers",
+    "category": "Reverb",
+    "tags": [
+      "warm",
+      "vintage",
+      "classic",
+      "thin",
+      "bright",
+      "lush",
+      "musical",
+      "tight",
+      "vocal",
+      "bass",
+      "strings",
+      "piano"
+    ],
+    "description": "Convolution reverb capturing Abbey Road Studios' legendary STEED echo chambers — Room 1 (bright, tight), Room 2 (warm, medium), and the Mirror Room (long, lush). Uses actual impulse responses from the physical chambers. Controls: chamber select, mic position, speaker type (Altec/B&K), pre-delay, bass/treble cut, mix. Character: organic, vintage, musical — the real sound of countless classic records. Choose over algorithmic reverbs when you want authentic vintage studio ambience. Best for: vocals, strings, orchestral, piano, anything needing that classic 60s-70s Abbey Road depth."
+  },
+  {
+    "name": "Abbey Road EMI TG12345 Ch",
+    "category": "Channel Strip",
+    "tags": [
+      "warm",
+      "vintage",
+      "thin",
+      "dark",
+      "rich",
+      "harmonic",
+      "vocal",
+      "drum",
+      "bass",
+      "compressor",
+      "limiter",
+      "eq"
+    ],
+    "description": "Modeled EMI TG12345 channel strip from Abbey Road's TG console (installed 1968, used on Dark Side of the Moon, Abbey Road album). Sections: Mic Pre (with gain), EQ (Treble shelf, Presence, Bass shelf — each with frequency select), Compressor (with recovery/threshold), Limiter, HPF, LPF. Character: warm, rich, harmonically complex — adds beautiful coloration even at unity. The EQ has a unique 'glow' that flatters everything. Choose over SSL when you want warmth over clinical precision. Best for: vocals, drums, bass, full mixes wanting vintage British color."
+  },
+  {
+    "name": "Abbey Road J37 Tape",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "digital",
+      "warm",
+      "smooth",
+      "clean",
+      "thin",
+      "bright",
+      "subtle",
+      "gentle",
+      "rich",
+      "saturation",
+      "harmonic",
+      "mix bus"
+    ],
+    "description": "Modeled Abbey Road Studios' Studer J37 4-track tape machine (the actual unit used on Beatles recordings). 3 tape formulas: 888 (bright), 811 (warm), 815 (balanced). Controls: tape speed (7.5/15/30 IPS), bias, noise level, wow/flutter (depth + rate), delay, saturation, HF/LF adjustment. Character: rich harmonic warmth, gentle compression, HF smoothing, subtle pitch modulation. Higher speed = cleaner, lower speed = more saturation. Choose over Kramer Tape when you want historically authentic Beatles-era sound. Best for: drums, vocals, full mix bus — warming up harsh digital recordings."
+  },
+  {
+    "name": "Abbey Road Plates",
+    "category": "Reverb",
+    "tags": [
+      "smooth",
+      "classic",
+      "bright",
+      "dark",
+      "lush",
+      "dense",
+      "musical",
+      "saturation",
+      "vocal",
+      "bass",
+      "percussion",
+      "snare"
+    ],
+    "description": "Modeled EMT 140 plate reverbs from Abbey Road Studios — 4 distinct plates each with unique character. Controls: plate select (A/B/C/D), damper (decay time), pre-delay, bass/treble, drive (pushes into saturation), mix. Character: smooth, dense, lush decay with shimmering highs. Plate A is brightest, D is darkest. Drive control adds pleasant grit. Choose over H-Reverb when you want classic plate sound with less tweaking. Best for: vocals (plate reverb is THE classic vocal reverb), snare, percussion, pop/rock production. The most musical reverb type for most mixing situations."
+  },
+  {
+    "name": "Abbey Road REDD.17",
+    "category": "Channel Strip",
+    "tags": [
+      "tube",
+      "valve",
+      "warm",
+      "colored",
+      "vintage",
+      "thick",
+      "thin",
+      "heavy",
+      "rich",
+      "saturation",
+      "harmonic",
+      "vocal"
+    ],
+    "description": "Modeled REDD.17 valve (tube) console from Abbey Road Studios — the desk used on early Beatles records (Please Please Me through Revolver). Sections: preamp with gain, 3-band EQ (Bass/Mid/Treble), compressor/limiter. Character: warm, thick, richly harmonic tube saturation even at unity gain. Very colored — everything sounds warmer and more 'vintage' through it. Choose over REDD.37/51 when you want the most colored, tube-saturated vintage sound. Best for: rock vocals needing vintage warmth, acoustic instruments, anything where you want heavy vintage coloration."
+  },
+  {
+    "name": "Abbey Road REDD.37.51",
+    "category": "Channel Strip",
+    "tags": [
+      "tube",
+      "valve",
+      "warm",
+      "aggressive",
+      "punch",
+      "vintage",
+      "thin",
+      "drum",
+      "bass",
+      "guitar",
+      "compressor",
+      "limiter"
+    ],
+    "description": "Modeled REDD.37 and REDD.51 consoles from Abbey Road Studios — transitional desks between REDD.17 and TG (late Beatles era). Transistor-based rather than valve. Sections: preamp, 3-band EQ, compressor/limiter. Character: more punchy and aggressive than REDD.17 but still vintage. Less tube warmth, more transistor edge. Choose over REDD.17 when you want vintage character with more bite and definition. Best for: rock drums, electric guitars, bass — anything needing vintage edge rather than vintage warmth."
+  },
+  {
+    "name": "Abbey Road RS124",
+    "category": "Compressor",
+    "tags": [
+      "tube",
+      "warm",
+      "aggressive",
+      "smooth",
+      "vintage",
+      "gentle",
+      "saturation",
+      "harmonic",
+      "bus",
+      "vocal",
+      "bass",
+      "guitar"
+    ],
+    "description": "Modeled RS124 compressor from Abbey Road Studios — modified Altec 436B tube compressor. Three distinct units available: 'Peter' (smooth, gentle), 'Paul' (medium, balanced), 'George' (aggressive, more compression). Controls: input gain, recovery (release), superFuse, hold, mix. Character: smooth, warm tube compression with beautiful harmonic saturation. Program-dependent timing. Choose over CLA-2A when you want more tube warmth and vintage Abbey Road flavor. Best for: vocals, bass, acoustic guitar, room mics, bus compression wanting vintage tube glue."
+  },
+  {
+    "name": "Abbey Road RS56 Passive EQ",
+    "category": "EQ",
+    "tags": [
+      "tube",
+      "smooth",
+      "classic",
+      "silky",
+      "musical",
+      "mix bus",
+      "bus",
+      "mastering",
+      "master",
+      "acoustic",
+      "eq",
+      "neve"
+    ],
+    "description": "Modeled RS56 Universal Tone Control (Curve Bender) from Abbey Road — an extremely rare passive tube EQ. 6 bands: LF, LMF, MF, HMF, HF, plus HPF/LPF. Each band has frequency, gain, and Q controls. Character: incredibly smooth, silky, never harsh — passive EQ with tube amplification means the curves are very musical. Choose over active EQs when you want the smoothest possible EQ moves, especially for mastering. Best for: mastering, mix bus sweetening, acoustic instruments, classical/jazz — any situation where you need EQ that sounds 'invisible'."
+  },
+  {
+    "name": "Abbey Road Reel ADT",
+    "category": "Modulation",
+    "tags": [
+      "thick",
+      "subtle",
+      "natural",
+      "vocal",
+      "guitar",
+      "delay",
+      "chorus",
+      "doubler",
+      "tape",
+      "abbey road"
+    ],
+    "description": "Emulation of Abbey Road's Automatic Double Tracking tape effect, invented by Ken Townsend for the Beatles (1966). Creates doubling by varying tape speed. Controls: LFO rate, depth, drive, dry/wet, varispeed modulation. Character: organic, natural-sounding doubling with subtle pitch/time modulation — much more realistic than simple delay-based doubling. Choose over Doubler when you want authentic tape-based doubling rather than pitch-shift doubling. Best for: lead vocals (thickening without chorus artifacts), guitars, keyboards, any source needing realistic double-tracking."
+  },
+  {
+    "name": "Abbey Road Reel ADT2V",
+    "category": "Modulation",
+    "tags": [
+      "vocal",
+      "guitar",
+      "synth",
+      "tape",
+      "abbey road"
+    ],
+    "description": "Two-voice version of Abbey Road Reel ADT with independent control over two ADT voices. Each voice has separate rate, depth, and drive controls. Allows stereo widening by panning voices. Character: same authentic tape doubling but with stereo dimension. Choose over single-voice ADT when you want stereo spread from doubling, or creative effects with two different modulation speeds. Best for: stereo vocal widening, guitar stereo spread, synth pads, creating wide stereo image from mono sources."
+  },
+  {
+    "name": "Abbey Road Saturator",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "tube",
+      "analog",
+      "transformer",
+      "warm",
+      "aggressive",
+      "subtle",
+      "saturation",
+      "harmonic",
+      "parallel",
+      "mix bus",
+      "bus",
+      "vocal"
+    ],
+    "description": "Analog saturation modeler with multiple saturation types. Controls: Drive (amount), Mix (parallel blend), output, saturation type select. Different types model various analog sources (tube, tape, transformer). Character: ranges from subtle warmth to aggressive grit depending on drive and type. Choose over dedicated tape/tube plugins when you want flexible saturation that can morph between different analog characters. Best for: drums (adding bite), bass (harmonic presence), vocals (warmth), mix bus (analog glue), any source needing controlled harmonic enhancement."
+  },
+  {
+    "name": "Abbey Road Studio 3",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "acoustic",
+      "room",
+      "abbey road"
+    ],
+    "description": "3D headphone monitoring plugin recreating Abbey Road Studio 3 control room using Nx head-tracking technology. Simulates speakers, room acoustics, and head movement for accurate stereo/surround monitoring on headphones. Controls: head tracking, room simulation, speaker selection, headphone compensation. This is a MONITORING tool — use it for mixing, not for processing. Best for: mixing on headphones when you can't use speakers, checking mixes in a virtual reference room."
+  },
+  {
+    "name": "Abbey Road TG Mastering",
+    "category": "Mastering",
+    "tags": [
+      "transparent",
+      "musical",
+      "subtle",
+      "gentle",
+      "sidechain",
+      "bus",
+      "mastering",
+      "master",
+      "compressor",
+      "limiter",
+      "eq",
+      "channel strip"
+    ],
+    "description": "Mastering chain based on EMI TG12410 transfer console at Abbey Road. Sections: HPF/LPF filters, Presence EQ, Tone EQ (shelving), Compressor (with sidechain filter), Limiter. Each section can be independently bypassed. Character: transparent yet musical — more subtle than the TG12345 channel strip. The EQ has a refined, gentle touch ideal for mastering moves. Choose over individual plugins when you want a cohesive mastering chain with consistent tonal character. Best for: mastering, mixdown finalization, stereo bus processing."
+  },
+  {
+    "name": "Abbey Road TG Meter Bridge",
+    "category": "Mastering",
+    "tags": [
+      "classic",
+      "mastering",
+      "master",
+      "console",
+      "abbey road"
+    ],
+    "description": "Metering plugin modeled after Abbey Road's TG console meter bridge. Provides VU, Peak, and Phase metering with classic console aesthetics. Analysis/monitoring tool only — does NOT process audio. Use for visual monitoring of levels, dynamics, and stereo balance during mixing and mastering."
+  },
+  {
+    "name": "Abbey Road The King's Microphones",
+    "category": "EQ",
+    "tags": [
+      "vintage",
+      "vocal",
+      "acoustic",
+      "eq",
+      "abbey road"
+    ],
+    "description": "EQ based on vintage microphone characteristics from Abbey Road's collection. Imparts the tonal fingerprint of legendary microphones including Neumann U47, U67, AKG C12, Coles 4038, and more. Controls: mic model select, intensity. Character: each mic model adds its unique frequency response curve. Choose when you want to add the character of expensive vintage mics to recordings made with ordinary mics. Best for: vocals, acoustic instruments — transforming the tonal character of any source to sound like it was recorded through a different microphone."
+  },
+  {
+    "name": "Abbey Road Vinyl",
+    "category": "Modulation",
+    "tags": [
+      "vintage",
+      "modern",
+      "lo fi",
+      "mix bus",
+      "bus",
+      "eq",
+      "abbey road"
+    ],
+    "description": "Vinyl record emulation with comprehensive modeling of the vinyl playback chain. Sections: Noise (surface noise, crackle intensity), Electrical (50/60Hz hum), Mechanical (wow, flutter, rumble), Frequency Response (vinyl curve). Controls per section for detailed vintage character. Choose over Abbey Road Vinyl Light when you need full control over every aspect of vinyl degradation. Best for: lo-fi hip-hop, vintage aesthetics, sound design, making modern recordings sound like vinyl pressings. Apply to individual tracks or mix bus."
+  },
+  {
+    "name": "Abbey Road Vinyl Light",
+    "category": "Modulation",
+    "tags": [
+      "vintage",
+      "subtle",
+      "lo fi",
+      "abbey road"
+    ],
+    "description": "Simplified version of Abbey Road Vinyl with fewer controls for quick results. Key controls: noise amount, wow/flutter amount, main mix. Same core vinyl modeling but streamlined workflow. Choose over full Abbey Road Vinyl when you want quick vinyl character without deep parameter diving. Best for: quick lo-fi treatment, adding subtle vintage vibe, when CPU matters (lighter than full version)."
+  },
+  {
+    "name": "Aphex Vintage Exciter",
+    "category": "Other",
+    "tags": [
+      "vintage",
+      "bright",
+      "harmonic",
+      "mix bus",
+      "bus",
+      "vocal",
+      "guitar",
+      "acoustic",
+      "eq",
+      "exciter",
+      "enhancer"
+    ],
+    "description": "Modeled Aphex Aural Exciter Type III. Psychoacoustic harmonic enhancer that generates upper harmonics from existing audio content to add presence, air, and clarity without simply boosting EQ. Controls: Mix, Tune (frequency of excitation), Harmonics (amount of generation), Mode. Character: adds 'sparkle' and 'air' that cuts through a mix — the harmonics are generated, not boosted, so they add new brightness. Choose over high shelf EQ when simple EQ boost sounds harsh. Best for: vocals (adding air and presence), acoustic guitar, cymbals, mix bus brightness, dull recordings."
+  },
+  {
+    "name": "AudioTrack",
+    "category": "Channel Strip",
+    "tags": [
+      "transparent",
+      "clean",
+      "compressor",
+      "eq",
+      "noise gate",
+      "channel strip"
+    ],
+    "description": "Basic channel strip with 4-band parametric EQ (2 semi-parametric mids, HF/LF shelving), compressor (Threshold/Ratio/Attack/Release), and noise gate (Threshold/Range). Minimal CPU usage. Character: clean, transparent, no color — purely functional processing. Choose when you need basic channel processing with absolute minimum CPU load. Best for: utility processing, demos, sessions with very high track counts where CPU matters, quick rough mixing."
+  },
+  {
+    "name": "B360 5.0/Quad",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics B-Format to 5.0 surround decoder. Converts ambisonics signals to multi-channel surround. Technical utility for spatial audio production and VR audio. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 5.1/Quad",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics B-Format to 5.1 surround decoder. Converts ambisonics signals to 5.1 surround including LFE channel. Technical utility for immersive audio and VR. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 7.1/Quad",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics B-Format to 7.1 surround decoder. Converts ambisonics signals to 7.1 surround. Technical utility for large immersive audio formats. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 AmbiX-FuMa",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics format converter: AmbiX to FuMa. Converts between two different B-Format ambisonics standards. Technical utility for spatial audio format interoperability. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 FuMa-AmbiX",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics format converter: FuMa to AmbiX. Converts between two different B-Format ambisonics standards. Technical utility for spatial audio format interoperability. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 Mono/Quad",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics encoder: mono input to B-Format output. Positions a mono source in 3D ambisonics space with azimuth/elevation control. For VR and immersive audio production. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "B360 Stereo/Quad",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics encoder: stereo input to B-Format output. Positions a stereo source in 3D ambisonics space. For VR and immersive audio production. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "Bass Rider",
+    "category": "Bass",
+    "tags": [
+      "transparent",
+      "heavy",
+      "sidechain",
+      "vocal",
+      "bass",
+      "guitar",
+      "synth",
+      "compressor",
+      "eq"
+    ],
+    "description": "Automatic bass level rider that maintains consistent bass volume without compression artifacts. Analyzes bass frequencies and applies sample-accurate gain adjustments to even out performance dynamics. Controls: Target range (min/max), Sensitivity, Rider speed, Vocal sidechain (ducks bass when vocals present). Character: transparent — it just evens out level, adds no coloration. Choose over compressor when you want level consistency without changing the bass tone or dynamics character. Best for: bass guitar (essential for keeping bass solid in a mix), synth bass, any bass-heavy source with inconsistent levels."
+  },
+  {
+    "name": "Berzerk Distortion",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "warm",
+      "aggressive",
+      "subtle",
+      "saturation",
+      "lo fi",
+      "feedback",
+      "drum",
+      "synth",
+      "compressor",
+      "distortion"
+    ],
+    "description": "Creative multi-stage distortion with extreme range. 6 distortion shapes: Crush, Insane, Saturate, Fuzz, Rectify, Squeez. Features: feedback loop (creates chaotic self-oscillation), dynamics section (gate/compressor), filter, wet/dry mix. Controls: Drive, Shape, Feedback, Dynamics, Filter, Mix. Character: from subtle grit to complete destruction and experimental noise. Choose over subtle saturation plugins when you want aggressive, creative, or experimental distortion effects. Best for: EDM/electronic (harsh synths), industrial, experimental sound design, drum mangling, lo-fi destruction. NOT for subtle warming."
+  },
+  {
+    "name": "Brauer Motion",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "vocal",
+      "guitar",
+      "synth",
+      "percussion",
+      "delay",
+      "panner"
+    ],
+    "description": "Auto-panner and stereo motion processor designed with mixer Michael Brauer. Creates circular, lateral, and complex motion paths. Controls: trigger mode (auto/sync/manual), speed, depth, motion shape (circle, X, random, etc.), pre-delay, drive. Character: adds constant movement and life to static sounds, creating depth and width. Choose over simple pan automation when you want complex, evolving stereo motion. Best for: guitars, synths, pads, percussion, background vocals — any element that sounds static and needs life and movement in the stereo field."
+  },
+  {
+    "name": "Butch Vig Vocals",
+    "category": "Vocal",
+    "tags": [
+      "aggressive",
+      "modern",
+      "classic",
+      "de esser",
+      "vocal",
+      "compressor",
+      "eq",
+      "reverb",
+      "delay"
+    ],
+    "description": "All-in-one vocal processing chain designed with producer Butch Vig (Nirvana, Smashing Pumpkins, Garbage). Sections: Compressor (with character knob), EQ (with presence/body), De-Esser, Reverb, Delay, Stereo widening. Each section has dedicated on/off. Character: modern rock vocal sound — upfront, present, compressed with character. Choose over individual plugins when you want a quick, complete rock vocal chain. Best for: rock vocals, alternative vocals, punk vocals, aggressive vocal styles. Less suited for delicate jazz/classical vocals."
+  },
+  {
+    "name": "C1 comp",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "colored",
+      "surgical",
+      "sidechain",
+      "compressor",
+      "la 2a"
+    ],
+    "description": "Versatile single-band compressor with comprehensive control set. Controls: Threshold, Ratio (1:1-50:1), Attack (0.01-500ms), Release (1-5000ms), Gain, PDR (Program-Dependent Release), HPF sidechain filter. Transparent, clinical character — adds minimal coloration. Choose over colored compressors (CLA-76, CLA-2A) when you want purely transparent dynamic control. Best for: surgical compression where you don't want character added, utility compression, processing where the compressor should be invisible."
+  },
+  {
+    "name": "C1 comp-gate",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "clean",
+      "sidechain",
+      "gating",
+      "drum",
+      "live",
+      "compressor",
+      "noise gate"
+    ],
+    "description": "Combined compressor and gate in one plugin. Same compressor as C1 plus integrated noise gate with Threshold, Floor, Attack, Release. Sidechain filter shared between comp and gate. Character: clean, transparent dual processing. Choose when a track needs both gating (noise removal) and compression in one insert, saving CPU and simplifying routing. Best for: live recordings needing cleanup + compression, drum tracks with bleed needing gating + dynamics control."
+  },
+  {
+    "name": "C1 comp-sc",
+    "category": "Compressor",
+    "tags": [
+      "clean",
+      "sidechain",
+      "de essing",
+      "ducking",
+      "vocal",
+      "bass",
+      "kick",
+      "compressor",
+      "eq"
+    ],
+    "description": "C1 compressor with external sidechain input capability. Same clean compressor with full sidechain control — route any audio to trigger compression. Controls include sidechain filter (HPF/LPF) for frequency-selective triggering. Choose when you need sidechain compression (ducking). Best for: bass ducking from kick, vocal ducking from music, EDM sidechain pumping effect, de-essing with external sidechain, any frequency-triggered dynamic control."
+  },
+  {
+    "name": "C1 gate",
+    "category": "Compressor",
+    "tags": [
+      "clean",
+      "surgical",
+      "tight",
+      "sidechain",
+      "look ahead",
+      "gating",
+      "drum",
+      "snare",
+      "kick",
+      "live",
+      "noise gate"
+    ],
+    "description": "Versatile noise gate with look-ahead, sidechain filter, and adjustable Floor. Controls: Threshold, Floor (how much to attenuate), Attack, Hold, Release, HPF/LPF sidechain filter. Character: clean, precise gating with zero coloration. Choose when you need surgical noise removal with full control. Best for: drum tracks (isolating kicks/snares from bleed), removing background noise, tightening up live recordings, any source where you need precise gating control."
+  },
+  {
+    "name": "C4",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "transparent",
+      "multiband",
+      "de essing",
+      "de esser",
+      "expansion",
+      "mastering",
+      "master",
+      "bass",
+      "compression",
+      "eq"
+    ],
+    "description": "4-band multiband dynamics processor. Each band has: Threshold, Range (compression/expansion amount), Attack, Release, Gain. Crossover frequencies adjustable. Bands can compress OR expand independently. Character: transparent multiband control. Choose over C6 when 4 bands is sufficient (less CPU, simpler). Best for: mastering (spectral dynamics control), taming resonant problem areas, de-essing without a de-esser, controlling muddy bass without EQ, frequency-specific dynamic management."
+  },
+  {
+    "name": "C6",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "transparent",
+      "surgical",
+      "multiband",
+      "de essing",
+      "mastering",
+      "master",
+      "live",
+      "eq"
+    ],
+    "description": "6-band multiband dynamics processor — 4 crossover bands plus 2 floating parametric bands for surgical control. Each band: Threshold, Range, Attack, Release, Gain, Solo. The 2 floating bands can target any frequency with adjustable Q. Character: extremely precise, transparent dynamics. Choose over C4 when you need the surgical floating bands for problem frequencies. Best for: mastering (the floating bands are perfect for taming specific resonances), live sound, de-essing, de-mudding, complex spectral dynamics problems."
+  },
+  {
+    "name": "C6-SideChain",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "sidechain",
+      "multiband",
+      "ducking",
+      "expansion",
+      "vocal",
+      "bass",
+      "kick",
+      "broadcast",
+      "compression",
+      "eq"
+    ],
+    "description": "C6 multiband dynamics with external sidechain input. Same 6-band processor but compression/expansion can be triggered by external audio. Each band can be individually sidechained. Choose when you need frequency-selective ducking triggered by another source. Best for: multiband sidechain (e.g., only duck bass frequencies from kick while leaving mids/highs untouched), multiband vocal ducking, broadcast processing, advanced frequency-aware dynamic routing."
+  },
+  {
+    "name": "CLA Bass",
+    "category": "Bass",
+    "tags": [
+      "punch",
+      "surgical",
+      "harmonic",
+      "bass",
+      "guitar",
+      "synth"
+    ],
+    "description": "Bass processing chain by mix legend Chris Lord-Alge. Simple, effective controls: Sub (sub-bass), Low (bass body), High (top end presence), Compress (dynamics), Distort (harmonic grit). Also HPF and Treble controls. Character: punchy, full, radio-ready bass sound — CLA's signature bass treatment. Choose when you want quick, polished bass without tweaking multiple plugins. Best for: bass guitar in rock/pop, synth bass, any bass source needing quick professional treatment. Not for surgical precision work."
+  },
+  {
+    "name": "CLA Drums",
+    "category": "Drums",
+    "tags": [
+      "aggressive",
+      "punch",
+      "fat",
+      "subtle",
+      "heavy",
+      "bus",
+      "drum",
+      "acoustic",
+      "compression"
+    ],
+    "description": "Drum processing chain by Chris Lord-Alge. Controls: Bite (transient/attack enhancement), Squash (heavy compression), Compress (moderate compression), Fatten (low-end weight), Sub. Character: punchy, aggressive, radio-ready drum sound. CLA's Grammy-winning drum treatment in one plugin. Choose when you want quick, professional drum processing without detailed tweaking. Best for: drum bus, individual drums in rock/pop, aggressive drum sounds. Not for subtle jazz or acoustic drum treatment."
+  },
+  {
+    "name": "CLA EchoSphere",
+    "category": "Effects",
+    "tags": [
+      "warm",
+      "musical",
+      "vocal",
+      "guitar",
+      "synth",
+      "reverb",
+      "delay",
+      "echo",
+      "chorus"
+    ],
+    "description": "Combined delay + reverb designed by Chris Lord-Alge. Sections: Delay (with filtering, modulation, sync), Reverb (multiple types), Chorus. Each section independently on/off. Character: warm, musical spatial effects tuned by CLA. Choose over separate delay+reverb when you want a quick, cohesive vocal space effect. Best for: vocal ambience (CLA's specialty), guitar space, synth depth — any source needing delay+reverb as one cohesive effect."
+  },
+  {
+    "name": "CLA Effects",
+    "category": "Effects",
+    "tags": [
+      "musical",
+      "vocal",
+      "guitar",
+      "synth",
+      "reverb",
+      "delay",
+      "flanger",
+      "phaser",
+      "distortion"
+    ],
+    "description": "Multi-effects processor by Chris Lord-Alge combining distortion, delay, reverb, phaser, flanger, and more. Multiple effect slots with CLA-curated presets. Character: creative, musical effects with CLA's sonic signature. Choose when you want quick creative effects without building complex chains. Best for: creative vocal effects, guitar processing, synth enhancement, adding character to any source with CLA's signature style."
+  },
+  {
+    "name": "CLA Epic",
+    "category": "Effects",
+    "tags": [
+      "subtle",
+      "feedback",
+      "vocal",
+      "guitar",
+      "snare",
+      "reverb",
+      "delay"
+    ],
+    "description": "Large-format delay and reverb by Chris Lord-Alge designed for cinematic, dramatic spatial effects. Features long tails, deep modulation, and expansive stereo imaging. Controls: Delay section (feedback, filtering, sync), Reverb section (size, decay, damping), Throw controls for dramatic delay throws. Character: huge, cinematic, epic space. Choose over subtle reverbs when you want BIG, dramatic spatial effects. Best for: vocal throws, snare reverb explosions, cinematic builds, dramatic breakdowns, massive guitar ambience."
+  },
+  {
+    "name": "CLA Guitars",
+    "category": "Guitar",
+    "tags": [
+      "bus",
+      "guitar",
+      "acoustic"
+    ],
+    "description": "Guitar processing chain by Chris Lord-Alge. Controls: Bite (presence/attack), Body (low-mid fullness), Treble (high-end sparkle), Compress (dynamics), Distort (edge/grit). Character: professional, radio-ready guitar tone — CLA's signature guitar processing. Choose when you want quick professional guitar polish. Best for: electric guitar in rock/pop/alternative, guitar bus processing, quick guitar enhancement. Not for amp simulation or acoustic guitar."
+  },
+  {
+    "name": "CLA MixDown",
+    "category": "Mastering",
+    "tags": [
+      "aggressive",
+      "mix bus",
+      "bus",
+      "mastering",
+      "master",
+      "bass",
+      "compression",
+      "limiting",
+      "eq",
+      "api"
+    ],
+    "description": "Stereo mix bus processor by Chris Lord-Alge. Complete final chain: EQ section (bass, mid, treble shaping), Compression (bus glue), Stereo Enhancement (width control), Limiting (final loudness). Character: polished, loud, radio-ready master bus processing with CLA's signature aggressive clarity. Choose when you want quick mix finalization with one plugin. Best for: mix bus (the primary use case), submix bus processing, quick mastering for demos."
+  },
+  {
+    "name": "CLA MixHub",
+    "category": "Channel Strip",
+    "tags": [
+      "analog",
+      "warm",
+      "mix bus",
+      "bus",
+      "compressor",
+      "eq",
+      "channel strip",
+      "console",
+      "preamp"
+    ],
+    "description": "Full console emulation by Chris Lord-Alge modeling his actual analog console signal path. Sections: Input (preamp with drive), EQ (3-band with character), Compressor (with multiple modes), Mix Bus routing. Multiple console models available. Character: analog console warmth, depth, and cohesion — like mixing through a real console. Choose over individual channel strip plugins when you want the full CLA console experience. Best for: every track in a mix (use on all channels for console cohesion), adding analog console depth and width."
+  },
+  {
+    "name": "CLA MixHub Lite",
+    "category": "Channel Strip",
+    "tags": [
+      "heavy",
+      "compression",
+      "eq",
+      "console",
+      "preamp"
+    ],
+    "description": "Simplified version of CLA MixHub console emulation with fewer controls and lower CPU. Core console processing: preamp drive, basic EQ, compression. Character: same CLA console vibe but streamlined. Choose over full MixHub when CPU matters or you want faster workflow. Best for: large sessions where full MixHub is too heavy, quick console character on every channel."
+  },
+  {
+    "name": "CLA Nx",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "acoustic",
+      "room"
+    ],
+    "description": "Headphone monitoring plugin simulating Chris Lord-Alge's mixing environment using Nx head-tracking technology. Recreates the acoustic environment of CLA's mix room on headphones. MONITORING tool only — does not process audio for the mix. Best for: mixing on headphones with a reference to CLA's monitoring environment."
+  },
+  {
+    "name": "CLA Unplugged",
+    "category": "Other",
+    "tags": [
+      "warm",
+      "guitar",
+      "acoustic",
+      "strings",
+      "piano",
+      "reverb",
+      "room"
+    ],
+    "description": "Acoustic instrument processor by Chris Lord-Alge. Optimized for acoustic guitars, pianos, strings, and other unplugged sources. Controls: Body (low end), Treble (top end), Compress (dynamics), Ambience (room/reverb), additional tonal controls. Character: warm, present, polished acoustic sound. Choose when you want quick professional treatment for acoustic instruments. Best for: acoustic guitar, piano, strings, any unplugged instrument in pop/rock/folk productions."
+  },
+  {
+    "name": "CLA Vocals",
+    "category": "Vocal",
+    "tags": [
+      "subtle",
+      "bus",
+      "vocal",
+      "bass",
+      "reverb",
+      "delay",
+      "echo"
+    ],
+    "description": "Vocal processing chain by Chris Lord-Alge. Controls: Bass (low end body), Treble (presence/air), Compress (dynamics), Reverb (space), Delay (echo), Pitch (subtle correction). All sections independently adjustable. Character: upfront, present, radio-ready vocal sound — CLA's signature vocal treatment used on countless hits. Choose when you want quick, polished vocal processing. Best for: lead vocals in pop/rock/alternative, background vocals, vocal bus. The fastest way to get a professional vocal sound."
+  },
+  {
+    "name": "CLA-2A",
+    "category": "Compressor",
+    "tags": [
+      "optical",
+      "warm",
+      "aggressive",
+      "smooth",
+      "transparent",
+      "musical",
+      "slow attack",
+      "mix bus",
+      "bus",
+      "vocal",
+      "drum",
+      "bass"
+    ],
+    "description": "Modeled Teletronix LA-2A optical compressor. Controls are deceptively simple: Gain (output), Peak Reduction (threshold/ratio combined), and Comp/Limit switch. The optical (T4B cell) detection gives program-dependent attack/release that adapts to the audio — slow attack on transients, fast recovery on sustained material. Character: smooth, warm, musical, never aggressive. The most 'invisible' compression possible while still being effective. Choose over CLA-76 when you want smooth, transparent compression. Choose over CLA-3A for slower, silkier compression. Best for: vocals (#1 vocal compressor in history), bass, acoustic guitar, mix bus. NOT ideal for fast transients (drums) or aggressive pumping."
+  },
+  {
+    "name": "CLA-3A",
+    "category": "Compressor",
+    "tags": [
+      "optical",
+      "solid state",
+      "aggressive",
+      "smooth",
+      "thin",
+      "vocal",
+      "drum",
+      "bass",
+      "guitar",
+      "snare",
+      "compressor",
+      "urei"
+    ],
+    "description": "Modeled UREI LA-3A optical compressor. Solid-state version of the optical compressor concept (faster than LA-2A). Controls: Gain, Peak Reduction, Attack/Release characteristics fixed but faster than 2A. Character: more aggressive and faster than CLA-2A but still smooth optical compression. Adds slightly more presence and 'grab'. Choose over CLA-2A when you need faster optical compression with more bite. Choose over CLA-76 when you want something between 2A smoothness and 76 aggression. Best for: electric guitar, snare drum, faster vocals, bass guitar, anything needing optical compression with more urgency than the 2A."
+  },
+  {
+    "name": "CLA-76",
+    "category": "Compressor",
+    "tags": [
+      "fet",
+      "aggressive",
+      "punch",
+      "thin",
+      "harmonic",
+      "bus",
+      "vocal",
+      "drum",
+      "bass",
+      "guitar",
+      "synth",
+      "compressor"
+    ],
+    "description": "Modeled UREI 1176 FET compressor — the most versatile and widely-used compressor in recording history. Controls: Input (drives threshold), Output, Attack (fastest full clockwise = 20μs to slowest at 800μs), Release (fastest full clockwise = 50ms to slowest at 1.1s), Ratio (4/8/12/20:1), plus famous All-Buttons-In mode (all ratios pushed = extreme limiting). REVERSE knob logic: full CW = fastest. FET circuit gives aggressive, fast, exciting sound with harmonic distortion that adds presence. Choose over CLA-2A when you need speed, punch, and aggression. Choose over SSLComp for individual tracks vs bus. Best for: vocals (exciting, present), drums (punchy), bass (defined), guitars, synths — works on literally everything. The #1 all-purpose compressor."
+  },
+  {
+    "name": "Center",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "punch",
+      "mastering",
+      "master",
+      "vocal",
+      "bass",
+      "guitar",
+      "snare",
+      "kick",
+      "reverb"
+    ],
+    "description": "Stereo utility extracting or adjusting center (mono) vs side (stereo) content. Controls: Center level, Sides level, Punch (center dynamics), crossover. Separates stereo signals into center and sides components for independent control. Choose when you need to adjust the balance between centered elements (vocal, kick, snare, bass) and stereo elements (reverb, guitars, pads). Best for: rebalancing mixes, reducing/boosting vocals in stereo mixes, widening or narrowing stereo image, karaoke (vocal removal), mastering width adjustments."
+  },
+  {
+    "name": "Clarity Vx",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "natural",
+      "vocal",
+      "dialogue",
+      "eq",
+      "room",
+      "noise reduction"
+    ],
+    "description": "AI-powered vocal noise reduction using neural networks trained on millions of vocal samples. Single main control: noise reduction amount. Automatically identifies and removes background noise (room tone, HVAC, street noise, equipment hum) while preserving voice quality. Character: transparent — just removes noise without affecting the vocal. Choose over traditional noise reduction (X-Noise, Z-Noise) for vocals specifically — AI-based approach is far more natural. Best for: podcast vocals, dialogue cleanup, vocal recordings in untreated rooms, remote recording cleanup, any vocal with background noise."
+  },
+  {
+    "name": "Clarity Vx - DeReverb",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "heavy",
+      "gating",
+      "vocal",
+      "dialogue",
+      "reverb",
+      "room"
+    ],
+    "description": "AI-powered reverb removal from recordings. Uses neural networks to identify and reduce unwanted room reverb and ambience while preserving the dry signal. Single main control: amount of reverb reduction. Character: remarkably transparent — removes reverb tail without metallic artifacts common in older tech. Choose over conventional gating for reverb issues. Best for: cleaning up vocals recorded in reverberant rooms, dialogue recorded on-set (film/TV), home studio recordings with room problems, improving clarity of reverb-heavy recordings."
+  },
+  {
+    "name": "Clarity Vx - DeReverb Pro",
+    "category": "Restoration & Noise",
+    "tags": [
+      "heavy",
+      "dialogue",
+      "eq",
+      "reverb"
+    ],
+    "description": "Advanced AI reverb removal with more control than standard DeReverb. Additional controls: frequency-dependent reverb reduction, early reflections vs tail control, sensitivity adjustment. More CPU-heavy but more precise. Choose over standard DeReverb when you need fine-tuned control over reverb removal, especially for difficult cases. Best for: professional post-production, film dialogue, complex reverb situations where standard DeReverb isn't enough, high-quality audio restoration."
+  },
+  {
+    "name": "Clarity Vx Pro",
+    "category": "Restoration & Noise",
+    "tags": [
+      "broadcast",
+      "eq",
+      "noise reduction"
+    ],
+    "description": "Advanced AI noise reduction with more control than standard Clarity Vx. Features: multiple noise reduction algorithms, frequency-dependent processing, learn mode for custom noise profiles, ambience preservation control. Choose over standard Clarity Vx when you need more precise control over noise reduction or have complex noise situations. Best for: professional broadcast, high-end post-production, extreme noise situations, environments with changing noise profiles."
+  },
+  {
+    "name": "Curves AQ",
+    "category": "EQ",
+    "tags": [
+      "smooth",
+      "transparent",
+      "thin",
+      "mastering",
+      "master",
+      "eq"
+    ],
+    "description": "AI-powered adaptive EQ that learns from reference audio. Analyzes your audio and a target reference, then automatically creates an EQ curve to match. Controls: match intensity, frequency range, smoothing, manual EQ override bands. Character: transparent EQ matching — goal is to make your audio sound like the reference. Choose when you have a reference track and want to match its tonal balance. Best for: mastering (matching reference), ensuring tonal consistency across albums, quickly correcting tonal imbalances, learning/teaching EQ by seeing what a reference does differently."
+  },
+  {
+    "name": "Curves Equator",
+    "category": "Compressor",
+    "tags": [
+      "mastering",
+      "master",
+      "compression",
+      "eq"
+    ],
+    "description": "AI-powered adaptive dynamics that learns from reference material. Analyzes dynamic range, envelope shape, and loudness profile of a target, then matches your audio to it. Controls: match intensity, dynamics range, attack/release influence. Character: intelligent dynamics matching — automatically applies the right compression to match a reference. Choose when you want your dynamics to match a reference track. Best for: mastering, achieving commercial loudness/dynamics balance, learning dynamics processing by comparing to references."
+  },
+  {
+    "name": "Curves Resolve",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "clean",
+      "surgical",
+      "feedback",
+      "drum",
+      "guitar",
+      "dialogue",
+      "eq",
+      "room"
+    ],
+    "description": "AI-powered resonance detection and removal. Automatically scans audio for problematic resonances (ringing frequencies, room modes, harsh peaks) and notches them out. Controls: sensitivity, resolution, reduction amount, frequency range. Character: surgical, transparent — targets only the problems. Choose over manual notch EQ when you want automatic resonance hunting. Best for: room resonance removal, taming harsh guitar feedback, cleaning up resonant drum sounds, dialogue cleanup, any source with problematic ringing frequencies."
+  },
+  {
+    "name": "DPR-402",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "de essing",
+      "de esser",
+      "vocal",
+      "dialogue",
+      "broadcast",
+      "compressor",
+      "limiting",
+      "eq"
+    ],
+    "description": "Modeled BSS DPR-402 professional dynamics processor. Dual-mode: Compressor + De-Esser in one unit. Compressor: Threshold, Ratio, Attack, Release, Gain. De-Esser: frequency select, threshold, HF limiting. Character: transparent, broadcast-grade dynamics. Choose when you need both compression and de-essing in one plugin with broadcast precision. Best for: voice-over, broadcast, dialogue (designed for broadcast chain), vocals needing simultaneous compression and de-essing."
+  },
+  {
+    "name": "DeBreath",
+    "category": "Vocal",
+    "tags": [
+      "transparent",
+      "natural",
+      "vocal"
+    ],
+    "description": "Automatic breath removal for vocal recordings. AI-powered breath detection with controls: Sensitivity (breath detection threshold), Reduction (how much to attenuate breaths, -inf to 0dB), Energy (response speed). Can remove breaths entirely or just reduce them for natural results. Character: transparent — affects only breaths. Choose over manual editing when you need fast, consistent breath management across many vocal tracks. Best for: podcasts, audiobooks, voice-over, pop vocals, any vocal recording where breaths are distracting. Set reduction to -6 to -12dB for natural results rather than full removal."
+  },
+  {
+    "name": "DeEsser",
+    "category": "Compressor",
+    "tags": [
+      "colored",
+      "classic",
+      "bright",
+      "natural",
+      "sidechain",
+      "de essing",
+      "de esser",
+      "vocal",
+      "eq",
+      "deesser"
+    ],
+    "description": "Classic frequency-selective de-esser for sibilance control. Controls: Threshold, Frequency (target sibilance range, typically 4-10kHz), Sidechain monitor (audio/wideband/sidechain). Broadband or split-band modes. Character: simple, effective, slightly colored. Choose over Sibilance when you want a traditional de-esser approach (threshold-based). Choose Sibilance for more natural, intelligent de-essing. Best for: vocals with harsh 's' and 'sh' sounds, cymbals that are too bright, any source with problematic high-frequency energy in a specific range."
+  },
+  {
+    "name": "Doppler",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "synth"
+    ],
+    "description": "Doppler effect simulator recreating the pitch shift, volume change, and filtering of a sound source passing by the listener at variable speeds. Controls: Speed, Distance, Path shape (fly-by, approach, recede), Air filtering, Drive, Mix. Character: realistic motion simulation with physics-based modeling. Choose when you want the specific Doppler effect (pitch drops as object passes). Best for: sound design (cars, planes, sirens), creative effects (synth fly-bys), cinematic whooshes, post-production motion effects."
+  },
+  {
+    "name": "Dorrough",
+    "category": "Analyzer",
+    "tags": [
+      "mastering",
+      "master",
+      "broadcast"
+    ],
+    "description": "Modeled Dorrough 280-D loudness meter — broadcast industry standard. Displays simultaneous Peak and Average (persistent/summary) on a single scale. Multiple ballistic modes. METERING/ANALYSIS TOOL ONLY — does not process audio. Best for: broadcast compliance monitoring, mastering level monitoring, understanding the relationship between peak and average loudness."
+  },
+  {
+    "name": "Doubler2",
+    "category": "Modulation",
+    "tags": [
+      "modern",
+      "fat",
+      "thick",
+      "natural",
+      "feedback",
+      "vocal",
+      "guitar",
+      "synth",
+      "eq",
+      "delay",
+      "doubler"
+    ],
+    "description": "2-voice doubler creating natural-sounding doubling using pitch shifting and delay. Controls per voice: Detune (pitch shift amount), Delay, Pan, Level, Feedback. Global: direct level, EQ. Character: thickening and widening through micro pitch/time differences. Choose over ADT when you want simpler, modern doubling. Choose 4-voice Doubler4 for thicker results. Best for: vocal thickening, guitar widening, synth fattening, background vocal spread, adding stereo width to mono sources."
+  },
+  {
+    "name": "Doubler4",
+    "category": "Modulation",
+    "tags": [
+      "thick",
+      "lush",
+      "rich",
+      "vocal",
+      "guitar",
+      "synth",
+      "delay",
+      "doubler"
+    ],
+    "description": "4-voice doubler for thick doubling effects. Same concept as Doubler2 but with 4 independent pitch-shifted/delayed voices for much richer results. Controls per voice: Detune, Delay, Pan, Level. Character: lush, thick ensemble effect from the 4 detuned voices. Choose over Doubler2 when you want thicker doubling, or for creating wide vocal stacks. Best for: big background vocal sounds, thick guitar walls, synth pad widening, creating rich ensemble effects from a single source."
+  },
+  {
+    "name": "EKramer BA",
+    "category": "Bass",
+    "tags": [
+      "analog",
+      "warm",
+      "vintage",
+      "classic",
+      "bass",
+      "guitar",
+      "synth",
+      "compression",
+      "eq"
+    ],
+    "description": "Bass amp processor by legendary producer/engineer Eddie Kramer (Hendrix, Led Zeppelin, Beatles). Models classic bass amplifier tones with EQ, compression, drive, and cab simulation. Character: warm, vintage rock bass — the sound of classic records. Choose when you want quick vintage bass amp tones. Best for: bass guitar DI recordings needing amp character, vintage rock bass sounds, synth bass needing analog amp warmth."
+  },
+  {
+    "name": "EKramer DR",
+    "category": "Drums",
+    "tags": [
+      "punch",
+      "classic",
+      "bus",
+      "drum",
+      "overhead",
+      "compression",
+      "eq",
+      "room"
+    ],
+    "description": "Drum processor by Eddie Kramer. Controls optimized for drums: compression, EQ, room simulation, drive. Character: big, punchy, room-filling drum sound — classic rock drum processing by the man who recorded Led Zeppelin's drums. Choose when you want classic rock drum production style. Best for: drum bus, room mics, overhead processing, individual drums in rock/classic rock context."
+  },
+  {
+    "name": "EKramer FX",
+    "category": "Effects",
+    "tags": [
+      "vintage",
+      "vocal",
+      "guitar",
+      "reverb",
+      "delay",
+      "chorus",
+      "flanger",
+      "phaser"
+    ],
+    "description": "Multi-effects processor by Eddie Kramer. Combines delay, reverb, phaser, flanger, chorus in a vintage-flavored effects rack. Each effect has Eddie Kramer's curated settings. Character: vintage-flavored creative effects. Choose when you want quick vintage spatial/modulation effects. Best for: guitar effects, vocal effects, creative vintage-style processing, achieving 60s-70s production aesthetics."
+  },
+  {
+    "name": "EKramer GT",
+    "category": "Guitar",
+    "tags": [
+      "vintage",
+      "classic",
+      "guitar",
+      "eq"
+    ],
+    "description": "Guitar amp processor by Eddie Kramer. Models classic guitar amplifier tones with amp selection, EQ, drive, and cabinet simulation. Character: classic rock guitar — Hendrix, Zeppelin tones. Choose when you want vintage rock guitar amp simulation. Best for: electric guitar DI recordings, achieving classic rock guitar sounds, Hendrix-style tones."
+  },
+  {
+    "name": "EKramer VC",
+    "category": "Vocal",
+    "tags": [
+      "warm",
+      "vintage",
+      "classic",
+      "vocal",
+      "compression",
+      "eq",
+      "reverb",
+      "preamp"
+    ],
+    "description": "Vocal channel processor by Eddie Kramer. Complete vocal chain: preamp drive, compression, EQ, doubling, reverb. Designed around Eddie Kramer's vocal recording techniques from classic records. Character: warm, present, vintage vocal sound. Choose when you want a vintage-style complete vocal chain. Best for: rock vocals, classic-style vocal productions, vocals needing vintage warmth and character."
+  },
+  {
+    "name": "EMO-D5",
+    "category": "Compressor",
+    "tags": [
+      "clean",
+      "de esser",
+      "vocal",
+      "live",
+      "compressor",
+      "limiter"
+    ],
+    "description": "Emotion Series dynamics processor combining 5 modules: Gate, Leveler, De-Esser, Compressor, Limiter. All in one compact interface. Each module can be independently enabled/disabled. Character: clean, efficient multi-stage dynamics. Choose when you need a complete dynamics chain in minimal CPU/interface space. Best for: live sound (compact chain), quick studio dynamics setup, vocal chains needing gate+comp+de-esser+limiter in one."
+  },
+  {
+    "name": "EMO-F2",
+    "category": "EQ",
+    "tags": [
+      "clean",
+      "overhead",
+      "eq"
+    ],
+    "description": "Emotion Series 2-band parametric filter. Simple hi-pass and lo-pass filters with frequency and Q control. Minimal CPU. Character: clean, purely functional filtering. Choose when you just need simple hi/lo pass filtering. Best for: utility filtering, rumble removal (HPF), harsh top-end removal (LPF), quick cleanup with minimal CPU overhead."
+  },
+  {
+    "name": "EMO-Generator",
+    "category": "Generator",
+    "tags": [
+      "acoustic",
+      "eq",
+      "room"
+    ],
+    "description": "Test tone and noise generator. Produces: sine wave (variable frequency), pink noise, white noise, impulse. Controls: frequency, level, signal type. UTILITY TOOL — not for music production. Best for: system calibration, signal path testing, room acoustics measurement, troubleshooting audio equipment."
+  },
+  {
+    "name": "EMO-Q4",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "transparent",
+      "clean",
+      "live",
+      "eq"
+    ],
+    "description": "Emotion Series 4-band parametric EQ. Each band: Frequency, Gain (+/-18dB), Q (0.5-15). Plus HPF and LPF. Character: clean, transparent, zero coloration — purely functional EQ. Choose when you want simple, clean EQ without any analog modeling or character. Best for: utility EQ, live sound (efficient), basic tonal corrections where you don't want any plugin character."
+  },
+  {
+    "name": "Enigma",
+    "category": "Modulation",
+    "tags": [
+      "feedback",
+      "guitar",
+      "synth",
+      "eq",
+      "delay"
+    ],
+    "description": "Creative multi-effect combining resonant filtering, modulation (LFO/envelope follower), delay, and feedback into a complex effect chain. Controls: Filter (frequency, resonance, type), Modulation (LFO rate, depth, shape), Delay (time, feedback), Feedback routing. Character: otherworldly, psychedelic, constantly evolving textures. Choose when you want complex, experimental modulation effects. Best for: experimental sound design, psychedelic guitar effects, ambient synth textures, creating evolving, unpredictable sonic textures."
+  },
+  {
+    "name": "F6",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "surgical",
+      "dynamic eq",
+      "feedback",
+      "de essing",
+      "mastering",
+      "master",
+      "vocal",
+      "live",
+      "compression",
+      "eq"
+    ],
+    "description": "6-band floating-point dynamic EQ with real-time frequency analyzer. Each band can act as standard EQ OR dynamic EQ (compress/expand at that frequency). Controls per band: Frequency, Gain, Q, Range (dynamic amount), Threshold, Attack, Release. RTA display shows frequency content in real-time. Character: surgical, precise, transparent. The most problem-solving EQ available. Choose over H-EQ when you need dynamic EQ (frequency-specific compression). Choose over C6 when you want visual feedback. Best for: problem-solving (resonance taming, frequency-dependent dynamics), mastering, de-essing with visual feedback, live vocals, any complex tonal problem."
+  },
+  {
+    "name": "F6-RTA",
+    "category": "EQ",
+    "tags": [
+      "dynamic eq",
+      "feedback",
+      "mastering",
+      "master",
+      "live",
+      "eq"
+    ],
+    "description": "F6 dynamic EQ with enhanced real-time frequency analyzer display. Same powerful 6-band dynamic EQ as F6 but with more detailed RTA visualization. Choose over F6 when the visual analysis is important for your workflow. Best for: same applications as F6 but when you want better visual frequency feedback — mastering, problem-solving, live sound with visual monitoring."
+  },
+  {
+    "name": "Feedback Hunter",
+    "category": "Other",
+    "tags": [
+      "transparent",
+      "tight",
+      "feedback",
+      "live",
+      "eq"
+    ],
+    "description": "Automatic feedback detection and elimination for live sound. Scans for feedback frequencies and places precise notch filters to suppress them. Controls: sensitivity, number of filters, Q of notch filters, auto/manual mode. Character: transparent — notch filters are tight enough to be inaudible on the program material. Choose when you have feedback issues in live sound or monitoring. Best for: live sound reinforcement (essential), stage monitor mixing, PA system optimization, house of worship audio."
+  },
+  {
+    "name": "GEQ Classic",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "colored",
+      "modern",
+      "classic",
+      "musical",
+      "live",
+      "eq",
+      "api"
+    ],
+    "description": "30-band graphic EQ with classic analog-modeled response (1/3 octave spacing from 25Hz to 20kHz). +/-12dB per band. Analog modeling means bands interact slightly like a real analog graphic EQ. Character: musical, slightly colored — bands affect each other like hardware. Choose over GEQ Modern when you want analog-style graphic EQ behavior. Best for: live sound system tuning, quick broad tonal shaping, venue EQ, monitor mixing — any situation where fast, visual EQ is needed."
+  },
+  {
+    "name": "GEQ Modern",
+    "category": "EQ",
+    "tags": [
+      "digital",
+      "transparent",
+      "modern",
+      "classic",
+      "clean",
+      "mastering",
+      "master",
+      "eq",
+      "distortion"
+    ],
+    "description": "30-band graphic EQ with linear-phase digital response (1/3 octave spacing). +/-12dB per band. True linear-phase processing means zero phase distortion and bands don't interact. Character: transparent, precise, clinically clean. Choose over GEQ Classic when phase accuracy matters (mastering, critical applications). Best for: mastering, high-fidelity system tuning, critical applications where phase distortion is unacceptable."
+  },
+  {
+    "name": "GTR Amp",
+    "category": "Guitar",
+    "tags": [
+      "modern",
+      "classic",
+      "clean",
+      "heavy",
+      "bass",
+      "guitar",
+      "eq",
+      "hall"
+    ],
+    "description": "Guitar amp simulator with multiple amp models covering clean to high-gain. Models include classic American (Fender-style), British (Marshall-style), and modern high-gain amps. Controls: Amp select, Gain, EQ (Bass/Mid/Treble), Volume, Cabinet select. Character: depends on amp model — ranges from clean sparkle to heavy crunch. Choose when you need guitar amp simulation for DI-recorded guitar. Best for: DI guitar recordings, re-amping, guitar processing without a real amp."
+  },
+  {
+    "name": "GTR Amp 2Cab",
+    "category": "Guitar",
+    "tags": [
+      "vintage",
+      "modern",
+      "rich",
+      "guitar"
+    ],
+    "description": "Guitar amp simulator with dual cabinet selection. Same amp modeling as GTR Amp but allows blending two different speaker cabinets for richer, more complex tones. Choose over GTR Amp when you want more tonal variety from cabinet blending. Best for: achieving complex guitar tones through cabinet layering, vintage + modern cab combinations."
+  },
+  {
+    "name": "GTR Solo Tool Rack",
+    "category": "Guitar",
+    "tags": [
+      "guitar"
+    ],
+    "description": "Complete guitar effects and amp rack in single-instance format. Combines stomp effects + amp + cabinet in one plugin. Streamlined for lead guitar processing. Best for: quick complete guitar rig setup for lead guitar parts."
+  },
+  {
+    "name": "GTR Stomp 2",
+    "category": "Guitar",
+    "tags": [
+      "guitar",
+      "compressor",
+      "reverb",
+      "delay",
+      "chorus",
+      "flanger",
+      "phaser",
+      "distortion",
+      "overdrive"
+    ],
+    "description": "2-slot guitar stomp box effects rack. Includes various pedal models: overdrive, distortion, fuzz, chorus, flanger, phaser, delay, reverb, wah, compressor. Chain 2 pedals in series. Best for: simple guitar pedalboard setups, adding 1-2 effects to a guitar signal."
+  },
+  {
+    "name": "GTR Stomp 4",
+    "category": "Guitar",
+    "tags": [
+      "guitar",
+      "live"
+    ],
+    "description": "4-slot guitar stomp box effects rack. Same pedal models as Stomp 2 but with 4 slots for more complex pedalboard configurations. Best for: moderate guitar pedalboard setups, typical live guitar effects chains."
+  },
+  {
+    "name": "GTR Stomp 6",
+    "category": "Guitar",
+    "tags": [
+      "guitar"
+    ],
+    "description": "6-slot guitar stomp box effects rack. Full pedalboard with 6 effects slots for complex guitar processing chains. Best for: comprehensive guitar pedalboard emulation, complex effects chains, recreating real pedalboard setups in software."
+  },
+  {
+    "name": "GTR Tool Rack",
+    "category": "Guitar",
+    "tags": [
+      "thin",
+      "guitar",
+      "live"
+    ],
+    "description": "Complete guitar rig: stomp effects + amp + cabinet + tuner in one plugin. The full solution for guitar processing from effects through amp simulation to cabinet modeling. Choose over separate stomp/amp plugins when you want everything in one interface. Best for: complete guitar rig replacement, home recording, live performance guitar processing."
+  },
+  {
+    "name": "GTR Tuner",
+    "category": "Guitar",
+    "tags": [
+      "bass",
+      "guitar"
+    ],
+    "description": "Chromatic guitar/bass tuner. Displays pitch with cent accuracy. Simple, accurate tuning reference. UTILITY TOOL. Best for: tuning guitars, bass, and other chromatic instruments."
+  },
+  {
+    "name": "GW MixCentric",
+    "category": "Mastering",
+    "tags": [
+      "modern",
+      "mix bus",
+      "bus",
+      "compression",
+      "limiting",
+      "eq"
+    ],
+    "description": "Mix bus processor by Grammy-winning producer Greg Wells (Adele, Katy Perry, OneRepublic). All-in-one mix finalization: compression, EQ, stereo enhancement, low-end control, limiting. Character: polished, modern pop/rock — huge but controlled. Choose when you want a quick, professional mix bus chain with a modern pop production aesthetic. Best for: mix bus processing, pop/rock/indie mix finalization, stereo bus sweetening. One of the best one-plugin mix bus solutions."
+  },
+  {
+    "name": "GW PianoCentric",
+    "category": "Effects",
+    "tags": [
+      "musical",
+      "bus",
+      "piano",
+      "compression",
+      "eq"
+    ],
+    "description": "Piano-specific processor by Greg Wells. Dedicated EQ curves, compression, and spatial processing optimized for piano. Controls tuned specifically to piano frequency ranges and dynamics. Character: clear, present, musical piano sound. Choose when mixing piano in pop/rock contexts — Greg Wells' piano sounds are legendary. Best for: piano in pop/rock/indie, piano-driven songs, piano bus processing."
+  },
+  {
+    "name": "GW ToneCentric",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "analog",
+      "warm",
+      "modern",
+      "rich",
+      "saturation",
+      "harmonic",
+      "mix bus",
+      "bus",
+      "vocal",
+      "drum",
+      "guitar",
+      "console"
+    ],
+    "description": "Saturation and tonal enhancement by Greg Wells. Adds harmonic richness with controls for intensity and character. Character: warm, full, modern analog warmth — Greg Wells' signature tonal sweetening. Choose over generic saturation when you want a specific, tested, modern production aesthetic. Best for: any source needing warmth and presence (vocals, drums, guitars, bus), mix bus analog sweetening, adding 'expensive analog console' character."
+  },
+  {
+    "name": "GW VoiceCentric",
+    "category": "Vocal",
+    "tags": [
+      "modern",
+      "vocal",
+      "compression",
+      "eq"
+    ],
+    "description": "Vocal processor by Greg Wells. Complete vocal chain optimized for modern pop production: compression, EQ, presence enhancement, spatial processing. Character: clear, present, polished — the vocal sound of modern pop hits. Choose over CLA Vocals when you want modern pop production (CLA is more rock-oriented). Best for: pop vocals, R&B vocals, modern vocal production, lead vocals in commercial music."
+  },
+  {
+    "name": "H-Comp",
+    "category": "Compressor",
+    "tags": [
+      "vca",
+      "optical",
+      "analog",
+      "digital",
+      "hybrid",
+      "transformer",
+      "punch",
+      "smooth",
+      "transparent",
+      "colored",
+      "clean",
+      "parallel"
+    ],
+    "description": "Hybrid compressor combining analog modeling with digital precision. 4 analog character modes: Punchy (VCA-style), Smooth (optical-style), British (Neve-style transformer), and Clean (transparent). Controls: Threshold, Ratio, Attack (0.005-100ms), Release (1-3000ms), Mix (parallel compression built in!), Analog mode select. The built-in Mix knob is huge — instant parallel compression without routing. Character varies by mode: from transparent to heavily colored. Choose when you want versatile compression with easy parallel blending. Best for: drums (parallel compression with mix knob), vocals, bass, bus — the most flexible compressor for any situation."
+  },
+  {
+    "name": "H-Delay",
+    "category": "Delay",
+    "tags": [
+      "analog",
+      "digital",
+      "hybrid",
+      "warm",
+      "lo fi",
+      "lofi",
+      "feedback",
+      "ducking",
+      "vocal",
+      "guitar",
+      "synth",
+      "delay"
+    ],
+    "description": "Hybrid delay with analog-modeled character. Features: tempo sync, ping-pong mode, analog/digital mode, LoFi mode (bit-crush), filtering (HPF+LPF on feedback), modulation, ducking. Controls: Delay time (free/sync), Feedback, Mix, Filter, Modulation, Analog/Digital character. Character: ranges from pristine digital to warm analog to degraded lo-fi depending on settings. Choose when you need a versatile, full-featured delay. Best for: vocals (slapback, tempo delay), guitars (rhythmic delay), synths, any source — the most versatile all-purpose delay plugin. Set LoFi mode for tape-style degrading repeats."
+  },
+  {
+    "name": "H-EQ",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "digital",
+      "hybrid",
+      "warm",
+      "punch",
+      "transparent",
+      "vintage",
+      "modern",
+      "thin",
+      "dynamic eq",
+      "bus",
+      "vocal"
+    ],
+    "description": "Hybrid 7-band parametric EQ with switchable analog character models. 3 analog modes: British 60s/70s (Neve-style warmth), American 70s/80s (API-style punch), Modern (transparent digital). 7 bands: HP, LP, plus 5 parametric. Each band: Frequency, Gain, Q, band type (bell/shelf/cut). Character: adapts to the selected analog model — warm/punchy/transparent. Choose over dedicated vintage EQs when you want flexibility to switch between characters. Choose over F6 when you don't need dynamic EQ. Best for: everyday mixing EQ (the most versatile EQ), vocals, drums, guitars, bus — works on everything with adjustable character."
+  },
+  {
+    "name": "H-EQ-Light",
+    "category": "EQ",
+    "tags": [
+      "eq"
+    ],
+    "description": "Lightweight version of H-EQ with same 7 bands but simplified controls and lower CPU. Fewer display options, same sound quality. Choose over full H-EQ when CPU matters or you want faster workflow. Best for: large sessions, quick EQ adjustments, sessions where CPU is limited."
+  },
+  {
+    "name": "H-Reverb",
+    "category": "Reverb",
+    "tags": [
+      "analog",
+      "hybrid",
+      "smooth",
+      "vintage",
+      "thin",
+      "lush",
+      "dense",
+      "saturation",
+      "vocal",
+      "drum",
+      "synth",
+      "eq"
+    ],
+    "description": "Hybrid reverb engine combining algorithmic processing with FIR (Finite Impulse Response) technology for extremely dense, lush tails. Types: Hall, Room, Plate, Chamber, Ambience, Reverse, plus vintage analog reverb emulations. Controls: Type, Time (decay), Size, Damping, Pre-Delay, EQ, Modulation, Drive (pushable into saturation), Mix. Character: dense, smooth, professional — exceptionally lush decay tails. Choose over Abbey Road Plates when you want more variety and control. Choose over IR reverbs when you want tweakability. Best for: vocals (lush plate/hall), drums (room/ambient), synths (long tails), cinematic reverb, anything needing premium spatial treatment."
+  },
+  {
+    "name": "H-Reverb long",
+    "category": "Reverb",
+    "tags": [
+      "reverb"
+    ],
+    "description": "Extended decay version of H-Reverb with much longer maximum tail times. Same engine and controls as H-Reverb but allows decay times up to minutes. Choose over regular H-Reverb when you need very long, atmospheric reverb tails. Best for: ambient music, drone, atmospheric pads, cinematic sound design, infinite-style reverbs, special effects."
+  },
+  {
+    "name": "IDX Intelligent Dynamics",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "aggressive",
+      "transparent",
+      "multiband",
+      "expansion",
+      "mastering",
+      "master",
+      "broadcast",
+      "compression",
+      "eq"
+    ],
+    "description": "AI-driven intelligent multiband dynamics processor. Automatically analyzes audio content and applies optimal multiband compression, expansion, and EQ. Controls: Intensity, Style (transparent/aggressive), Focus (frequency emphasis). The AI engine adapts processing to the material in real-time. Choose over manual multiband dynamics when you want intelligent, automatic spectral dynamics. Best for: quick mastering, consistent dynamics across varying material, broadcast processing, time-saving dynamic control."
+  },
+  {
+    "name": "IDX LIVE Intelligent Dynamics",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "multiband",
+      "vocal",
+      "broadcast",
+      "live",
+      "delay"
+    ],
+    "description": "Low-latency version of IDX for live performance use. Same AI-driven multiband dynamics with minimal processing delay. Choose over studio IDX for live sound applications. Best for: live sound reinforcement, live broadcast, real-time vocal processing, any live application needing intelligent dynamics."
+  },
+  {
+    "name": "IMPusher",
+    "category": "Mastering",
+    "tags": [
+      "aggressive",
+      "saturation",
+      "mastering",
+      "master",
+      "compression",
+      "limiting",
+      "distortion",
+      "maximizer"
+    ],
+    "description": "Mastering-grade loudness maximizer with intelligent multi-stage processing. Combines saturation, compression, and limiting for maximum loudness with minimal distortion. Controls: Push (loudness amount), Style (character), Ceiling, Output. Character: aggressive loudness without obvious artifacts — designed to push masters very loud. Choose over L2/L316 when you want to push loudness beyond traditional limiting. Best for: competitive loudness mastering, electronic music masters, hip-hop masters, any master that needs to be LOUD."
+  },
+  {
+    "name": "IR-L",
+    "category": "Reverb",
+    "tags": [
+      "classic",
+      "drum",
+      "acoustic",
+      "eq",
+      "reverb",
+      "delay",
+      "plate",
+      "hall",
+      "room"
+    ],
+    "description": "Convolution reverb using impulse responses of real acoustic spaces. Full-featured IR reverb with extensive built-in IR library (halls, rooms, churches, studios, plates). Controls: IR select, Pre-Delay, Reverb Time scaling, Damping, Size, EQ, Mix. Character: utterly realistic — these are recordings of actual spaces. Choose over algorithmic reverbs when you want 100% realistic room simulation. Best for: orchestral (real halls), film scoring, realistic room simulation, drum room ambience, classical music."
+  },
+  {
+    "name": "IR-L efficient",
+    "category": "Reverb",
+    "tags": [
+      "tight",
+      "reverb"
+    ],
+    "description": "CPU-efficient version of IR-L convolution reverb. Same impulse response quality with optimized processing. Choose over full IR-L when CPU budget is tight. Best for: same applications as IR-L but in CPU-constrained sessions."
+  },
+  {
+    "name": "IR-L full",
+    "category": "Reverb",
+    "tags": [
+      "mastering",
+      "master",
+      "reverb"
+    ],
+    "description": "Full-resolution IR-L convolution reverb with maximum processing quality. Higher CPU usage but maximum fidelity. Choose over efficient version for final mixes and mastering. Best for: critical applications, film scoring final mixes, mastering."
+  },
+  {
+    "name": "IR1",
+    "category": "Reverb",
+    "tags": [
+      "eq",
+      "reverb",
+      "delay"
+    ],
+    "description": "Convolution reverb with parametric control over impulse responses. Unique: allows tweaking IR properties (decay, size, damping) that normally can't be changed with convolution. Controls: IR select, Decay, Size, Pre-Delay, Damping, EQ, Density, Direct signal. Character: realistic with flexibility — the best of both convolution and algorithmic worlds. Choose over IR-L when you need to modify IR characteristics. Best for: any reverb application where you want realistic spaces but need to adapt them."
+  },
+  {
+    "name": "IR1 efficient",
+    "category": "Reverb",
+    "tags": [
+      "reverb"
+    ],
+    "description": "CPU-efficient version of IR1 parametric convolution reverb. Same tweakable convolution with lower CPU. Best for: same as IR1 but in CPU-constrained sessions."
+  },
+  {
+    "name": "IR1 full",
+    "category": "Reverb",
+    "tags": [
+      "mastering",
+      "master",
+      "reverb"
+    ],
+    "description": "Full-resolution IR1 parametric convolution reverb. Maximum quality processing. Best for: final mixes, mastering, critical applications."
+  },
+  {
+    "name": "IRLive",
+    "category": "Reverb",
+    "tags": [
+      "broadcast",
+      "live",
+      "reverb",
+      "delay"
+    ],
+    "description": "Low-latency convolution reverb for live sound applications. Real impulse responses with minimal processing delay. Choose over other IR reverbs when latency matters (live performance). Best for: live sound, live broadcast, monitoring with reverb, any real-time application needing realistic convolution reverb."
+  },
+  {
+    "name": "InPhase",
+    "category": "Tools",
+    "tags": [
+      "transparent",
+      "drum",
+      "bass",
+      "guitar",
+      "acoustic",
+      "snare",
+      "kick",
+      "delay",
+      "room"
+    ],
+    "description": "Precision phase alignment and correction tool. Controls: phase shift (0-360° continuous), delay (samples/ms), HPF/LPF, correlation meter, waveform display. Aligns phase between two or more microphones/tracks with sample-accurate precision. Character: transparent — corrects phase without coloring sound. Choose when you have phase issues from multi-mic recording. Best for: multi-mic drum recordings (kick in/out, top/bottom snare), bass DI + amp alignment, acoustic guitar + room mic alignment, any multi-microphone situation."
+  },
+  {
+    "name": "InPhase LT",
+    "category": "Tools",
+    "tags": [
+      "delay"
+    ],
+    "description": "Simplified version of InPhase for basic phase correction. Same core functionality with fewer controls (no full waveform display). Choose over full InPhase for quick phase fixes. Best for: simple phase alignment tasks, quick phase flip, basic delay compensation."
+  },
+  {
+    "name": "InTrigger",
+    "category": "Other",
+    "tags": [
+      "transparent",
+      "drum",
+      "live",
+      "eq",
+      "ssl"
+    ],
+    "description": "Intelligent drum trigger and replacer. Detects drum hits and triggers replacement samples or sends MIDI. Controls: Sensitivity, Trigger frequency range, Retrigger time, Sample selection, Blend (original + sample mix), MIDI output settings. Character: transparent triggering — blends seamlessly with original. Choose for drum replacement/augmentation. Best for: reinforcing weak drum hits, replacing poorly recorded drums, layering samples with live drums, MIDI drum triggering for virtual instruments."
+  },
+  {
+    "name": "JJP-Bass",
+    "category": "Bass",
+    "tags": [
+      "punch",
+      "bass",
+      "guitar",
+      "synth",
+      "compression"
+    ],
+    "description": "Bass processor by Jack Joseph Puig (Green Day, U2, Rolling Stones). Controls: Sub (sub-bass), Lo (bass body), Hi (presence), Attack (transient), Punch (compression), DI/Amp blend. Character: full, round, present bass — JJP's signature bass sound. Choose for quick professional bass processing. Best for: bass guitar in rock/pop/punk, synth bass, any bass source needing professional treatment."
+  },
+  {
+    "name": "JJP-Cymb-Perc",
+    "category": "Drums",
+    "tags": [
+      "bus",
+      "drum",
+      "percussion",
+      "overhead",
+      "compression",
+      "eq"
+    ],
+    "description": "Cymbal and percussion processor by Jack Joseph Puig. Dedicated controls for cymbal/percussion frequency ranges: Body, Shimmer, Attack, Compression. Character: controlled, balanced cymbal/percussion sound — tames harshness while adding shimmer. Choose specifically for cymbal/percussion processing. Best for: drum overhead processing, cymbal bus, percussion bus, hi-hat control, taming harsh cymbal recordings."
+  },
+  {
+    "name": "JJP-Drums",
+    "category": "Drums",
+    "tags": [
+      "aggressive",
+      "punch",
+      "bus",
+      "drum",
+      "distortion",
+      "room"
+    ],
+    "description": "Drum processor by Jack Joseph Puig. Controls: Punch (transient attack), Body (low-mid fullness), Crunch (distortion/edge), Room (ambience), HiHat (cymbal control). Character: big, punchy, full drum sound — JJP's signature rock drum treatment. Choose for quick professional drum processing. Best for: drum bus, individual drum processing in rock/pop/punk, aggressive drum sounds."
+  },
+  {
+    "name": "JJP-Guitars",
+    "category": "Guitar",
+    "tags": [
+      "dense",
+      "bus",
+      "guitar",
+      "distortion"
+    ],
+    "description": "Guitar processor by Jack Joseph Puig. Controls: Bite (high-mid presence), Body (low-mid fullness), Edge (distortion), Compress, Ambience. Character: upfront, cutting guitar sound — JJP's signature guitar tone heard on punk and rock records. Choose for quick professional guitar processing. Best for: electric guitar in rock/punk/alternative, guitar bus processing, guitars needing to cut through a dense mix."
+  },
+  {
+    "name": "JJP-Strings-Keys",
+    "category": "Other",
+    "tags": [
+      "warm",
+      "rich",
+      "strings",
+      "piano",
+      "synth"
+    ],
+    "description": "Strings and keyboard processor by Jack Joseph Puig. Controls: Body (warmth/fullness), Treble (presence/air), Compress (dynamics), Ambience (space), Width (stereo spread). Optimized for piano, synth, strings, and pads. Character: rich, deep, present — makes keyboards sit beautifully in a mix. Best for: piano, synth pads, strings, organ, any keyboard instrument in pop/rock context."
+  },
+  {
+    "name": "JJP-Vocals",
+    "category": "Vocal",
+    "tags": [
+      "aggressive",
+      "vocal",
+      "reverb",
+      "delay"
+    ],
+    "description": "Vocal processor by Jack Joseph Puig. Controls: Body (low end), Presence (mid-high), Air (very top end), Compress, Reverb, Delay, Effects. Character: upfront, present, exciting vocal sound — JJP's signature vocal treatment from countless rock hits. Choose for quick professional vocal processing. Best for: rock/pop/punk vocals, lead vocals needing to cut through, aggressive vocal styles."
+  },
+  {
+    "name": "Kaleidoscopes",
+    "category": "Modulation",
+    "tags": [
+      "feedback",
+      "guitar",
+      "synth",
+      "chorus",
+      "flanger",
+      "phaser",
+      "tremolo",
+      "neve"
+    ],
+    "description": "Creative multi-effect processor with two independent modulation engines that generate ever-changing patterns. Each engine: phaser, flanger, chorus, tremolo, all with randomization and pattern generation. Controls: Speed, Depth, Feedback, Waveform, Randomize, Sync. Character: constantly evolving, unpredictable, organic modulation textures. Choose over standard chorus/flanger when you want evolving, never-repeating modulation. Best for: ambient textures, synth pads, guitar shimmer, creating evolving soundscapes, psychedelic effects."
+  },
+  {
+    "name": "Key Detector",
+    "category": "Other",
+    "tags": [
+      "musical",
+      "harmonic"
+    ],
+    "description": "Automatic musical key and chord detection in real-time. Displays detected root note and scale (major/minor/modes). Also shows chord progressions. ANALYSIS TOOL ONLY — does not process audio. Best for: determining the key of a song for pitch correction setup, DJ mixing (harmonic mixing), music production reference."
+  },
+  {
+    "name": "Kramer HLS",
+    "category": "EQ",
+    "tags": [
+      "warm",
+      "smooth",
+      "colored",
+      "vintage",
+      "modern",
+      "classic",
+      "clean",
+      "thin",
+      "musical",
+      "heavy",
+      "rich",
+      "vocal"
+    ],
+    "description": "Modeled Helios Type 69 console EQ by Eddie Kramer — the EQ sound of Led Zeppelin, Hendrix, and Olympic Studios. 3 bands: Bass (shelf, 60/120Hz), Mid (parametric, 0.7-7kHz), Treble (shelf, 10/12/16kHz). Character: warm, smooth, richly colored — adds vintage British console magic. Very musical, nothing like modern clean EQ. Choose over modern EQs when you want heavy vintage coloration. Best for: drums (the Bonham sound), guitars (the Hendrix tone), vocals (classic rock warmth), anything needing vintage British console character."
+  },
+  {
+    "name": "Kramer PIE",
+    "category": "Compressor",
+    "tags": [
+      "aggressive",
+      "smooth",
+      "transparent",
+      "vintage",
+      "subtle",
+      "gentle",
+      "bus",
+      "mastering",
+      "master",
+      "vocal",
+      "compressor",
+      "limiter"
+    ],
+    "description": "Modeled PIE (Pye) compressor/limiter used at Olympic Studios. Simple controls: Input, Output, Recovery (release), Limit/Compress mode. Character: gentle, program-dependent compression with vintage smoothness. Very subtle, flattering compression. Choose over aggressive compressors when you want barely-there vintage limiting. Best for: gentle bus compression, mastering (subtle limiting), vocals needing transparent control, any source where compression should be invisible."
+  },
+  {
+    "name": "Kramer Tape",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "analog",
+      "digital",
+      "warm",
+      "smooth",
+      "clean",
+      "thin",
+      "subtle",
+      "gentle",
+      "saturation",
+      "harmonic",
+      "mix bus",
+      "bus"
+    ],
+    "description": "Analog tape machine emulation. Controls: Tape Speed (7.5/15/30 IPS), Record Level (into saturation), Tape Type, Wow/Flutter (depth + rate), Noise, Bias, HF/LF adjustment, Delay (for slapback). Character: warmth, gentle compression, HF smoothing, subtle pitch wobble, harmonic saturation. Lower speeds = more color, higher = cleaner. Choose over J37 when you want simpler tape emulation with less historical specificity. Best for: mix bus (adds analog warmth to digital mixes), drums, vocals, guitars — any source needing tape warmth. One of the most-used saturation plugins."
+  },
+  {
+    "name": "L1 limiter",
+    "category": "Compressor",
+    "tags": [
+      "aggressive",
+      "transparent",
+      "vintage",
+      "heavy",
+      "limiter"
+    ],
+    "description": "First-generation Waves brick-wall peak limiter. Controls: Threshold, Release, Output Ceiling, and IDR dithering for bit-depth reduction. Character: effective but slightly aggressive at heavy limiting. Choose L2 or newer limiters for transparent results; L1 adds more character/color. Best for: utility peak limiting, dithering for bit-depth conversion, situations where slight limiter coloration is desired, vintage Waves limiter sound."
+  },
+  {
+    "name": "L1+ Ultramaximizer",
+    "category": "Compressor",
+    "tags": [
+      "limiter",
+      "maximizer"
+    ],
+    "description": "Enhanced L1 with automatic gain optimization and improved dithering algorithms. Same basic limiter engine as L1 with better metering and auto-makeup gain. Choose over L1 for improved workflow. Best for: same as L1 with better ergonomics."
+  },
+  {
+    "name": "L2",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "auto release",
+      "mastering",
+      "master",
+      "live",
+      "limiter",
+      "api"
+    ],
+    "description": "Second-generation brick-wall limiter with ARC (Auto Release Control) — intelligent release timing that adapts to program material for transparent limiting. Controls: Threshold, Output Ceiling, ARC on/off, IDR dithering with noise shaping options. Character: transparent, professional, industry-standard. ARC is the key feature — prevents pumping by automatically adjusting release time. Choose over L1 for transparency. Choose over L316 for simpler workflow. Best for: mastering (industry standard final limiter), dithering for delivery, any situation needing transparent loudness maximization without artifacts."
+  },
+  {
+    "name": "L2-SC",
+    "category": "Compressor",
+    "tags": [
+      "heavy",
+      "sidechain",
+      "mastering",
+      "master",
+      "bass",
+      "limiter",
+      "eq",
+      "distortion"
+    ],
+    "description": "L2 limiter with sidechain filtering. Adds HPF/LPF filters on the sidechain detector so bass-heavy material doesn't trigger excessive limiting. Choose over standard L2 when bass is causing pumping/distortion during limiting. Best for: mastering bass-heavy genres (EDM, hip-hop), any material where low-frequency energy causes problematic limiter behavior."
+  },
+  {
+    "name": "L3 MultiMaximizer",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "transparent",
+      "multiband",
+      "mastering",
+      "master",
+      "broadcast",
+      "limiter",
+      "eq",
+      "distortion",
+      "maximizer"
+    ],
+    "description": "5-band multiband brick-wall limiter. Each band has independent threshold and priority controls. Limits each frequency band independently for more transparent loudness with preserved spectral balance. Controls: per-band threshold, Priority, Release, Profile (presets for different material types). Character: louder and more transparent than single-band limiting. Choose over L2 when you need louder masters without spectral distortion. Best for: mastering (especially competitive loudness), broadcast, EDM/pop mastering where loudness matters, material with wide dynamic range across spectrum."
+  },
+  {
+    "name": "L3 UltraMaximizer",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "multiband",
+      "mastering",
+      "master",
+      "limiting",
+      "maximizer"
+    ],
+    "description": "Single-band version of L3 with same quality processing but simplified to one band. Controls: Threshold, Ceiling, Profile, Release. Character: excellent quality single-band limiting with L3 engine. Choose over L2 when you want L3-quality limiting without multiband complexity. Best for: simpler mastering tasks, quick loudness maximization with L3 quality."
+  },
+  {
+    "name": "L3-LL Multi",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "multiband",
+      "mastering",
+      "master",
+      "broadcast",
+      "live",
+      "limiting",
+      "delay",
+      "maximizer"
+    ],
+    "description": "Low-latency version of L3 MultiMaximizer for live applications. Same 5-band multiband limiting with minimal processing delay. Choose over studio L3 for live use. Best for: live broadcast, live mastering, real-time loudness management."
+  },
+  {
+    "name": "L3-LL Ultra",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "broadcast",
+      "live",
+      "limiting",
+      "delay",
+      "maximizer"
+    ],
+    "description": "Low-latency version of L3 UltraMaximizer. Single-band L3 limiting with minimal delay. Best for: live sound, live broadcast, real-time peak limiting."
+  },
+  {
+    "name": "L316",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "analog",
+      "warm",
+      "modern",
+      "thin",
+      "subtle",
+      "saturation",
+      "harmonic",
+      "multiband",
+      "mastering",
+      "master",
+      "limiter"
+    ],
+    "description": "Mastering limiter combining multiband processing with harmonic enhancement. Unique approach: adds subtle saturation alongside limiting for louder, fuller-sounding masters. Controls: Threshold, Ceiling, Analog Trim (saturation amount), Priority, Release. Character: loud AND warm — the saturation prevents the 'thin squashed' sound of pure limiting. Choose over L2/L3 when you want loud masters that still sound full and warm. Best for: modern mastering (competitive loudness with warmth), EDM, pop, hip-hop, rock — any genre where loudness AND fullness matter."
+  },
+  {
+    "name": "L4 Ultramaximizer",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "auto release",
+      "mastering",
+      "master",
+      "limiter",
+      "maximizer"
+    ],
+    "description": "Latest generation brick-wall limiter with the most advanced ARC (Auto Release Control) technology. Improved algorithm over L2 for even more transparent limiting at extreme settings. Controls: Threshold, Ceiling, ARC, IDR dithering. Character: the most transparent Waves limiter — handles extreme gain reduction better than predecessors. Choose over L2 when you need to push loudness harder without artifacts. Best for: demanding mastering situations, very dynamic material, pushing loudness while maintaining quality."
+  },
+  {
+    "name": "LinEQ Broadband",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "mastering",
+      "master",
+      "eq",
+      "distortion"
+    ],
+    "description": "Linear-phase broadband EQ for mastering. 5 bands of parametric EQ with zero phase distortion across the full spectrum. Controls: standard parametric per band (Freq, Gain, Q) plus HP/LP filters. Character: utterly transparent — EQ changes happen without any phase shift, preserving transient shape and stereo image. Choose over minimum-phase EQs (H-EQ, etc.) when phase accuracy matters (mastering). Best for: mastering (the go-to EQ type for mastering), critical listening applications, any EQ application where preserving phase relationships is essential."
+  },
+  {
+    "name": "LinEQ Lowband",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "heavy",
+      "mastering",
+      "master",
+      "bass",
+      "eq"
+    ],
+    "description": "Linear-phase low-frequency EQ focused on bass and sub-bass. Precision low-end equalization without phase shift. Character: transparent bass EQ — especially important in low frequencies where phase shift from conventional EQ causes the most damage. Choose when you need to EQ bass without the phase issues that conventional EQ causes in low frequencies. Best for: mastering low-end adjustments, bass-heavy music, EDM/hip-hop sub-bass management."
+  },
+  {
+    "name": "LinMB",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "transparent",
+      "multiband",
+      "bus",
+      "mastering",
+      "master",
+      "compressor",
+      "distortion"
+    ],
+    "description": "Linear-phase multiband compressor with 5 bands and zero phase distortion. Controls per band: Threshold, Range (amount), Attack, Release, Gain. Master: Adaptive Release, Mix. Character: transparent multiband dynamics without the phase issues of conventional multiband processors. Choose over C4/C6 when phase accuracy matters (mastering). Best for: mastering (the premium multiband compressor for mastering), critical bus processing, any multiband dynamics task where phase integrity is essential."
+  },
+  {
+    "name": "LoAir",
+    "category": "Effects",
+    "tags": [
+      "harmonic",
+      "drum",
+      "bass",
+      "synth",
+      "kick",
+      "eq"
+    ],
+    "description": "Sub-bass enhancement generator using harmonic synthesis. Creates sub-harmonics below the fundamental frequency to add weight and depth. Controls: Amount, Lo/Hi alignment, Mix. Character: adds deep, powerful sub-bass rumble that you feel rather than hear. Choose over EQ bass boost when there's no sub content to boost (LoAir generates new sub content). Best for: kick drums (adding sub weight), bass (extending into sub range), full mix sub-bass enhancement, EDM/hip-hop sub-bass reinforcement, any audio lacking sub-bass content."
+  },
+  {
+    "name": "Lofi Space",
+    "category": "Effects",
+    "tags": [
+      "warm",
+      "vintage",
+      "thin",
+      "lo fi",
+      "lofi",
+      "eq",
+      "reverb",
+      "delay",
+      "room"
+    ],
+    "description": "Lo-fi delay and reverb combination with vintage degradation character. Sections: Delay (with lo-fi degradation, filtering), Reverb (with vintage character), combined output. Character: warm, degraded, nostalgic — everything sounds like it's playing through old equipment in a small room. Choose for intentional lo-fi aesthetics. Best for: lo-fi hip-hop, chill music, vintage-style productions, ambient lo-fi textures, vaporwave aesthetics, bedroom pop."
+  },
+  {
+    "name": "MDMX Fuzz",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "aggressive",
+      "smooth",
+      "classic",
+      "thick",
+      "bass",
+      "guitar",
+      "synth",
+      "distortion",
+      "overdrive"
+    ],
+    "description": "Modeled classic fuzz pedal. Multiple fuzz types from smooth germanium to aggressive silicon. Controls: Fuzz (amount), Tone, Volume, Type select. Character: thick, sustaining, aggressive fuzz distortion — from Hendrix smooth to Sabbath aggressive. Choose for fuzz specifically (different from overdrive or distortion). Best for: guitar (psychedelic, classic rock, stoner rock fuzz), bass fuzz, experimental synth destruction."
+  },
+  {
+    "name": "MDMX OverDrive",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "tube",
+      "warm",
+      "smooth",
+      "classic",
+      "clean",
+      "subtle",
+      "natural",
+      "guitar",
+      "overdrive"
+    ],
+    "description": "Modeled classic overdrive pedal with tube-like clipping. Controls: Drive, Tone, Volume. Character: smooth, warm, tube-like overdrive — from subtle warming to medium crunch. Choose over Screamer for less mid-focused, more natural overdrive. Best for: blues guitar, classic rock, adding warmth to clean guitar, boosting tube amps, subtle drive on any source."
+  },
+  {
+    "name": "MDMX Screamer",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "tube",
+      "smooth",
+      "creamy",
+      "classic",
+      "bass",
+      "guitar",
+      "overdrive"
+    ],
+    "description": "Modeled Tube Screamer-style overdrive — the most iconic guitar overdrive pedal ever made. Controls: Drive, Tone, Volume. Character: distinctive mid-hump (boosts midrange while cutting bass and extreme highs), smooth clipping, creamy drive. Choose specifically when you want the Tube Screamer mid-hump character. Best for: blues/rock guitar, boosting tube amp channels (the classic TS use), adding mid-focused presence to guitar, the SRV/John Mayer sound."
+  },
+  {
+    "name": "MV2",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "thin",
+      "vocal",
+      "acoustic",
+      "dialogue",
+      "compressor",
+      "expander"
+    ],
+    "description": "Dual-action dynamics plugin that simultaneously controls BOTH peaks AND quiet parts. Top slider reduces peaks (like a compressor), bottom slider raises quiet signals (like an upward expander). Controls: Low Level (raise quiet), High Level (reduce loud), Mix, Output. Character: simple, transparent, effective dynamic range control. Choose when you want to even out dynamics from both directions simultaneously. Best for: vocals (evening out wildly dynamic performance), dialogue, acoustic instruments, podcasts — anything with too much dynamic range that needs leveling from both ends."
+  },
+  {
+    "name": "Magma BB Tubes",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "tube",
+      "analog",
+      "warm",
+      "subtle",
+      "heavy",
+      "rich",
+      "saturation",
+      "harmonic",
+      "vocal",
+      "drum",
+      "bass",
+      "synth"
+    ],
+    "description": "Tube saturation from the Magma plugin series. Multiple tube models with different harmonic characters. Controls: Drive, Tube model select, Mix, Output. Character: warm, rich tube saturation — from subtle warmth to heavy tube overdrive. Choose over NLS/Abbey Road Saturator when you specifically want tube (not console/tape) saturation. Best for: vocals (warmth), bass (presence), drums (grit), synths (analog warmth), any source needing tube harmonic enhancement."
+  },
+  {
+    "name": "Magma Channel Strip",
+    "category": "Channel Strip",
+    "tags": [
+      "modern",
+      "clean",
+      "saturation",
+      "compressor",
+      "eq",
+      "channel strip",
+      "preamp"
+    ],
+    "description": "Modern channel strip from the Magma series. Sections: Preamp (with drive/saturation), 3-band EQ, Compressor, Gate. Controls: standard channel strip parameters with modern interface. Character: clean modern processing with optional preamp color. Choose when you want a contemporary channel strip design. Best for: general-purpose channel processing, modern mix workflow, any track needing basic EQ+comp+gate."
+  },
+  {
+    "name": "Magma Lil Tube",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "tube",
+      "analog",
+      "warm",
+      "subtle",
+      "saturation"
+    ],
+    "description": "Compact single-knob tube saturation from the Magma series. Controls: Drive (one main knob), Mix. Character: simple tube warmth — quick, easy, effective. Choose when you want fast tube saturation without deep parameter diving. Best for: quick warming of any source, adding subtle analog character, sessions where you want tube warmth on many tracks with minimal fuss."
+  },
+  {
+    "name": "Magma Springs",
+    "category": "Reverb",
+    "tags": [
+      "vintage",
+      "classic",
+      "lo fi",
+      "guitar",
+      "reverb",
+      "plate",
+      "hall",
+      "spring"
+    ],
+    "description": "Spring reverb emulation from the Magma series. Models the characteristic 'boingy' metallic resonance of physical spring reverb tanks. Controls: Spring type, Decay, Tone, Mix, Drive. Character: bouncy, metallic, twangy — the distinctive spring reverb sound. Choose over plate/hall reverbs when you specifically want spring reverb character. Best for: guitar (the classic spring reverb sound), surf music, vintage/retro productions, lo-fi aesthetics, dub reggae."
+  },
+  {
+    "name": "MannyM Delay",
+    "category": "Delay",
+    "tags": [
+      "modern",
+      "dense",
+      "vocal",
+      "delay"
+    ],
+    "description": "Delay processor by Grammy-winning mixer Manny Marroquin (Rihanna, Bruno Mars, Kanye West). Features sync, filtering, modulation with Manny's signature settings. Character: modern, polished delay suited for contemporary pop/R&B/hip-hop. Choose for modern pop/R&B delay aesthetics. Best for: vocals in pop/R&B/hip-hop, modern productions, delay effects that sit perfectly in dense modern mixes."
+  },
+  {
+    "name": "MannyM Distortion",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "modern",
+      "subtle",
+      "heavy",
+      "saturation",
+      "vocal",
+      "drum",
+      "synth",
+      "distortion"
+    ],
+    "description": "Distortion processor by Manny Marroquin. Multiple distortion types from subtle saturation to heavy destruction. Character: creative, modern distortion designed for contemporary pop/R&B/hip-hop production. Choose for creative distortion effects in modern productions. Best for: vocals (creative grit), synths, drums, modern production distortion effects."
+  },
+  {
+    "name": "MannyM EQ",
+    "category": "EQ",
+    "tags": [
+      "modern",
+      "musical",
+      "vocal",
+      "equalizer",
+      "eq"
+    ],
+    "description": "Equalizer by Manny Marroquin. Signature EQ curves designed for modern mixing workflows. Character: musical, modern — tuned for contemporary pop/R&B/hip-hop frequency balance. Choose for quick modern EQ treatment. Best for: vocals in pop/R&B, modern mixes, quick tonal corrections with a modern aesthetic."
+  },
+  {
+    "name": "MannyM Reverb",
+    "category": "Reverb",
+    "tags": [
+      "modern",
+      "clean",
+      "dense",
+      "vocal",
+      "reverb"
+    ],
+    "description": "Reverb processor by Manny Marroquin. Multiple reverb types with modern character and Manny's signature settings. Character: clean, contemporary reverb designed for modern pop/R&B/hip-hop mixes. Choose for modern reverb aesthetics. Best for: vocals in contemporary productions, modern spatial effects, reverb that sits well in dense modern mixes."
+  },
+  {
+    "name": "MannyM Tone Shaper",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "modern",
+      "multiband",
+      "bus",
+      "vocal",
+      "eq",
+      "api"
+    ],
+    "description": "Multiband tone-shaping processor by Manny Marroquin. Combines frequency-selective dynamics with tonal control for spectral shaping. Controls per band: shape amount, character. Character: dynamic spectral control — shapes frequency balance dynamically. Choose for creative spectral shaping. Best for: vocals (controlling specific frequency ranges dynamically), bus processing, modern pop/R&B tonal sculpting."
+  },
+  {
+    "name": "MannyM TripleD",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "clean",
+      "de esser",
+      "vocal",
+      "dialogue",
+      "eq"
+    ],
+    "description": "Triple problem-solver: De-Esser + De-Harsher + De-Boxer by Manny Marroquin. Three independent processors targeting sibilance (4-10kHz harshness), harshness (2-4kHz), and boxiness (200-600Hz). Each section has its own controls. Character: targeted problem-solving without affecting good frequencies. Choose when vocals have multiple frequency problems simultaneously. Best for: vocals with sibilance + harshness + boxiness issues, dialogue cleanup, any source with multiple frequency-domain problems."
+  },
+  {
+    "name": "Maserati ACG",
+    "category": "Guitar",
+    "tags": [
+      "guitar",
+      "acoustic"
+    ],
+    "description": "Acoustic guitar processor by Tony Maserati (Beyoncé, Jay-Z, Alicia Keys). Controls: Body (low-end fullness), Edge (presence/attack), Compress, Ambience. Character: polished, clear, present acoustic guitar. Choose for quick professional acoustic guitar processing. Best for: acoustic guitar in pop/R&B, singer-songwriter productions, any acoustic guitar needing professional polish."
+  },
+  {
+    "name": "Maserati B72",
+    "category": "Bass",
+    "tags": [
+      "punch",
+      "modern",
+      "bass",
+      "guitar",
+      "synth",
+      "distortion"
+    ],
+    "description": "Bass processor by Tony Maserati. Controls: Sub (sub-bass), Punch (mid-bass attack), Grind (distortion), Compress, Ambience. Character: full, punchy, modern bass. Choose for quick professional bass processing. Best for: bass guitar in pop/R&B/hip-hop, synth bass, modern bass production."
+  },
+  {
+    "name": "Maserati DRM",
+    "category": "Drums",
+    "tags": [
+      "punch",
+      "modern",
+      "bus",
+      "drum",
+      "compression",
+      "room"
+    ],
+    "description": "Drum processor by Tony Maserati. Separate controls for different drum characteristics: Attack, Body, Room, Compression. Character: polished, punchy, modern drum sound — Tony Maserati's signature drum treatment. Choose for quick professional drum processing. Best for: drum bus in pop/R&B, modern drum production, drums needing polished contemporary treatment."
+  },
+  {
+    "name": "Maserati GRP",
+    "category": "Mastering",
+    "tags": [
+      "modern",
+      "mix bus",
+      "bus",
+      "master",
+      "compression",
+      "limiting",
+      "eq"
+    ],
+    "description": "Master bus processor by Tony Maserati. Complete mix bus chain: stereo enhancement, compression, EQ, limiting. Character: polished, wide, modern — Tony Maserati's mix finalization approach. Choose for modern pop/R&B mix bus processing. Best for: mix bus in pop/R&B productions, master bus sweetening, quick mix finalization."
+  },
+  {
+    "name": "Maserati GTi",
+    "category": "Guitar",
+    "tags": [
+      "modern",
+      "clean",
+      "guitar"
+    ],
+    "description": "Electric guitar processor by Tony Maserati. Controls: Bite (presence), Body (fullness), Compress, Ambience. Character: polished, modern electric guitar sound. Choose for electric guitar in pop/R&B context. Best for: electric guitar in modern pop/R&B, clean to light drive guitar tones, guitar needing polished contemporary treatment."
+  },
+  {
+    "name": "Maserati HMX",
+    "category": "Effects",
+    "tags": [
+      "bright",
+      "rich",
+      "harmonic",
+      "multiband",
+      "mix bus",
+      "bus",
+      "vocal",
+      "drum",
+      "enhancer"
+    ],
+    "description": "Harmonic enhancer by Tony Maserati. Adds presence, sparkle, and harmonic richness through multiband harmonic generation. Character: exciting, bright, present — adds life and energy. Choose for quick harmonic enhancement. Best for: drums (adding excitement), vocals (presence), mix bus (sparkle), any source needing energy and harmonic enhancement."
+  },
+  {
+    "name": "Maserati VX1",
+    "category": "Vocal",
+    "tags": [
+      "modern",
+      "de essing",
+      "bus",
+      "vocal",
+      "compression",
+      "eq",
+      "reverb",
+      "delay"
+    ],
+    "description": "Vocal processor by Tony Maserati. Complete vocal chain: compression, EQ, de-essing, doubling, reverb, delay. Character: polished, modern, radio-ready — Tony Maserati's vocal treatment for major pop/R&B/hip-hop releases. Choose for modern pop/R&B vocal production. Best for: pop/R&B/hip-hop vocals, lead vocal processing, background vocal bus."
+  },
+  {
+    "name": "MaxxBass",
+    "category": "Bass",
+    "tags": [
+      "heavy",
+      "harmonic",
+      "mastering",
+      "master",
+      "bass",
+      "guitar",
+      "acoustic",
+      "synth",
+      "eq"
+    ],
+    "description": "Sub-bass enhancement using psychoacoustic bass synthesis. Generates upper harmonics of bass frequencies that trick the ear into perceiving bass on speakers too small to reproduce it. Controls: Original Bass, MaxxBass (harmonic amount), Frequency (crossover), Response (decay). Character: makes bass translate on ALL speakers — from laptop to club. Choose over LoAir when translation across playback systems is the goal (LoAir adds real sub, MaxxBass adds perceived bass). Best for: ensuring bass translates on headphones/laptops/phones, pop/rock mastering, bass guitar, any bass-heavy content that must work on small speakers."
+  },
+  {
+    "name": "MaxxVolume",
+    "category": "Compressor",
+    "tags": [
+      "thin",
+      "vocal",
+      "dialogue",
+      "live",
+      "compressor",
+      "limiter",
+      "eq"
+    ],
+    "description": "Multi-stage dynamics combining Gate + Leveler + Compressor + Limiter in one plugin. Each stage processes sequentially: gate removes noise, leveler evens out long-term dynamics, compressor controls short-term dynamics, limiter prevents peaks. Controls per stage: threshold, amount, speed. Character: comprehensive dynamics control — handles everything from noise to peaks. Choose when you need complete dynamics management in one plugin. Best for: wildly dynamic vocals (radio/podcast), dialogue, live recordings with noise + dynamics issues, any source needing gate + comp + limiter in one chain."
+  },
+  {
+    "name": "MetaFilter",
+    "category": "Modulation",
+    "tags": [
+      "classic",
+      "subtle",
+      "vocal",
+      "guitar",
+      "synth",
+      "eq"
+    ],
+    "description": "Creative multi-mode resonant filter with advanced modulation. Filter types: LP, HP, BP, Notch, Comb. Modulation sources: LFO (multiple shapes), Envelope Follower, Step Sequencer. Controls: Cutoff, Resonance, Modulation source select, Rate, Depth, Sync. Character: from subtle movement to extreme filter sweeps — the most creative filter available. Choose for creative filter effects (not utility filtering). Best for: synths (classic filter sweeps), EDM builds/drops, guitar filter effects, DJ-style filter transitions, sound design, creative vocal effects."
+  },
+  {
+    "name": "MetaFlanger",
+    "category": "Modulation",
+    "tags": [
+      "analog",
+      "classic",
+      "subtle",
+      "feedback",
+      "vocal",
+      "drum",
+      "guitar",
+      "synth",
+      "eq",
+      "chorus",
+      "flanger",
+      "tape"
+    ],
+    "description": "Advanced flanging effect with analog tape flanging simulation. Controls: Rate, Depth, Feedback, Manual (center frequency), Tape/Electric mode, Stereo spread. Tape mode simulates real tape flanging (two machines). Character: from subtle motion to jet-engine flanging sweeps. Choose when you specifically want flanging (not chorus or phasing). Best for: guitars (classic flanger), synths, drums, vocal effects, creating the iconic 'jet swoosh' flanging effect."
+  },
+  {
+    "name": "MondoMod",
+    "category": "Modulation",
+    "tags": [
+      "classic",
+      "vocal",
+      "guitar",
+      "synth",
+      "eq",
+      "tremolo"
+    ],
+    "description": "Combined modulation effects: AM (amplitude modulation/tremolo), FM (frequency modulation/vibrato), and Rotation (rotary speaker simulation). Each section has Rate, Depth, and Waveform controls with tempo sync. Character: classic modulation effects — tremolo for pulsating volume, vibrato for pitch wobble, rotation for Leslie speaker simulation. Choose when you want tremolo, vibrato, or rotary effects. Best for: guitar (tremolo, Leslie), organ (rotary speaker), synths (vibrato), creative vocal effects."
+  },
+  {
+    "name": "Morphoder",
+    "category": "Modulation",
+    "tags": [
+      "classic",
+      "vocal",
+      "synth"
+    ],
+    "description": "10-band vocoder/talk box effect. Analyzes one signal (carrier) and imposes its spectral shape on another (modulator), or uses built-in synth as carrier. Controls: Carrier select, Modulator input, Filter Q, Noise amount, built-in synth settings. Character: robotic vocals, talking instruments — classic vocoder/talk box sounds. Choose for vocoder/talk box effects specifically. Best for: robotic vocal effects, talk box sounds, synth vocoding, creative cross-synthesis between any two sources."
+  },
+  {
+    "name": "MultiMod Rack",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "guitar",
+      "synth",
+      "chorus",
+      "flanger",
+      "phaser",
+      "tremolo"
+    ],
+    "description": "Multi-effects modulation rack with multiple chainable effect slots. Available effects: Chorus, Flanger, Phaser, Tremolo, Vibrato, Rotary. Can chain multiple modulation effects in series. Character: complex combined modulation effects. Choose when you need multiple modulation effects chained together. Best for: complex modulation chains, creative effects, ambient guitar rigs, synth processing."
+  },
+  {
+    "name": "NLS Buss",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "analog",
+      "digital",
+      "warm",
+      "punch",
+      "subtle",
+      "tight",
+      "rich",
+      "harmonic",
+      "mix bus",
+      "bus",
+      "distortion",
+      "console"
+    ],
+    "description": "Non-Linear Summer BUS channel — analog mix bus summing emulation. Models three different console mix buses: Spike (Neve 5116 — warm, wide), Mike (SSL 4000E — tight, punchy), Nevo (EMI TG12345 — rich, harmonic). Controls: Bus model, Drive, Trim. Character: adds the subtle nonlinear distortion and coloration of analog mix bus summing. Choose when you want analog summing character on your mix bus. Best for: mix bus (primary use), submix buses, adding analog console depth to digital summing."
+  },
+  {
+    "name": "NLS Channel",
+    "category": "Saturation & Distortion",
+    "tags": [
+      "analog",
+      "subtle",
+      "bus",
+      "channel strip",
+      "console"
+    ],
+    "description": "Non-Linear Summer CHANNEL strip — analog channel emulation with per-channel variation. Same three console models as NLS Buss but each instance gets a slightly different channel (like real consoles where every channel sounds slightly different). Controls: Console model, Channel variation, Drive, Trim. Character: subtle per-channel variation adding depth and 3D quality. Choose when you want each track in your mix to sound slightly different (like a real console). Best for: use on every channel in a mix for realistic analog console variation, adding depth and separation between tracks."
+  },
+  {
+    "name": "NS1",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "vocal",
+      "dialogue",
+      "live",
+      "noise reduction"
+    ],
+    "description": "One-knob noise suppressor using real-time spectral analysis. Single control: Amount (noise reduction intensity). Automatically identifies and separates noise from signal — no noise profile capture needed. Character: transparent, simple, effective — just turn the knob until noise disappears. Choose over X-Noise/Z-Noise when you want the fastest possible noise reduction workflow. Best for: quick noise cleanup on vocals, dialogue, podcasts, live recordings — any scenario where you need fast noise reduction without parameter diving."
+  },
+  {
+    "name": "NX",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "room"
+    ],
+    "description": "Headphone monitoring plugin using Waves Nx 3D audio technology with head tracking. Simulates the experience of listening on speakers in a treated room while wearing headphones. Tracks head movement for realistic spatial perception. MONITORING TOOL — does not process audio for the mix. Best for: mixing on headphones when speakers aren't available, checking stereo image accuracy on headphones."
+  },
+  {
+    "name": "NX Ambisonics",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Ambisonics monitoring on headphones with Nx head-tracking technology. Monitors B-Format ambisonics content through headphones with realistic 3D spatial perception. For VR/immersive audio monitoring. Not relevant for standard stereo mixing."
+  },
+  {
+    "name": "Nx Ambisonics",
+    "category": "Stereo & Spatial",
+    "tags": [],
+    "description": "Variant of NX Ambisonics headphone monitoring. Same spatial audio technology for ambisonics monitoring on headphones. For VR/immersive audio production."
+  },
+  {
+    "name": "Nx Germano Studios",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "room"
+    ],
+    "description": "Headphone monitoring simulating the control room of Germano Studios NYC. Nx technology recreating a specific legendary studio environment. MONITORING TOOL. Best for: mixing on headphones with a specific studio reference."
+  },
+  {
+    "name": "Nx Ocean Way Nashville",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "room"
+    ],
+    "description": "Headphone monitoring simulating Ocean Way Nashville studio control room. Nx technology for accurate spatial monitoring. MONITORING TOOL. Best for: mixing on headphones with a Nashville studio reference."
+  },
+  {
+    "name": "OVox",
+    "category": "Modulation",
+    "tags": [
+      "hybrid",
+      "subtle",
+      "vocal",
+      "synth"
+    ],
+    "description": "Advanced voice-controlled synthesizer and vocal effects processor. Features: voice-to-synth (plays synth with your voice), vocoder, talkbox, harmonizer, auto-tune, 8 FX modules, MIDI integration. Controls: Source (voice input), Synth engine, FX chain, MIDI settings, Voicing. Character: from subtle harmonizing to extreme vocal transformation — the most powerful vocal effects processor available. Choose for creative vocal effects beyond simple processing. Best for: vocal sound design, electronic vocal effects, EDM vocal production, creative harmonizing, robotic/alien voice effects, synth-vocal hybrid sounds."
+  },
+  {
+    "name": "OneKnob Brighter",
+    "category": "Other",
+    "tags": [
+      "bright",
+      "eq",
+      "enhancer",
+      "api"
+    ],
+    "description": "Single-knob high-frequency enhancer. One dial from 0 (no change) to 10 (maximum brightness). Applies intelligent high-frequency enhancement curve. Character: quick brightness boost without harshness. Choose when you want the fastest possible brightening. Best for: quick brightening of dull recordings, adding top-end sparkle with minimal effort, sessions needing rapid tonal fixes."
+  },
+  {
+    "name": "OneKnob Driver",
+    "category": "Other",
+    "tags": [
+      "warm",
+      "aggressive",
+      "clean",
+      "subtle",
+      "heavy",
+      "saturation",
+      "harmonic",
+      "distortion",
+      "overdrive",
+      "api"
+    ],
+    "description": "Single-knob saturation and drive. One dial from 0 (clean) to 10 (heavy distortion). Progressive saturation from subtle warmth to aggressive overdrive. Character: increasingly aggressive harmonic drive. Choose for fastest-possible saturation workflow. Best for: quick warmth/drive on any source, adding character with one dial, rapid tonal enhancement."
+  },
+  {
+    "name": "OneKnob Filter",
+    "category": "Other",
+    "tags": [
+      "thin",
+      "dark",
+      "open"
+    ],
+    "description": "Single-knob resonant filter sweep. One dial sweeps from full low-pass (dark) through open to full high-pass (thin). Resonance at filter point. Character: DJ-style filter sweeps. Best for: DJ transitions, build-ups/drops, creative filter effects, automation."
+  },
+  {
+    "name": "OneKnob Louder",
+    "category": "Other",
+    "tags": [
+      "limiting",
+      "maximizer"
+    ],
+    "description": "Single-knob loudness maximizer. One dial from 0 (unity) to 10 (maximum loudness). Intelligent limiting and gain optimization. Character: progressive loudness increase. Best for: quick loudness boost, demos, rough mixes needing quick volume, podcasts."
+  },
+  {
+    "name": "OneKnob Phatter",
+    "category": "Other",
+    "tags": [
+      "warm",
+      "thin",
+      "drum",
+      "bass",
+      "eq",
+      "enhancer"
+    ],
+    "description": "Single-knob low-frequency enhancer. One dial from 0 (no change) to 10 (maximum bass enhancement). Adds low-frequency warmth and weight. Character: quick bass boost. Best for: thin recordings needing bass, drums needing weight, quick low-end enhancement."
+  },
+  {
+    "name": "OneKnob Pressure",
+    "category": "Other",
+    "tags": [
+      "subtle",
+      "gentle",
+      "heavy",
+      "parallel",
+      "compressor",
+      "api"
+    ],
+    "description": "Single-knob compressor. One dial from 0 (no compression) to 10 (heavy squash). Progressive compression from gentle to extreme. Character: increasingly obvious compression from subtle to pumping. Best for: quick compression on any source, parallel compression (mix knob), rapid dynamics control."
+  },
+  {
+    "name": "OneKnob Pumper",
+    "category": "Compressor",
+    "tags": [
+      "classic",
+      "sidechain",
+      "ducking",
+      "bass",
+      "synth"
+    ],
+    "description": "Single-knob rhythmic ducking/pumping effect. Creates sidechain-style volume pumping synchronized to tempo WITHOUT needing an external sidechain trigger. One dial controls pump depth. Character: classic EDM sidechain pumping. Best for: EDM production (sidechain effect without routing), rhythmic pumping on pads/synths/bass, dance music production, adding rhythmic motion to static elements."
+  },
+  {
+    "name": "OneKnob Wetter",
+    "category": "Other",
+    "tags": [
+      "reverb",
+      "room"
+    ],
+    "description": "Single-knob reverb. One dial from 0 (dry) to 10 (maximum reverb). Character: simple room reverb. Best for: quick ambience on any source, adding room feel with minimal effort."
+  },
+  {
+    "name": "PAZ- Analyzer",
+    "category": "Analyzer",
+    "tags": [
+      "eq"
+    ],
+    "description": "Comprehensive audio analysis suite: real-time frequency spectrum, stereo field display (Lissajous), peak/RMS meters. Multiple display modes and resolution settings. ANALYSIS TOOL ONLY — no audio processing. Best for: frequency analysis during mixing, stereo imaging verification, level monitoring, identifying problem frequencies visually."
+  },
+  {
+    "name": "PAZ- Frequency",
+    "category": "Analyzer",
+    "tags": [
+      "eq"
+    ],
+    "description": "Real-time frequency spectrum analyzer. Displays frequency content with adjustable FFT resolution, averaging, and peak hold. ANALYSIS TOOL ONLY. Best for: identifying frequency buildups, checking spectral balance, finding problematic resonances visually."
+  },
+  {
+    "name": "PAZ- Meters",
+    "category": "Analyzer",
+    "tags": [
+      "digital",
+      "mastering",
+      "master"
+    ],
+    "description": "Peak and RMS level metering. Multiple meter scales (VU, PPM, digital). Displays both peak and average simultaneously. ANALYSIS TOOL ONLY. Best for: level monitoring during mixing and mastering."
+  },
+  {
+    "name": "PAZ- Position",
+    "category": "Analyzer",
+    "tags": [],
+    "description": "Stereo field position analyzer showing the stereo image as a vectorscope/Lissajous display. Visualizes width, balance, and mono compatibility. ANALYSIS TOOL ONLY. Best for: checking stereo width and balance, verifying mono compatibility, identifying stereo imaging problems."
+  },
+  {
+    "name": "PRS Archon",
+    "category": "Guitar",
+    "tags": [
+      "aggressive",
+      "modern",
+      "bright",
+      "heavy",
+      "tight",
+      "bass",
+      "guitar"
+    ],
+    "description": "Modeled PRS Archon guitar amplifier. High-gain amp with tight low-end and aggressive modern voicing. Controls: Gain, Volume, Bass, Mid, Treble, Presence, Bright switch, Cabinet select. Character: tight, aggressive, modern high-gain — designed for heavy rock and metal. Choose when you need high-gain metal/djent tones. Best for: metal guitar, hard rock, djent, progressive metal, any heavy guitar style needing tight articulation at high gain."
+  },
+  {
+    "name": "PRS Dallas",
+    "category": "Guitar",
+    "tags": [
+      "warm",
+      "vintage",
+      "classic",
+      "clean",
+      "bass",
+      "guitar",
+      "overdrive"
+    ],
+    "description": "Modeled PRS Dallas guitar amplifier. Vintage-voiced amp with warm overdrive character. Controls: Gain, Volume, Bass, Mid, Treble, Cabinet select. Character: warm, vintage, classic — American clean to mid-gain overdrive. Choose for blues, classic rock, roots tones. Best for: blues guitar, classic rock, country, roots, clean-to-crunch tones."
+  },
+  {
+    "name": "PRS V9",
+    "category": "Guitar",
+    "tags": [
+      "clean",
+      "dirty",
+      "bright",
+      "bass",
+      "guitar"
+    ],
+    "description": "Modeled PRS V9 guitar amplifier. Versatile amp covering clean through high-gain. Controls: Gain, Volume, Bass, Mid, Treble, Bright switch, Cabinet select, Channel select. Character: wide-ranging — from clean sparkle through crunch to high-gain. Choose when you need one amp that covers multiple gain ranges. Best for: versatile guitar sessions, recording multiple styles, sessions needing clean + dirty tones from one amp."
+  },
+  {
+    "name": "PS22 Split",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "bass",
+      "eq"
+    ],
+    "description": "Stereo split: separates audio into low and high frequencies, then pans them to different stereo positions. Controls: Crossover frequency, spread amount. Character: frequency-dependent stereo widening. Choose for creative stereo effects based on frequency separation. Best for: creating stereo width from mono by splitting frequencies, creative stereo effects, widening bass or treble independently."
+  },
+  {
+    "name": "PS22 Spread",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "thick",
+      "vocal",
+      "guitar",
+      "synth",
+      "eq",
+      "imager"
+    ],
+    "description": "Stereo spreading using micro pitch-shifting. Creates stereo width by slightly pitch-shifting left and right channels in opposite directions. Controls: Spread amount, Frequency range. Character: effective stereo widening that works on any mono source. Choose over S1 Imager when the source is mono and needs stereo width (S1 works on existing stereo). Best for: mono-to-stereo widening, thickening vocals/guitars/synths, adding width to narrow recordings."
+  },
+  {
+    "name": "PS22 Spread(10)",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "thick",
+      "lush",
+      "rich",
+      "vocal"
+    ],
+    "description": "Extended 10-voice version of PS22 Spread for richer stereo spreading. Uses 10 pitch-shifted voices instead of standard 2 for much thicker, more complex stereo image. Choose over PS22 Spread when you want maximum thickness and width. Best for: creating very wide stereo from mono, thick vocal stacks, lush pad widening, maximum stereo enhancement."
+  },
+  {
+    "name": "PS22 XSplit",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "mastering",
+      "master",
+      "eq"
+    ],
+    "description": "Advanced stereo split with adjustable crossover and precise frequency-dependent panning control. More control than PS22 Split with adjustable crossover slope and wider parameter range. Choose over PS22 Split for more precise frequency-based stereo manipulation. Best for: detailed frequency-dependent stereo work, creative stereo design, mastering width adjustments."
+  },
+  {
+    "name": "PSE",
+    "category": "Compressor",
+    "tags": [
+      "dense",
+      "subtle",
+      "live",
+      "eq",
+      "expander"
+    ],
+    "description": "Peak Spectrum Expander for dynamic spectral enhancement. Detects and enhances spectral peaks to add presence and clarity. Controls: Amount, Range, Speed. Character: subtle presence enhancement — makes audio sound more alive and detailed. Choose when standard EQ boosting sounds harsh but audio needs more presence. Best for: dull or lifeless recordings, adding subtle presence without EQ, enhancing detail in dense mixes."
+  },
+  {
+    "name": "PlaylistRider",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "mastering",
+      "master"
+    ],
+    "description": "Automatic gain rider for mastering playlists and compilations. Maintains consistent loudness across multiple tracks with different levels. Controls: Target level, Speed, Range. Character: transparent level matching. Choose for album/playlist level consistency. Best for: mastering engineers (matching track levels across an album), playlist creation, compilation mastering, podcast level consistency."
+  },
+  {
+    "name": "PuigChild 660",
+    "category": "Compressor",
+    "tags": [
+      "tube",
+      "transformer",
+      "warm",
+      "smooth",
+      "vintage",
+      "thick",
+      "musical",
+      "gentle",
+      "rich",
+      "saturation",
+      "harmonic",
+      "bus"
+    ],
+    "description": "Modeled Fairchild 660 MONO tube compressor by Jack Joseph Puig. The Fairchild 660/670 is the most coveted and expensive vintage compressor ever made (originals sell for $30K-50K+). 20 tubes, transformer-coupled, program-dependent timing with 6 time constants. Controls: Input Gain, Threshold, Time Constant (1-6, from fast to slow), Output Gain. Character: incredibly smooth, warm, thick tube compression with rich harmonic saturation. The compression 'breathes' musically. Choose over any other compressor when you want the ultimate vintage warmth and musicality. Best for: vocals (legendary vocal compressor), bus compression (gentle glue with tube warmth), mastering (the ultimate gentle touch)."
+  },
+  {
+    "name": "PuigChild 670",
+    "category": "Compressor",
+    "tags": [
+      "vca",
+      "tube",
+      "warm",
+      "smooth",
+      "colored",
+      "clean",
+      "thin",
+      "gentle",
+      "mix bus",
+      "bus",
+      "mastering",
+      "master"
+    ],
+    "description": "Modeled Fairchild 670 STEREO tube compressor by Jack Joseph Puig. Stereo version of the 660 with linked or independent channel control. Same legendary tube circuit with 20+ tubes. Controls: Input, Threshold, Time Constant (1-6), Output, L/R link. Character: same incredible smoothness and warmth as 660 but in stereo — legendary on mix bus and mastering. Choose over SSLComp when you want warm, tube-colored bus compression vs clean VCA glue. Best for: mix bus (the ultimate warm bus compressor), stereo mastering, stereo submix processing, anything needing gentle, warm stereo compression."
+  },
+  {
+    "name": "PuigTec EQP1A",
+    "category": "EQ",
+    "tags": [
+      "tube",
+      "warm",
+      "smooth",
+      "airy",
+      "silky",
+      "musical",
+      "harmonic",
+      "mix bus",
+      "bus",
+      "mastering",
+      "master",
+      "vocal"
+    ],
+    "description": "Modeled Pultec EQP-1A passive tube EQ — perhaps the most revered EQ in recording history. Unique design: separate Boost AND Attenuate controls at the SAME bass frequency (the famous 'Pultec trick' — boosting and cutting simultaneously creates a unique resonant low-end shape). Bands: Low (20-100Hz boost+atten), High Boost (3-16kHz with bandwidth), High Atten (shelf). Character: silky, smooth, impossibly musical — adds tube warmth and harmonic beauty. The high boost is 'airy' not 'harsh'. Choose when you want the most musical EQ possible. Best for: bass sweetening (the Pultec bass trick is legendary), adding air to vocals, kick drum low-end shaping, mix bus sweetening, mastering — anywhere you need beautiful EQ."
+  },
+  {
+    "name": "PuigTec MEQ5",
+    "category": "EQ",
+    "tags": [
+      "tube",
+      "smooth",
+      "silky",
+      "heavy",
+      "vocal",
+      "guitar",
+      "piano",
+      "eq",
+      "pultec"
+    ],
+    "description": "Modeled Pultec MEQ-5 passive tube midrange EQ — the companion to the EQP-1A covering midrange. Two Mid bands: Low-Mid peak (200-1000Hz) and High-Mid dip (1.5-5kHz), plus separate High boost (3-12kHz). Character: same silky, smooth Pultec character as EQP-1A but focused on midrange. The mid dip is legendary for clearing vocal mud. Together with EQP-1A covers the full spectrum. Best for: vocals (clearing 1-3kHz mud while adding presence), guitars, piano, any midrange-heavy source. Essential companion to EQP-1A for full Pultec treatment."
+  },
+  {
+    "name": "Q-Capture",
+    "category": "EQ",
+    "tags": [
+      "digital",
+      "eq"
+    ],
+    "description": "EQ curve capture tool — records the frequency response of an external hardware EQ for use with Q-Clone. Part of the Q-Clone EQ matching system. Insert on a hardware send/return to capture the hardware EQ's curve. UTILITY TOOL for Q-Clone workflow. Best for: capturing hardware EQ responses for digital recall."
+  },
+  {
+    "name": "Q-Clone",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "digital",
+      "hybrid",
+      "eq"
+    ],
+    "description": "EQ cloning plugin that applies frequency curves captured by Q-Capture. Replicates the exact frequency response of any external hardware EQ in real-time. Character: matches whatever hardware it's cloning. Choose when you want to use expensive hardware EQ on many tracks without multiple hardware units. Best for: applying hardware EQ to multiple tracks, hardware EQ recall, hybrid analog/digital workflows."
+  },
+  {
+    "name": "Q1",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "eq"
+    ],
+    "description": "1-band parametric EQ. Single fully parametric band with Frequency, Gain, Q controls plus filter type (bell/shelf/cut). Minimal CPU. Character: clean, transparent. Best for: single targeted frequency adjustment with absolute minimum CPU, utility EQ, simple corrections."
+  },
+  {
+    "name": "Q10",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "eq"
+    ],
+    "description": "10-band parametric EQ — the most bands available in a Waves parametric EQ. Ten fully parametric bands for maximum detail. Character: clean, transparent. Best for: extremely detailed EQ work, situations needing many simultaneous corrections, complex tonal reconstruction."
+  },
+  {
+    "name": "Q2",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "overhead",
+      "eq"
+    ],
+    "description": "2-band parametric EQ. Two fully parametric bands. Minimal CPU. Character: clean, transparent. Best for: simple 2-point corrections with minimum CPU overhead."
+  },
+  {
+    "name": "Q3",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "eq",
+      "api"
+    ],
+    "description": "3-band parametric EQ. Three fully parametric bands. Efficient processing. Character: clean, transparent. Best for: basic tonal shaping with 3 bands, moderate EQ tasks with low CPU."
+  },
+  {
+    "name": "Q4",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "eq"
+    ],
+    "description": "4-band parametric EQ. Four fully parametric bands — sufficient for most EQ tasks. Character: clean, transparent. Best for: general-purpose mixing EQ, standard tonal corrections, when you need solid EQ without extra features."
+  },
+  {
+    "name": "Q6",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "eq"
+    ],
+    "description": "6-band parametric EQ. Six fully parametric bands for detailed work. Character: clean, transparent. Best for: detailed frequency sculpting, complex EQ tasks needing 6 points of control."
+  },
+  {
+    "name": "Q8",
+    "category": "EQ",
+    "tags": [
+      "transparent",
+      "clean",
+      "surgical",
+      "mastering",
+      "master",
+      "eq"
+    ],
+    "description": "8-band parametric EQ. Eight fully parametric bands for surgical work. Character: clean, transparent. Best for: very detailed EQ work, mastering-level frequency sculpting, complex tonal problems needing many correction points."
+  },
+  {
+    "name": "RBass",
+    "category": "Bass",
+    "tags": [
+      "warm",
+      "harmonic",
+      "drum",
+      "bass",
+      "guitar",
+      "synth",
+      "kick",
+      "eq"
+    ],
+    "description": "Renaissance Bass — low-frequency enhancement using harmonic synthesis. Generates harmonics of bass frequencies to create perceived bass that translates across all playback systems. Controls: Intensity (harmonic amount), Frequency (crossover — below this gets harmonics), Original (dry bass level). Character: warm, present bass that works on any speaker. Different from LoAir (which generates sub-harmonics below the fundamental) — RBass generates UPPER harmonics for perceived bass. Best for: bass guitar (essential for translation), kick drum, any bass source that must translate on small speakers/headphones/phones, pop/rock bass enhancement."
+  },
+  {
+    "name": "RChannel",
+    "category": "Channel Strip",
+    "tags": [
+      "opto",
+      "analog",
+      "warm",
+      "musical",
+      "subtle",
+      "vocal",
+      "drum",
+      "compressor",
+      "limiter",
+      "eq",
+      "channel strip"
+    ],
+    "description": "Renaissance Channel strip combining 4-band EQ, compressor, gate, and limiter with warm analog-modeled character. EQ: 2 parametric mids, HF/LF shelving with HPF/LPF. Compressor: threshold/ratio/attack/release with Opto/Electro modes. Gate: threshold/floor/attack/release. Character: warm, musical — the Renaissance series adds subtle analog warmth. Choose when you want a complete channel strip with warm character. Best for: general-purpose channel processing on any source, vocal chains, drum channels, one-plugin channel processing."
+  },
+  {
+    "name": "RCompressor",
+    "category": "Compressor",
+    "tags": [
+      "vca",
+      "opto",
+      "optical",
+      "analog",
+      "warm",
+      "smooth",
+      "musical",
+      "auto release",
+      "bus",
+      "vocal",
+      "drum",
+      "bass"
+    ],
+    "description": "Renaissance Compressor with analog-modeled warmth. Controls: Threshold, Ratio, Attack (0.005-500ms), Release (1-5000ms), Gain, ARC (Auto Release), Opto/Electro mode. Opto mode: smooth, program-dependent (like an optical compressor). Electro mode: faster, more precise (like VCA). Character: warm, musical, versatile — one of the most-used compressors for its balance of control and musicality. Choose when you want warm, easy compression without deep parameter diving. Best for: any source — vocals, drums, bass, guitars, bus. The jack-of-all-trades compressor."
+  },
+  {
+    "name": "RDeEsser",
+    "category": "Compressor",
+    "tags": [
+      "smooth",
+      "transparent",
+      "modern",
+      "natural",
+      "de essing",
+      "de esser",
+      "vocal",
+      "eq",
+      "deesser"
+    ],
+    "description": "Renaissance De-Esser with natural-sounding sibilance control. Split-band processing targets only the sibilant frequencies. Controls: Threshold, Frequency (sibilance target), Attenuation range, Monitor mode. Character: smooth, natural de-essing that preserves vocal air while reducing harshness. Choose over standard DeEsser for more natural results. Choose Sibilance for the most transparent/modern approach. Best for: vocals with sibilance, podcast de-essing, any vocal needing sibilance control with natural results."
+  },
+  {
+    "name": "REQ 2",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "warm",
+      "musical",
+      "subtle",
+      "eq"
+    ],
+    "description": "Renaissance EQ with 2 bands. Warm, analog-modeled parametric EQ. Character: musical, warm — adds subtle Renaissance-series analog flavor. Best for: simple corrections with warm character, situations needing minimal EQ with analog warmth."
+  },
+  {
+    "name": "REQ 4",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "warm",
+      "musical",
+      "vocal",
+      "drum",
+      "guitar",
+      "eq"
+    ],
+    "description": "Renaissance EQ with 4 bands. Warm, analog-modeled parametric EQ with four fully parametric bands plus HP/LP filters. Character: warm, musical — balance between transparency and analog character. Choose when you want musical EQ with 4 bands. Best for: mixing EQ with warm character, vocals, guitars, drums — versatile musical equalization."
+  },
+  {
+    "name": "REQ 6",
+    "category": "EQ",
+    "tags": [
+      "analog",
+      "warm",
+      "musical",
+      "eq",
+      "api"
+    ],
+    "description": "Renaissance EQ with 6 bands. The most complete Renaissance EQ with six parametric bands. Character: same warm Renaissance sound with comprehensive band count. Best for: detailed EQ work wanting warm analog character, comprehensive tonal shaping with musicality."
+  },
+  {
+    "name": "RVerb",
+    "category": "Reverb",
+    "tags": [
+      "warm",
+      "musical",
+      "eq",
+      "reverb",
+      "delay",
+      "plate",
+      "hall",
+      "room",
+      "chamber"
+    ],
+    "description": "Renaissance Reverb — versatile algorithmic reverb with multiple room types. Types: Hall, Room, Plate, Chamber, Church, Inverse, Gated, Non-Linear. Controls: Time, Size, Diffusion, Density, Damping, Pre-Delay, EQ, Early Reflections, Mix. Character: warm, musical, versatile — covers many reverb styles in one plugin. Choose as an all-purpose reverb when you don't need the premium quality of H-Reverb. Best for: general-purpose reverb on any source, utility reverb, gated/non-linear effects, creative reverb with good variety."
+  },
+  {
+    "name": "RVox",
+    "category": "Compressor",
+    "tags": [
+      "warm",
+      "vocal",
+      "dialogue",
+      "compressor"
+    ],
+    "description": "Renaissance Vox — vocal compressor/gate designed specifically for voice. Ultra-simple: Threshold, Gain, Gate controls (that's it). Automatic attack/release timing optimized for vocal dynamics. Built-in gate removes noise between phrases. Character: warm, simple, effective — the fastest way to compress a vocal. Choose when you want vocal compression with absolute minimum fuss. Best for: vocals (the fastest vocal compressor to set up), podcasts, dialogue, voiceover — any voice recording needing quick compression."
+  },
+  {
+    "name": "Renaissance Axx",
+    "category": "Compressor",
+    "tags": [
+      "smooth",
+      "clean",
+      "musical",
+      "bass",
+      "guitar",
+      "acoustic",
+      "strings",
+      "compressor"
+    ],
+    "description": "Guitar/bass compressor with program-dependent behavior optimized for string instruments. Controls: Threshold, Gain, Attack, Release. Character: smooth, musical compression that responds well to the dynamics of plucked strings. Choose over general compressors when processing guitar or bass specifically. Best for: acoustic guitar, electric guitar (clean), bass guitar, any plucked string instrument."
+  },
+  {
+    "name": "Retro Fi",
+    "category": "Effects",
+    "tags": [
+      "vintage",
+      "thin",
+      "lo fi",
+      "reverb",
+      "delay",
+      "echo",
+      "tape"
+    ],
+    "description": "Comprehensive vintage lo-fi multi-effect with 6 sections: Device (tape/vinyl/radio degradation), Space (reverb), Reverb (separate from space), Echo (delay), Noise (hiss/crackle/hum), and mechanical degradation. Each section independently on/off with detailed controls. Device Mix control is critical — don't set to 100% or you lose all clarity. Character: authentic retro degradation — makes anything sound like it's from another era. Choose when you want comprehensive vintage/lo-fi treatment. Best for: lo-fi hip-hop, vaporwave, vintage aesthetics, tape/vinyl/radio simulation, creating nostalgic textures. IMPORTANT: Set Device Mix to 20-40% not 100%."
+  },
+  {
+    "name": "S1 Imager",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "transparent",
+      "mastering",
+      "master",
+      "bass",
+      "imager"
+    ],
+    "description": "Stereo imaging tool for adjusting the width of existing stereo signals. Controls: Width (from mono through original to ultra-wide), Rotation, Asymmetry, Shuffling (bass narrowing). Visual stereo display. Character: transparent stereo manipulation. Choose for adjusting existing stereo width. Choose PS22 Spread for making mono sources stereo (S1 only works on existing stereo). Best for: narrowing too-wide mixes, widening narrow mixes, bass mono-ification for vinyl/club, mastering stereo adjustments, checking mono compatibility."
+  },
+  {
+    "name": "S1 MS Matrix",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "transparent",
+      "mid side",
+      "mastering",
+      "master",
+      "compression",
+      "eq"
+    ],
+    "description": "Mid-Side encoder/decoder for stereo manipulation. Converts L/R stereo to Mid+Side and back, allowing independent processing of center (Mid) and side (Side) content. Character: transparent M/S conversion utility. Best for: M/S processing workflows (insert EQ/compression between encoder and decoder), creative stereo manipulation, mastering M/S techniques, independent processing of center vs side content."
+  },
+  {
+    "name": "S1 Shuffler",
+    "category": "Stereo & Spatial",
+    "tags": [
+      "tight",
+      "mastering",
+      "master",
+      "bass",
+      "eq",
+      "imager"
+    ],
+    "description": "Advanced stereo processor with frequency-dependent width control and bass mono-ification. Controls: Shuffling (frequency-dependent width), Width, Bass Frequency (below this = mono), Rotation. Character: precise stereo sculpting. Choose over S1 Imager when you need frequency-dependent width control (narrow the bass, widen the highs). Best for: mastering (frequency-dependent stereo control), bass mono-ification for vinyl/club, stereo optimization, making mixes wider in highs and tighter in lows."
+  },
+  {
+    "name": "SSL EV2 Channel",
+    "category": "Channel Strip",
+    "tags": [
+      "analog",
+      "punch",
+      "modern",
+      "clean",
+      "thin",
+      "bus",
+      "vocal",
+      "drum",
+      "bass",
+      "guitar",
+      "compressor",
+      "eq"
+    ],
+    "description": "Modeled SSL E-Series V2 channel strip — the updated version of the most famous recording console in history. Sections: Preamp (with analog modeling), HPF/LPF Filters (12/18dB slopes), 4-band EQ (HF/HMF/LMF/LF with parametric mids and shelving highs/lows), Dynamics (compressor with ratio/threshold/attack/release PLUS expander/gate), Channel Mode switch (Cut/Boost). Character: clean, punchy, detailed — THE sound of modern music. Choose when you want complete channel processing with SSL precision. Best for: literally everything — vocals, drums, bass, guitars, keys, bus. The most versatile channel strip ever made."
+  },
+  {
+    "name": "SSLChannel",
+    "category": "Channel Strip",
+    "tags": [
+      "punch",
+      "vintage",
+      "thin",
+      "eq",
+      "expander",
+      "channel strip",
+      "ssl"
+    ],
+    "description": "Modeled SSL E-Series channel strip (original version). Sections: HPF/LPF, 4-band EQ (same topology as SSL EV2 but original modeling), Dynamics (comp + gate/expander). Character: punchy, detailed, slightly more 'vintage' than the EV2. Choose over EV2 when you want the original SSL sound. Best for: same as EV2 — works on everything. Industry-standard channel processing."
+  },
+  {
+    "name": "SSLComp",
+    "category": "Compressor",
+    "tags": [
+      "warm",
+      "aggressive",
+      "punch",
+      "vintage",
+      "modern",
+      "thin",
+      "tight",
+      "auto release",
+      "mix bus",
+      "bus",
+      "drum",
+      "compressor"
+    ],
+    "description": "Modeled SSL G-Series stereo bus compressor — THE most famous mix bus compressor in history, found on virtually every SSL console. Controls: Threshold, Ratio (2/4/10:1), Attack (0.1/0.3/1/3/10/30ms), Release (0.1/0.3/0.6/1.2s + Auto), Makeup Gain. Character: tight, punchy, gluing — makes a mix feel cohesive and powerful. The Auto release is legendary for mix bus use. Choose over Fairchild/PuigChild when you want modern punch vs vintage warmth. Choose over API-2500 for tighter, less aggressive glue. Best for: mix bus (THE primary use — put it on your mix bus and everything glues together), drum bus, group buses, any bus needing cohesion. Ratio 2:1 or 4:1, Auto release for mix bus."
+  },
+  {
+    "name": "SSLEQ",
+    "category": "EQ",
+    "tags": [
+      "punch",
+      "musical",
+      "eq",
+      "console",
+      "ssl",
+      "api"
+    ],
+    "description": "Modeled SSL E-Series parametric EQ. Same EQ section as the SSLChannel but standalone. 4 bands: HF shelf, HMF parametric, LMF parametric, LF shelf. HPF included. Character: punchy, musical, detailed — the SSL EQ sound. Choose when you want just the SSL EQ without the dynamics section. Best for: mixing EQ on any source, achieving SSL console tone, punchy tonal shaping."
+  },
+  {
+    "name": "SSLGChannel",
+    "category": "Channel Strip",
+    "tags": [
+      "punch",
+      "smooth",
+      "clean",
+      "mastering",
+      "master",
+      "vocal",
+      "acoustic",
+      "eq",
+      "channel strip",
+      "console",
+      "ssl"
+    ],
+    "description": "Modeled SSL G-Series channel strip. The G-Series is a different SSL console from the E-Series — slightly different character. Sections: 4-band EQ, Dynamics (comp + gate). Character: clean, precise, slightly less 'punchy' than E-Series and more refined. Choose over E-Series when you want a slightly smoother, more refined SSL sound. Best for: vocals, acoustic instruments, mastering applications, any source needing refined SSL processing."
+  },
+  {
+    "name": "Saphira",
+    "category": "Mastering",
+    "tags": [
+      "warm",
+      "dirty",
+      "bright",
+      "subtle",
+      "heavy",
+      "saturation",
+      "harmonic",
+      "bus",
+      "mastering",
+      "master",
+      "vocal",
+      "drum"
+    ],
+    "description": "Harmonic enhancer with multiple harmonic generation algorithms. Offers different harmonic profiles: Warm, Bright, Round, Dirty, and more. Controls: Intensity, Harmonic profile select, Mix, Output. Character: versatile saturation/enhancement — from subtle warmth to heavy harmonic coloring depending on profile. Choose over single-type saturation plugins when you want to explore different harmonic characters. Best for: vocals, drums, bus, mastering — anywhere harmonics can enhance the source. Good for A/B comparing different saturation types."
+  },
+  {
+    "name": "Scheps 73",
+    "category": "EQ",
+    "tags": [
+      "warm",
+      "punch",
+      "thin",
+      "musical",
+      "natural",
+      "vocal",
+      "drum",
+      "bass",
+      "guitar",
+      "snare",
+      "kick",
+      "eq"
+    ],
+    "description": "Modeled Neve 1073 EQ by mix legend Andrew Scheps. 3 bands: LF shelf (35-220Hz), Mid peak (360Hz-7.2kHz), HF shelf (12kHz fixed). HPF (50-300Hz). The 1073 is arguably the most iconic console EQ ever made — found on every major studio's Neve consoles. Character: huge, warm, musical, larger-than-life — the Neve sound. Boosts sound big and beautiful, cuts sound natural. Choose over API EQs when you want warmth (API = punch, Neve = warmth). Choose over SSL EQ when you want color over precision. Best for: drums (legendary on kick and snare), vocals, bass, electric guitars — anything that benefits from that big, warm, musical Neve character."
+  },
+  {
+    "name": "Scheps Omni Channel 2",
+    "category": "Channel Strip",
+    "tags": [
+      "vca",
+      "modern",
+      "saturation",
+      "de essing",
+      "de esser",
+      "gating",
+      "compressor",
+      "eq",
+      "channel strip",
+      "preamp"
+    ],
+    "description": "Comprehensive channel strip by mix engineer Andrew Scheps. Sections: Preamp (with saturation/drive), HPF/LPF, 4-band EQ, Compressor (VCA-style), De-Esser, Gate, Insert point (for other plugins). Each section can be reordered in the signal chain. Character: modern, flexible — designed as a complete channel solution. Choose when you want a fully-featured modern channel strip with maximum flexibility. Best for: complete channel processing on any source, modern mix workflows, any track needing EQ + compression + de-essing + gating in one plugin."
+  },
+  {
+    "name": "Scheps Parallel Particles",
+    "category": "Compressor",
+    "tags": [
+      "thick",
+      "parallel",
+      "mix bus",
+      "bus",
+      "vocal",
+      "drum",
+      "guitar",
+      "compression",
+      "eq"
+    ],
+    "description": "Parallel processing effect by Andrew Scheps. Adds four parallel processing layers: Sub (low-end), Air (high-end shimmer), Bite (mid-range presence), and Thick (density/fullness). Controls: per-layer Amount, global Mix. Character: additive enhancement — each layer adds a new dimension without changing the original. Choose when you want to enhance specific frequency/character ranges without EQ. Best for: drums (adding sub weight and air simultaneously), vocals (bite + air), mix bus (all four), guitars, any source needing enhancement without traditional EQ/compression."
+  },
+  {
+    "name": "Sibilance",
+    "category": "Compressor",
+    "tags": [
+      "transparent",
+      "natural",
+      "de essing",
+      "de esser",
+      "vocal",
+      "deesser"
+    ],
+    "description": "Intelligent de-esser with organic, transparent sibilance control. Uses real-time sibilance detection (not simple threshold-based). Controls: Sensitivity (detection), Range (attenuation amount), Monitor. Character: the most natural-sounding de-esser — handles sibilance without the 'lisping' artifacts of traditional de-essers. Choose over DeEsser and RDeEsser when you want the most transparent results. Best for: vocals (the best de-esser for natural results), podcast de-essing, any vocal recording where sibilance control must be completely invisible."
+  },
+  {
+    "name": "Sibilance-Live",
+    "category": "Compressor",
+    "tags": [
+      "de essing",
+      "vocal",
+      "broadcast",
+      "live",
+      "delay"
+    ],
+    "description": "Low-latency version of Sibilance for live vocal processing. Same intelligent de-essing with minimal delay. Best for: live vocal de-essing, real-time vocal processing, live broadcast."
+  },
+  {
+    "name": "Silk Vocal",
+    "category": "Compressor",
+    "tags": [
+      "warm",
+      "smooth",
+      "modern",
+      "vocal"
+    ],
+    "description": "AI-powered vocal processor for smooth, polished vocal tone. Uses machine learning to automatically enhance vocal clarity, warmth, and presence. Controls: Intensity, Character mode. Character: smooth, polished, modern — intelligent vocal sweetening. Choose when you want AI-assisted vocal enhancement. Best for: quick vocal polish, modern pop vocal production, podcasts, voiceover, any vocal needing fast, intelligent enhancement."
+  },
+  {
+    "name": "Smack Attack",
+    "category": "Compressor",
+    "tags": [
+      "punch",
+      "rich",
+      "drum",
+      "bass",
+      "guitar",
+      "acoustic",
+      "percussion",
+      "snare",
+      "kick",
+      "compression",
+      "eq"
+    ],
+    "description": "Transient designer for controlling attack (punch) and sustain (body/ring) independently. Controls: Attack (increase or decrease), Sustain (increase or decrease), Sensitivity, Duration. Character: changes the envelope shape without affecting EQ — boosts or reduces attack impact and sustain tail. Choose over compression when you want to change the 'shape' of a sound without compressing. Best for: drums (the #1 use — adding punch to kick/snare or reducing ring), percussion, acoustic guitar (reducing pick attack), bass (adding or reducing finger noise), any transient-rich source."
+  },
+  {
+    "name": "SoundShifter Pitch",
+    "category": "Pitch",
+    "tags": [
+      "clean",
+      "feedback",
+      "delay",
+      "pitch shifter"
+    ],
+    "description": "Real-time pitch shifter with high-quality time-domain processing. Controls: Pitch shift (semitones + cents), Delay, Feedback, Mix. Maintains timing while shifting pitch. Character: clean pitch shifting. Best for: pitch correction, harmonizing (shift + mix with dry), creative pitch effects, octave doubling, sound design."
+  },
+  {
+    "name": "Space Rider",
+    "category": "Reverb",
+    "tags": [
+      "vocal",
+      "dialogue",
+      "reverb"
+    ],
+    "description": "Automatic reverb level rider that dynamically adjusts wet/dry reverb mix based on input level. When input is loud, reverb decreases; when quiet, reverb increases — maintaining consistent perceived reverb regardless of dynamics. Controls: Target, Range, Speed. Character: intelligent reverb management. Choose when reverb is either too quiet during loud parts or too loud during quiet parts. Best for: vocals (essential for maintaining consistent reverb presence), dialogue, any dynamically varying source with reverb."
+  },
+  {
+    "name": "StudioVerse Audio Effects",
+    "category": "StudioVerse",
+    "tags": [],
+    "description": "Plugin platform for loading StudioVerse community-created effect chains. Access thousands of user-created signal processing chains and presets shared by the community. Choose when you want to explore community-created processing chains. Best for: discovering new processing approaches, quickly trying different effect combinations, learning from other engineers' signal chains."
+  },
+  {
+    "name": "Sub Align",
+    "category": "Other",
+    "tags": [
+      "transparent",
+      "live",
+      "delay"
+    ],
+    "description": "Subwoofer alignment and phase correction tool for aligning subwoofer timing with main speakers. Controls: Delay, Phase, Polarity, HPF/LPF. Essential for live sound and studio monitoring. Character: transparent alignment — corrects timing without coloring sound. Best for: live sound (essential for sub alignment), studio sub alignment, ensuring proper sub-to-main speaker phase relationship."
+  },
+  {
+    "name": "Submarine",
+    "category": "Effects",
+    "tags": [
+      "harmonic",
+      "drum",
+      "bass",
+      "synth",
+      "kick",
+      "eq"
+    ],
+    "description": "Sub-bass synthesizer generating deep sub-harmonics from existing audio content. Creates sub-bass frequencies BELOW the original fundamental using subharmonic synthesis. Controls: SubFreq (target frequency), Drive, Mix, Filter. Different from MaxxBass/RBass (which generate upper harmonics for perceived bass) — Submarine generates actual deep sub content. Choose when you need real sub-bass that doesn't exist in the recording. Best for: EDM (adding massive sub-bass to drops), hip-hop (808-style sub-bass enhancement), kick drums (adding sub weight), any source needing deep, physical sub-bass."
+  },
+  {
+    "name": "SuperTap 2-Taps",
+    "category": "Delay",
+    "tags": [
+      "feedback",
+      "delay"
+    ],
+    "description": "2-tap delay with independent control per tap. Each tap: Delay time (free/sync), Feedback, Pan, Level, Filter, Modulation. Character: precise, flexible rhythmic delay. Choose over H-Delay when you need independent control over 2 delay taps with per-tap filtering and panning. Best for: stereo delay effects, ping-pong with filtering, creating specific rhythmic delay patterns with 2 taps."
+  },
+  {
+    "name": "SuperTap 6-Taps",
+    "category": "Delay",
+    "tags": [
+      "feedback",
+      "guitar",
+      "delay"
+    ],
+    "description": "6-tap delay with independent control per tap — the most flexible delay for complex rhythmic patterns. Each tap: Delay time, Feedback, Pan, Level, Filter, Modulation, Rotation. Character: complex, rhythmic, evolving delay patterns. Choose when you need highly complex delay patterns with 6 independently controlled repeats. Best for: complex rhythmic delays, ambient guitar textures, creating polyrhythmic delay patterns, creative delay sound design, dub-style effects."
+  },
+  {
+    "name": "TRACT",
+    "category": "EQ",
+    "tags": [
+      "live",
+      "eq",
+      "room"
+    ],
+    "description": "System alignment and room correction EQ with real-time analysis. Measures room/system response and creates corrective EQ curves. Controls: measurement display, parametric EQ bands, target curve. Character: corrective — designed to fix system/room problems. Best for: PA system tuning, studio room correction, live sound system alignment, monitor optimization."
+  },
+  {
+    "name": "TRACT LinPhase",
+    "category": "EQ",
+    "tags": [
+      "mastering",
+      "master",
+      "eq",
+      "distortion",
+      "room"
+    ],
+    "description": "Linear-phase version of TRACT system alignment EQ. Same room/system correction with zero phase distortion. Choose over standard TRACT when phase accuracy matters. Best for: studio monitor correction (where phase matters), critical monitoring alignment, mastering room correction."
+  },
+  {
+    "name": "Torque",
+    "category": "Pitch",
+    "tags": [
+      "natural",
+      "drum",
+      "snare",
+      "kick",
+      "eq",
+      "api"
+    ],
+    "description": "Drum tuning and tone-shaping plugin. Changes the apparent pitch of drums WITHOUT affecting timing or transients. Controls: Torque (pitch shift amount), Focus (frequency range of pitch change), Speed (how fast the tuning change happens), Mix. Character: natural-sounding pitch shifting designed specifically for drums. Choose when drums are tuned to the wrong key or need pitch adjustments. Best for: tuning kick and snare to song key, fixing drum tuning inconsistencies, creative drum tone reshaping, tuning toms, adjusting drum pitch without re-recording."
+  },
+  {
+    "name": "Torque-Live",
+    "category": "Pitch",
+    "tags": [
+      "drum",
+      "live",
+      "delay"
+    ],
+    "description": "Low-latency version of Torque for live drum processing. Same drum pitch-shifting with minimal delay. Best for: live drum tuning, real-time drum tone correction during live performance."
+  },
+  {
+    "name": "TransX Multi",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "multi band",
+      "mastering",
+      "master",
+      "drum",
+      "kick",
+      "eq",
+      "api"
+    ],
+    "description": "Multi-band transient designer. Controls attack and sustain independently across multiple frequency bands. Each band: Attack, Sustain, Sensitivity. Character: frequency-selective transient shaping. Choose over TransX Wide when you need different transient settings for different frequency ranges (e.g., boost high-frequency attack while reducing low-frequency sustain). Best for: complex drum mixes (shape kick attack differently from cymbal attack), mastering transient control, any source needing frequency-dependent envelope shaping."
+  },
+  {
+    "name": "TransX Wide",
+    "category": "Compressor",
+    "tags": [
+      "punch",
+      "multiband",
+      "drum",
+      "acoustic",
+      "percussion",
+      "eq",
+      "api"
+    ],
+    "description": "Full-range transient designer. Controls: Attack (increase/decrease), Sustain (increase/decrease), Sensitivity, Range. Affects the entire frequency range equally. Character: simple, effective envelope shaping. Choose over Smack Attack for a slightly different algorithm, or TransX Multi when you don't need multiband. Best for: drums (adding/removing punch and ring), percussion, acoustic instruments, quick transient shaping on any percussive source."
+  },
+  {
+    "name": "TrueVerb",
+    "category": "Reverb",
+    "tags": [
+      "natural",
+      "eq",
+      "reverb",
+      "delay",
+      "room"
+    ],
+    "description": "Room simulator reverb combining direct sound (early reflections) with reverb tail. Unique visual room display shows dimensions and source/listener positions. Controls: Room dimensions, Absorption, Distance, Decay, Damping, Pre-Delay, Mix, plus EQ. Character: natural, realistic room simulation — emphasis on realistic space rather than beautiful effect. Choose when you want to simulate a specific physical room rather than an idealized reverb effect. Best for: post-production (realistic room recreation), film/TV mixing, making tracks sound like they were recorded in a specific space, natural room ambience."
+  },
+  {
+    "name": "UltraPitch 3 Voices",
+    "category": "Pitch",
+    "tags": [
+      "clean",
+      "thick",
+      "feedback",
+      "vocal",
+      "delay",
+      "pitch shifter",
+      "api"
+    ],
+    "description": "3-voice pitch shifter for harmonizing and thickening. Each voice: Pitch shift (semitones + cents), Delay, Pan, Level, Feedback, Formant correction. Creates 3 independent pitch-shifted copies. Character: clean pitch shifting with formant preservation. Best for: vocal harmonizing (3-part), thickening with micro-detuning, creative pitch effects, octave layering."
+  },
+  {
+    "name": "UltraPitch 6 Voices",
+    "category": "Pitch",
+    "tags": [
+      "thick",
+      "lush",
+      "dense",
+      "rich",
+      "vocal",
+      "pitch shifter",
+      "api"
+    ],
+    "description": "6-voice pitch shifter for rich harmonizing. Six independent pitch-shifted voices with full per-voice control. Character: lush, complex harmonizing and ensemble effects. Choose over 3-voice when you need richer harmonies or more voices. Best for: complex vocal harmonies (full chords), creating thick ensemble effects, choir simulation, dense pitch-shifted textures."
+  },
+  {
+    "name": "UltraPitch Shift",
+    "category": "Pitch",
+    "tags": [
+      "clean",
+      "feedback",
+      "delay",
+      "pitch shifter",
+      "api"
+    ],
+    "description": "Single-voice pitch shifter for precise pitch adjustment. Controls: Pitch (semitones + cents), Delay, Feedback, Mix, Formant correction. Character: clean pitch shifting. Best for: basic pitch correction, single-voice harmony, octave doubling, sound design pitch effects."
+  },
+  {
+    "name": "VComp",
+    "category": "Compressor",
+    "tags": [
+      "tube",
+      "warm",
+      "smooth",
+      "vintage",
+      "modern",
+      "classic",
+      "subtle",
+      "gentle",
+      "rich",
+      "harmonic",
+      "bus",
+      "mastering"
+    ],
+    "description": "Modeled vintage tube compressor based on classic tube compressor topology. Controls: Input, Attack (slow), Release (slow), Limit, Output, Character. Character: warm, smooth, slow — gentle tube compression with rich harmonics. Choose over modern compressors when you want slow, warm tube compression with vintage character. Best for: bus compression (gentle tube warmth), mastering (subtle tube limiting), vocals (warm compression), any source benefiting from slow, warm dynamics."
+  },
+  {
+    "name": "VEQ3",
+    "category": "EQ",
+    "tags": [
+      "warm",
+      "classic",
+      "musical",
+      "natural",
+      "vocal",
+      "drum",
+      "bass",
+      "guitar",
+      "eq",
+      "console",
+      "neve"
+    ],
+    "description": "Modeled Neve 1073 3-band EQ — one of the most revered console EQs ever made. 3 bands: LF shelf (35/60/110/220Hz), MF peak (360Hz-7.2kHz), HF shelf (12kHz fixed). HPF (50/80/160/300Hz). Character: warm, big, musical — the classic Neve sound. Boosts add warmth and size, cuts sound natural. Choose over VEQ4 when 3 bands is sufficient (the 1073 is generally preferred for its simplicity). Best for: drums, bass, vocals, guitars — the most musical EQ for adding warmth and character."
+  },
+  {
+    "name": "VEQ4",
+    "category": "EQ",
+    "tags": [
+      "warm",
+      "eq",
+      "console",
+      "neve"
+    ],
+    "description": "Modeled Neve 1081 4-band EQ — extended version of the Neve console EQ with 4 bands. Bands: LF shelf, LMF parametric, HMF parametric, HF shelf. HPF/LPF. Character: same warm Neve character as VEQ3 but with extra mid band for more detailed control. Choose over VEQ3 when you need 4 bands of Neve EQ (more detailed mid sculpting). Best for: same as VEQ3 but when you need more midrange control — complex sources, detailed tonal work while maintaining Neve warmth."
+  },
+  {
+    "name": "VU Meter",
+    "category": "Analyzer",
+    "tags": [
+      "vintage",
+      "classic"
+    ],
+    "description": "Classic VU meter emulation with traditional needle-style display. VU ballistics (300ms integration time) show average level, not peaks. METERING TOOL ONLY — no audio processing. Best for: gain staging (VU meters show average loudness better than peak meters), vintage-style level monitoring, understanding dynamic range."
+  },
+  {
+    "name": "Vitamin",
+    "category": "Multiband Dynamics",
+    "tags": [
+      "warm",
+      "airy",
+      "subtle",
+      "saturation",
+      "harmonic",
+      "multiband",
+      "mix bus",
+      "bus",
+      "mastering",
+      "master",
+      "drum",
+      "eq"
+    ],
+    "description": "5-band multiband harmonic enhancer. Each band (Low, Low-Mid, Mid, High-Mid, High) has independent Drive (harmonic generation) and Level controls plus Solo. Can generate harmonics in specific frequency ranges independently. Character: flexible enhancement — from subtle warmth in the lows to airy sparkle in the highs. Choose over broadband saturation when you want frequency-selective harmonic enhancement. Best for: adding sub weight + air simultaneously, enhancing specific bands without affecting others, mastering harmonic enhancement, mix bus sparkle, drums (sub weight + attack presence)."
+  },
+  {
+    "name": "Vocal Bender",
+    "category": "Pitch",
+    "tags": [
+      "vocal"
+    ],
+    "description": "Real-time vocal pitch and formant manipulation. Shifts pitch and formant independently — pitch changes the note while formant changes the vocal character (gender, size). Controls: Pitch (semitones + cents), Formant (shift character), MIDI input for real-time control. Character: creative vocal transformation. Choose for creative vocal effects beyond standard pitch correction. Best for: gender transformation, character creation, vocal sound design, creating chipmunk/deep voice effects, EDM vocal manipulation."
+  },
+  {
+    "name": "Vocal Rider",
+    "category": "Vocal",
+    "tags": [
+      "transparent",
+      "sidechain",
+      "vocal",
+      "dialogue",
+      "compressor"
+    ],
+    "description": "Automatic vocal level rider that maintains consistent vocal volume using intelligent gain adjustment. Analyzes vocal dynamics and rides the fader in real-time to keep the vocal at a consistent level — like having an engineer ride the fader for you. Controls: Target range (min/max gain), Sensitivity, Rider speed, Music sidechain (ducks vocal less when music is quiet). Character: transparent — adjusts level without compression artifacts. Choose over compressor when you want level consistency without changing the vocal's dynamic character. Best for: lead vocals (essential — the #1 vocal tool for level consistency), dialogue, podcasts, voiceover, any vocal recording with inconsistent levels. Use BEFORE compression in the chain."
+  },
+  {
+    "name": "Voltage Amps Bass",
+    "category": "Guitar",
+    "tags": [
+      "warm",
+      "modern",
+      "classic",
+      "clean",
+      "bass",
+      "guitar",
+      "synth",
+      "eq"
+    ],
+    "description": "Bass amplifier simulator with multiple amp models covering classic bass tones. Amp types: Clean, Warm, Driven, Modern. Controls: Gain, EQ, Volume, Cabinet select. Character: varies by model — from clean studio bass to driven rock bass. Best for: bass guitar DI recordings needing amp character, bass re-amping, synth bass needing amp warmth."
+  },
+  {
+    "name": "Voltage Amps Guitar",
+    "category": "Guitar",
+    "tags": [
+      "clean",
+      "guitar",
+      "eq",
+      "api"
+    ],
+    "description": "Guitar amplifier simulator with multiple amp models. Includes various amp voicings from clean to high-gain plus speaker cabinet modeling. Controls: Amp select, Gain, EQ, Volume, Cabinet. Best for: guitar DI recordings, re-amping, direct recording without real amps, quick guitar tone shaping."
+  },
+  {
+    "name": "W43",
+    "category": "Restoration & Noise",
+    "tags": [
+      "analog",
+      "colored",
+      "vintage",
+      "eq",
+      "noise reduction"
+    ],
+    "description": "Modeled vintage noise reduction processor. Emulates the sound of the analog noise reduction circuitry with its characteristic frequency response coloration. Character: colored — adds the unique tonal imprint of vintage noise reduction systems. Best for: creative tonal coloring, vintage sound character, adding the 'encoded' sound of analog noise reduction."
+  },
+  {
+    "name": "WLM Meter",
+    "category": "Analyzer",
+    "tags": [
+      "mastering",
+      "master",
+      "broadcast",
+      "live"
+    ],
+    "description": "Loudness metering plugin compliant with ITU-R BS.1770, EBU R128, ATSC A/85, and other broadcast standards. Displays: Momentary loudness, Short-term loudness, Integrated loudness (LUFS), True Peak. METERING TOOL ONLY. Best for: broadcast compliance (essential), streaming platform loudness targeting, mastering to loudness standards, film/TV delivery compliance."
+  },
+  {
+    "name": "WLM Plus",
+    "category": "Analyzer",
+    "tags": [
+      "mastering",
+      "master",
+      "broadcast",
+      "live"
+    ],
+    "description": "Advanced loudness metering with extended features over WLM Meter. Adds: Loudness Range (LRA), True Peak measurement with inter-sample peak detection, multiple standard presets, logging. METERING TOOL ONLY. Best for: professional broadcast compliance, detailed loudness analysis, mastering to multiple delivery standards, archive loudness documentation."
+  },
+  {
+    "name": "WNS",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "natural",
+      "gating",
+      "dialogue",
+      "live",
+      "eq",
+      "noise gate"
+    ],
+    "description": "Waves Noise Suppressor — multi-frequency noise gate. Instead of gating the entire signal, WNS uses multiple frequency-specific gates to suppress noise in specific bands while leaving clean frequencies untouched. Controls: per-band threshold, overall sensitivity. Character: more transparent than full-band gating. Choose over simple gate for complex noise situations where gating causes audible artifacts. Best for: dialogue with complex noise, live recordings with varying noise, situations where a simple gate chops the signal unnaturally."
+  },
+  {
+    "name": "Waves Gemstones",
+    "category": "Other",
+    "tags": [],
+    "description": "Creative multi-effects processor with multiple processing modules chained together. Various effect types available in a modular interface. Character: creative, experimental. Best for: creative processing, experimentation, discovering unusual effect combinations."
+  },
+  {
+    "name": "Waves Harmony",
+    "category": "Pitch",
+    "tags": [
+      "vocal",
+      "live"
+    ],
+    "description": "Real-time vocal harmony generator. Creates harmonies from a single vocal track based on MIDI or chord input. Multiple voices with independent level, pan, and formant control. Automatic voice-leading based on chord progressions. Character: realistic vocal harmonies in real-time. Choose when you need harmonies without recording additional vocal takes. Best for: creating background harmonies from a lead vocal, live performance harmonizing, quick harmony production, songwriter demos."
+  },
+  {
+    "name": "Waves Stream Receive",
+    "category": "Generator",
+    "tags": [],
+    "description": "Audio streaming receiver for routing audio over local network. Receives audio from Waves Stream Send on another computer. Low-latency audio networking. UTILITY TOOL for audio routing. Best for: multi-computer setups, audio networking between machines."
+  },
+  {
+    "name": "Waves Stream Send",
+    "category": "Generator",
+    "tags": [],
+    "description": "Audio streaming transmitter for sending audio over local network to Waves Stream Receive. Low-latency audio networking. UTILITY TOOL for audio routing. Best for: multi-computer setups, sending audio between machines."
+  },
+  {
+    "name": "Waves Tune",
+    "category": "Pitch",
+    "tags": [
+      "transparent",
+      "feedback",
+      "vocal",
+      "piano"
+    ],
+    "description": "Full-featured pitch correction with graphical note editing. Displays detected notes on a piano-roll-style interface for manual editing. Controls: Speed (correction rate), Note transition, Tolerance, Vibrato control, Formant correction. Character: transparent to obvious depending on Speed setting — from invisible correction to the 'auto-tune effect'. Choose over Waves Tune Real-Time when you need visual editing and precision. Best for: studio vocal tuning (the standard workflow), detailed pitch correction with visual feedback, creating the auto-tune effect with Speed at fastest."
+  },
+  {
+    "name": "Waves Tune LT",
+    "category": "Pitch",
+    "tags": [
+      "vocal",
+      "live"
+    ],
+    "description": "Lightweight automatic pitch correction. Simplified real-time tuning with: Key/Scale select, Speed (correction rate), Note transition. Character: simple, effective — set key and speed, it tunes. Choose over full Waves Tune for quick, set-and-forget tuning. Best for: quick vocal tuning, live-ish recordings needing basic correction, songs where you just need to set key and let it work."
+  },
+  {
+    "name": "Waves Tune Real-Time",
+    "category": "Pitch",
+    "tags": [
+      "transparent",
+      "heavy",
+      "vocal",
+      "live",
+      "delay"
+    ],
+    "description": "Zero-latency automatic pitch correction for live performance. Real-time tuning with no processing delay. Controls: Key/Scale, Speed, Tolerance, Vibrato. Character: from transparent to heavy auto-tune effect depending on speed. Choose over studio Waves Tune for live performance (zero latency). Best for: live vocal tuning, real-time pitch correction during recording, live performance, monitoring with pitch correction."
+  },
+  {
+    "name": "X-Click",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "tape"
+    ],
+    "description": "Click and pop remover for vinyl transfers and damaged audio. Detects and removes impulsive noise artifacts (clicks, pops, crackle) using intelligent detection. Controls: Threshold, Sensitivity, Click type. Character: transparent — removes only clicks without affecting program material. Best for: vinyl record transfers, restoring click-damaged recordings, cleaning up old tape recordings with splicing clicks, audio restoration."
+  },
+  {
+    "name": "X-Crackle",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "clean",
+      "noise reduction"
+    ],
+    "description": "Crackle and surface noise remover for vinyl transfers. Targets continuous low-level surface noise and crackle that X-Click doesn't address. Controls: Threshold, Sensitivity, Reduction amount. Character: transparent noise reduction for continuous surface noise. Best for: vinyl record restoration (use after X-Click), removing surface noise from old recordings, cleaning up archival audio."
+  },
+  {
+    "name": "X-FDBK",
+    "category": "Other",
+    "tags": [
+      "transparent",
+      "surgical",
+      "feedback",
+      "live",
+      "eq"
+    ],
+    "description": "Real-time feedback elimination for live sound. Detects feedback frequencies as they develop and places precise notch filters to prevent feedback before it becomes audible. Automatic and manual modes. Controls: sensitivity, number of available filters, detection speed. Character: transparent — notch filters are surgical. Best for: live sound (essential feedback control), stage monitor systems, any amplified sound system prone to feedback."
+  },
+  {
+    "name": "X-Hum",
+    "category": "Restoration & Noise",
+    "tags": [
+      "vintage",
+      "surgical",
+      "harmonic",
+      "guitar",
+      "eq"
+    ],
+    "description": "Hum remover targeting 50/60Hz electrical hum and its harmonics. Identifies fundamental hum frequency and places notch filters at the fundamental plus harmonics. Controls: Fundamental frequency (50/60Hz), Number of harmonics, Filter Q, Learn mode. Character: surgical — removes only hum frequencies. Best for: recordings with ground loop hum, electrical hum from guitar amps, AC hum in vintage recordings, any recording contaminated with 50 or 60Hz hum."
+  },
+  {
+    "name": "X-Noise",
+    "category": "Restoration & Noise",
+    "tags": [
+      "musical",
+      "room",
+      "noise reduction"
+    ],
+    "description": "Broadband noise reduction using noise profiling. Learns the noise characteristics of a recording, then subtracts it from the signal. Controls: Threshold, Reduction, Attack, Release, Learn mode (capture noise profile). Character: effective but can introduce artifacts at extreme settings — 'musical noise' or watery artifacts. Choose over Z-Noise for simpler workflow. Choose NS1 for fastest one-knob approach. Best for: reducing steady-state noise (hiss, room tone, HVAC), studio recordings with background noise, audio restoration, any recording with consistent background noise."
+  },
+  {
+    "name": "Z-Noise",
+    "category": "Restoration & Noise",
+    "tags": [
+      "transparent",
+      "vocal",
+      "dialogue",
+      "live",
+      "noise reduction"
+    ],
+    "description": "Advanced noise reduction with real-time adaptive noise profiling. Unlike X-Noise (which uses a static noise profile), Z-Noise continuously adapts to changing noise floors. Controls: Threshold, Reduction, Attack, Release, Sensitivity, Adaptive profiling controls. Character: more transparent than X-Noise for changing noise environments — adapts in real-time. Choose over X-Noise when noise level fluctuates. Choose over Clarity Vx for non-vocal sources. Best for: live recordings with varying noise, field recordings, dialogue with changing background noise, any source where the noise floor is not constant."
+  },
+  {
+    "name": "dbx-160",
+    "category": "Compressor",
+    "tags": [
+      "vca",
+      "aggressive",
+      "punch",
+      "transparent",
+      "classic",
+      "gentle",
+      "tight",
+      "parallel",
+      "drum",
+      "bass",
+      "synth",
+      "snare"
+    ],
+    "description": "Modeled dbx 160 VCA compressor — the most aggressive, punchy compressor in the collection. Hard-knee VCA compression with that distinctive dbx 'snap'. Controls: Threshold, Ratio (1:1-inf:1, all hard-knee), Output Gain. Character: aggressive, tight, snappy, punchy — very fast VCA response with hard knee creates a distinctive 'slap' on transients. Choose over CLA-76 when you want even more aggressive, harder-hitting compression. Choose for that specific 'dbx' snappy character. Best for: drums (the classic 80s drum sound — Phil Collins, etc.), snare (extreme snap), bass (tight control), synths (aggressive pumping), parallel compression (crush with dbx, blend with dry). NOT for gentle or transparent compression."
+  }
+]
