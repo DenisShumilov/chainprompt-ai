@@ -61,5 +61,7 @@ jobs:
           -DCMAKE_C_COMPILER_LAUNCHER=ccache
           -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
 
+      # --parallel 2: standard private-repo runners have ~7 GB RAM and large
+      # JUCE translation units OOM the build at full parallelism (SIGTERM 143).
       - name: Build
-        run: cmake --build plugin/build --parallel
+        run: cmake --build plugin/build --parallel 2

@@ -285,7 +285,8 @@ Later:
 - Plugin support is not universal.
 - Metadata support is strongest where local metadata exists.
 - AU and Standalone targets are configured but not yet feature-validated across a host matrix.
-- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, pluginval checks, and host profiling still need a focused audit. Known specifics: preset application notifies hosted plugin parameters from the audio thread, and bypass rewiring relies on a flag check at block start.
+- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, and host profiling still need a focused audit. Known specifics: preset application notifies hosted plugin parameters from the audio thread, and bypass rewiring relies on a flag check at block start.
+- pluginval (Windows x64, VST3): strictness 5 passes with a clean exit; at strictness 10 all test sections pass but with GUI tests enabled the validator process exits nonzero at teardown — an editor-related shutdown issue on the audit list. See the [Validation Plan](docs/VALIDATION_PLAN.md).
 - Hosted-chain latency is not aggregated or reported to the host (no plugin delay compensation); lookahead or linear-phase plugins in the chain will introduce uncompensated delay.
 - The internal graph is stereo-only; mono insert configurations are unvalidated.
 - Current scanner and metadata extraction paths still include Waves-specific and Windows-specific assumptions.

@@ -139,7 +139,7 @@ ChainPromptAudioProcessor::ChainPromptAudioProcessor()
     intentTracker.detectUserTouches (chainNodes, currentPreset);
     auto json = StudioTelemetryBridge::buildPayload (
         instanceId, trackName, projectScope, currentPreset, currentMetrics);
-    StudioTelemetryBridge::sendPayloadAsync (std::move (json));
+    telemetryBridge.sendPayloadAsync (std::move (json));
   };
   telemetryBridge.startPinging (15000);
 

@@ -4,10 +4,13 @@ This document lists the validation work needed before ChainPrompt AI should be t
 
 ## Current Verified Scope
 
-- Backend unit tests for chain diff, chat pipeline gating, and safety filtering.
-- Local backend health endpoint.
+- Backend unit tests for chain diff, chat pipeline gating, inventory/UID validation, and safety filtering.
+- Local backend health endpoint (verified booting from a fresh clone + venv).
 - Manual startup path documented in `README.md`.
 - Local plugin inventory and rescan flow represented in architecture docs.
+- Windows Release build of the VST3/Standalone targets from the documented CMake steps (2026-06-10).
+- pluginval 1.0.4 (Windows x64, VST3, strictness level 5): all tests pass, clean exit.
+- pluginval strictness level 10: all 25 test sections pass and the run reports SUCCESS; with GUI tests enabled the validator child process then exits nonzero at teardown (reproducible; a third-party control plugin exits cleanly on the same machine; with `--skip-gui-tests` the exit is clean). Editor-related teardown residue under GUI stress is on the audit list.
 
 ## Test Command
 
@@ -23,7 +26,7 @@ Last observed local result on 2026-06-09:
 
 ## Audio Plugin Validation Needed
 
-- Run pluginval for VST3 builds.
+- Resolve the strictness-10 GUI-stress teardown exit (see Current Verified Scope) and re-run pluginval.
 - Validate AU target on macOS when available.
 - Test variable sample rates.
 - Test variable buffer sizes.

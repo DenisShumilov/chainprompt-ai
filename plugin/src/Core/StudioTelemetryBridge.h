@@ -23,7 +23,14 @@
 class StudioTelemetryBridge
 {
 public:
-    ~StudioTelemetryBridge() { stopPinging(); }
+    ~StudioTelemetryBridge()
+    {
+        stopPinging();
+        // Wait for any in-flight ping (bounded by the 3s connection timeout).
+        // A member pool torn down here avoids the undefined teardown order a
+        // function-local static pool has at module unload.
+        pingPool.removeAllJobs (true, 5000);
+    }
 
     // ── Timer control ──
     void startPinging (int intervalMs = 15000)
@@ -117,8 +124,8 @@ public:
         return juce::JSON::toString (juce::var (body));
     }
 
-    // ── Fire-and-forget HTTP POST ──
-    static void sendPayloadAsync (juce::String jsonPayload)
+    // ── Fire-and-forget HTTP POST (runs on the bridge's own pool) ──
+    void sendPayloadAsync (juce::String jsonPayload)
     {
         juce::URL pingURL ("http://127.0.0.1:5000/api/ping");
         pingURL = pingURL.withPOSTData (jsonPayload);
@@ -145,11 +152,12 @@ public:
             }
         };
 
-        static juce::ThreadPool pingPool (1);
         pingPool.addJob (new PingTask (std::move (pingURL), std::move (options)), true);
     }
 
 private:
+    juce::ThreadPool pingPool { 1 };
+
     struct PingTimer : public juce::Timer
     {
         StudioTelemetryBridge* bridge = nullptr;
