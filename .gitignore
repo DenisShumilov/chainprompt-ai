@@ -42,3 +42,6 @@ Thumbs.db
 # Temp audio captures
 *.flac
 *.wav
+
+# Local generated media
+artifacts/
