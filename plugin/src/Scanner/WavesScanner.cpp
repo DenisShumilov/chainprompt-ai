@@ -1,16 +1,17 @@
 /*
-    WavesScanner — TRUE 1001-point VST3 Parameter Dumper
-    =====================================================
+    WavesScanner — 1001-point VST3 Parameter Metadata Dumper
+    =========================================================
     Loads every Waves VST3 plugin, calls getText() at 1001 normalized
     positions (0.000 → 1.000, step 0.001) for every parameter, and
-    writes the GROUND-TRUTH physical values to a provider-neutral
+    writes sampled physical-value metadata to a provider-neutral
     metadata envelope (Waves_HighRes_DB.json).
 
     Envelope contract (shared by all future extractors):
       { "provider": "<id>", "provider_version": <int>,
         "scan_timestamp": "<ISO-8601>", "plugins": [...] }
 
-    No PCHIP.  No interpolation.  No guessing.  Pure API dump.
+    Mostly numeric parameters are stored as sampled maps; isolated
+    non-numeric points are linearly filled from neighboring samples.
 */
 
 #include <JuceHeader.h>
@@ -112,7 +113,7 @@ private:
             if (logOut.is_open()) { logOut << msg << std::endl; logOut.flush(); }
         };
 
-        logMsg ("=== WavesScanner: TRUE 1001-point VST3 Parameter Dump ===");
+        logMsg ("=== WavesScanner: 1001-point VST3 Parameter Metadata Dump ===");
 
         // 1. Set up plugin format manager (VST3 only)
         juce::AudioPluginFormatManager formatManager;

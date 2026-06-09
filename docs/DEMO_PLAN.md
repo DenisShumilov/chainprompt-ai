@@ -1,6 +1,8 @@
 # Demo Plan
 
-This is the recommended demo path for a 60-90 second walkthrough.
+This is the recommended live-demo path for a 60-90 second walkthrough.
+
+The current slide-based explainer can support context, but the hiring/outreach demo should mostly use live screen recording: backend terminal, `/health`, plugin or standalone UI, prompt, payload/diff, manual bypass/tweak, revision, and `/api/diag`.
 
 ## Demo Goal
 
@@ -10,7 +12,7 @@ Show that ChainPrompt AI is not just a chat UI. It is a local, host-aware protot
 
 **Prompt:** "Build a clean modern vocal chain using installed plugins."
 
-The strongest demo moment is not the first generated chain. It is the revision step where a user manually tweaks or bypasses a slot, asks for a change, and the system preserves tracked user state.
+The strongest demo moment is not the first generated chain. It is the revision step where a user manually tweaks or bypasses a slot, asks for a change, and the system preserves or explicitly reports tracked user state.
 
 ## Screen Flow
 
@@ -98,10 +100,9 @@ Voice:
 - "Local plugin inventory"
 - "Fail-closed if inventory is missing"
 - "Chain diff instead of overwrite"
-- "User edits preserved"
+- "User edits preserved where tracked"
 - "Diagnostics visible"
 
 ## Final CTA
 
 "Open to feedback from music tech product and engineering teams."
-

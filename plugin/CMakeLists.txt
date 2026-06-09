@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(ChainPromptAI VERSION 1.0.0)
+project(ChainPromptAI VERSION 0.3.0)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -100,7 +100,7 @@ elseif(MSVC)
     target_compile_options(ChainPromptAI PRIVATE /W4 /WX-)
 endif()
 
-# ─── WavesScanner: TRUE 1001-point VST3 parameter dumper ─────────────────────
+# ─── WavesScanner: 1001-point VST3 parameter metadata dumper ─────────────────
 juce_add_console_app(WavesScanner PRODUCT_NAME "WavesScanner")
 
 target_compile_definitions(WavesScanner PRIVATE

@@ -7,7 +7,7 @@ It should answer:
 1. what is strong enough to build on
 2. what is still risky
 3. what kind of phase-scoped cycle should come next
-4. what the Analyst should read first
+4. what maintainers should read first
 
 ## 2. Current Status
 - Product state: strong internal prototype with a real technical nucleus
@@ -73,17 +73,20 @@ Every non-trivial sprint should watch:
 - graph rebuild
 - machine-specific path assumptions
 
-## 10. Analyst Reading Order
-Default mandatory reading order for the Analyst:
-1. `docs/04_REPOSITORY_CANON.md`
-2. `docs/03_EXECUTION_ROADMAP.md`
-3. `docs/05_SPRINT_BASELINE.md`
-4. `docs/12_RISK_REGISTER.md`
-5. `docs/02_ARCHITECTURE.md`
-6. `docs/01_PRODUCT_VISION.md`
+## 10. Maintainer Reading Order
+Default recommended reading order:
+1. `README.md`
+2. `docs/CASE_STUDY.md`
+3. `docs/DEMO_PLAN.md`
+4. `docs/VALIDATION_PLAN.md`
+5. `SECURITY.md`
+6. `docs/03_EXECUTION_ROADMAP.md`
+7. `docs/05_SPRINT_BASELINE.md`
+8. `docs/12_RISK_REGISTER.md`
+9. `docs/02_ARCHITECTURE.md`
+10. `docs/01_PRODUCT_VISION.md`
 
 Optional:
-- `docs/06_AGENT_OPERATING_MODEL.md`
 - `plugin/docs/02_ARCHITECTURE.md`
 
 Do not read by default:

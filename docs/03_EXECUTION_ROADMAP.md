@@ -16,9 +16,7 @@ Use the roadmap together with the rest of the canon:
 - `docs/02_ARCHITECTURE.md` defines the current technical nucleus and real runtime shape.
 - `docs/03_EXECUTION_ROADMAP.md` defines phase order, active phase, gate criteria, and loop-cycle meaning.
 - `docs/05_SPRINT_BASELINE.md` is the short operational snapshot of the current phase.
-- `docs/06_AGENT_OPERATING_MODEL.md` defines how Analyst, Coder, and the human operator work inside this roadmap.
 - `docs/12_RISK_REGISTER.md` records the active risks that can block a phase gate.
-- `CLAUDE.md` remains the highest-authority implementation constraint layer.
 
 This repository must have one roadmap document only. Do not create parallel phase trackers, release plans, or alternate roadmap canon.
 
@@ -42,17 +40,17 @@ While Phase 1 is active, the following stay future-only by default:
 - evaluation-system buildout
 - beginner-first UX
 - multi-vendor expansion
-- semi-autonomous execution modes
+- bounded automation modes
 
 ## 4. Phase Gate Rules
 - Phase order is strict. Do not start a later phase because it looks attractive.
 - One loop cycle equals one narrow, reviewable increment inside the active phase.
 - A valid cycle must close one explicit gap in the active phase exit criteria, or fix a regression that blocks the active phase.
-- The Analyst may plan only:
+- Planning work should stay limited to:
   - active-phase work
   - bugfix work
   - direct prerequisite work needed to verify an active-phase exit criterion
-- The Coder may implement only the approved cycle inside the active phase.
+- Implementation work should stay limited to the approved cycle inside the active phase.
 - Bugfix cycles are allowed at any time, but they do not advance the roadmap unless they close a named exit criterion.
 - A phase gate passes only when:
   - every exit criterion in this file is satisfied
@@ -184,7 +182,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Loop-cycle output: one vendor-support increment with evidence, one capability-contract update, or one regression-backed expansion step.
 - Main risks: fake universality, metadata gaps, support claims outrunning validation.
 
-### Phase 9 - Semi-Autonomous Engineer Mode
+### Phase 9 - Bounded Automation Mode
 - Purpose: allow bounded "do it for me" behavior under explicit user-approved limits.
 - Why it exists: autonomy without trust, evaluation, and product boundaries would be unsafe.
 - In scope: bounded autonomy settings, approval boundaries, safe automation envelopes, explicit undo/control limits.

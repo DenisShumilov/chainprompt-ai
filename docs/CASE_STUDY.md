@@ -4,7 +4,7 @@
 
 ChainPrompt AI is a portfolio prototype exploring host-aware AI assistance for music production workflows.
 
-The project combines a JUCE C++ audio plugin, VST3/AU/Standalone targets, a local Python Flask/Waitress backend, Gemini API orchestration, local plugin inventory scanning, and diagnostics endpoints.
+The project combines a JUCE C++ audio plugin, configured VST3/AU/Standalone targets, a local Python Flask/Waitress backend, Gemini API orchestration, local plugin inventory scanning, and diagnostics endpoints. The current implementation is VST3-first and not broadly host-validated yet.
 
 The current scope is intentionally narrow: serial insert-chain work on the current track.
 
@@ -32,7 +32,7 @@ The prototype is built around three boundaries:
 
 - **Host truth:** installed plugin inventory and current chain state are authoritative.
 - **Audio truth:** measured signal context can inform decisions when available.
-- **User intent truth:** manual edits, user-owned slots, and bypass state should be preserved.
+- **User intent truth:** manual edits, user-owned slots, and bypass state should be preserved where the current prototype can track them.
 
 Instead of building a broad "AI mixer", ChainPrompt AI focuses on a practical wedge: proposing and revising serial insert chains on one track.
 
@@ -65,7 +65,7 @@ It comes from the rules and checks around the model:
 - UID validation
 - chain diffing instead of free-form overwrite
 - targeted parameter generation only where needed
-- preservation of user-touched and bypassed slots
+- preservation attempts for user-touched and bypassed slots
 - backend and inventory diagnostics
 - explicit prototype limitations
 
@@ -89,7 +89,7 @@ This is the product thesis: AI becomes more useful inside a DAW when it is const
 - Chat/build requests go through an early fail-closed inventory gate.
 - Selected plugin UIDs are validated before payload generation.
 - The chain diff engine separates retained, inserted, removed, and reordered slots.
-- User-touched and bypassed slots are protected from unnecessary re-tuning.
+- User-touched and bypassed slots are protected from unnecessary re-tuning in the tested backend paths.
 - Backend tests cover critical chain diff, safety, and orchestration behavior.
 
 ## What I Would Improve Next
@@ -122,4 +122,3 @@ I designed and built the prototype end to end:
 - chain diff and safety logic
 - technical documentation
 - scaffolded AI workflow design
-

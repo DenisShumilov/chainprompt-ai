@@ -15,7 +15,7 @@ This document lists the validation work needed before ChainPrompt AI should be t
 python -m pytest server/tests
 ```
 
-Current local result:
+Last observed local result on 2026-06-09:
 
 ```text
 49 passed
@@ -84,4 +84,3 @@ Do not describe the project as product-ready until:
 - backend lifecycle is packaged or clearly automated
 - privacy behavior is user-facing and configurable
 - support tiers are visible in the UI and docs
-

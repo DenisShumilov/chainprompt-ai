@@ -2,13 +2,15 @@
 
 Portfolio prototype: a JUCE plugin plus local Python backend for AI-assisted DAW insert-chain building.
 
-It scans FX-eligible installed VST3 effects, routes requests through Gemini, proposes bounded chain changes, and preserves tracked user edits such as bypassed or manually touched slots.
+It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and attempts to preserve tracked user edits such as bypassed or manually touched slots.
 
 **Status:** working developer prototype, not production-ready. Manual backend startup, limited metadata coverage, packaging, and trust UX are still in progress.
 
 **Demo path:** scan inventory -> build vocal chain -> inspect chain payload -> revise while preserving a manual change.
 
 ## Review Materials
+
+Recommended reviewer path: README -> Case Study -> Demo Plan -> Validation Plan -> Security Notes.
 
 - [Case Study](docs/CASE_STUDY.md)
 - [Demo Plan](docs/DEMO_PLAN.md)
@@ -20,7 +22,7 @@ It scans FX-eligible installed VST3 effects, routes requests through Gemini, pro
 - Refuses to build when installed plugin inventory is unavailable.
 - Validates build payloads against a local installed-plugin manifest instead of trusting hallucinated tools.
 - Computes chain diffs instead of blindly replacing the current chain.
-- Preserves user-touched, user-owned, and bypassed slot state.
+- Attempts to preserve user-touched, user-owned, and bypassed slot state.
 - Exposes backend, inventory, and track diagnostics through local endpoints.
 
 ## Product Philosophy: Scaffold Over Magic
@@ -61,9 +63,9 @@ Reference: [Fender Studio Pro 8.1 announcement](https://www.prnewswire.com/news-
 
 ## Key Features / Technical Proof Points
 
-- **JUCE plugin:** C++20 audio plugin with VST3, AU, and Standalone targets configured. Broad host compatibility testing is still pending.
+- **JUCE plugin:** C++20 audio plugin with VST3, AU, and Standalone targets configured. The current inventory/hosting path is VST3-first, and broad host compatibility testing is still pending.
 - **Local backend:** Python Flask/Waitress service with Gemini orchestration, retry, and fallback support.
-- **Manifest-first inventory:** local VST3 scan exports an installed-plugin manifest for FX-eligible effects; non-Waves plugins may be host-only unless metadata exists.
+- **Manifest-first inventory:** local VST3 scan exports an installed-plugin manifest; the backend filters for chain-eligible effects where metadata exists.
 - **Bounded chain planning:** Stage 1 intent routing, UID validation, chain diffing, targeted Stage 2 parameter generation, and safety filters.
 - **Diagnostics and tests:** `/health`, `/api/chat`, `/api/rescan`, `/api/diag`, `/api/ping`, plus backend regression tests for chain diff, inventory gating, and safety filters.
 
@@ -73,7 +75,7 @@ Reference: [Fender Studio Pro 8.1 announcement](https://www.prnewswire.com/news-
 flowchart LR
     DAW[DAW Host] --> Plugin[JUCE Plugin]
     Plugin --> Scanner[Local Plugin Scanner]
-    Scanner --> Manifest[FX-Eligible Installed Plugin Manifest]
+    Scanner --> Manifest[VST3 Installed Plugin Manifest]
     Plugin --> Health[Backend Health Check]
     Plugin --> Chat[LLMCoordinator HTTP Client]
     Chat --> API[Python Flask / Waitress Backend]
@@ -92,7 +94,7 @@ The system is intentionally local-first. The DAW/plugin side owns host state and
 ## Tech Stack
 
 - **Audio/plugin:** JUCE 8, C++20, AudioProcessorGraph
-- **Plugin formats:** VST3, AU, Standalone targets configured
+- **Plugin formats:** VST3, AU, and Standalone targets configured; current validation is VST3-first
 - **Backend:** Python, Flask, Waitress, Flask-CORS
 - **AI:** Google Gemini via `google-genai`
 - **State:** JSON manifests, SQLite studio memory
@@ -102,14 +104,14 @@ The system is intentionally local-first. The DAW/plugin side owns host state and
 ## How It Works
 
 1. The user loads ChainPrompt AI in a DAW.
-2. The plugin scans FX-eligible installed VST3 effects and writes an installed plugin manifest.
+2. The plugin scans installed VST3 plugins and writes an installed plugin manifest.
 3. The backend hot-reloads that manifest through `/api/rescan`.
 4. The user asks for a chain, for example: "Build a clean modern vocal chain."
 5. The backend checks that plugin inventory is available before spending LLM tokens.
 6. Stage 1 routes the request as chat or build and selects real installed plugins.
 7. The diff engine compares the current chain with the desired chain.
 8. Stage 2 generates parameter suggestions only where needed.
-9. Safety logic trims excessive chains, validates UIDs, and preserves user-owned state.
+9. Safety logic trims excessive chains, validates UIDs, and attempts to preserve user-owned state.
 10. The plugin receives a bounded preset payload and updates the insert chain.
 
 ## Safety Principles
@@ -119,7 +121,7 @@ The system is intentionally local-first. The DAW/plugin side owns host state and
 - **Scaffold the model:** schemas, validators, diagnostics, and state checks matter as much as the model call.
 - **No fake universality:** unsupported or missing plugins should be visible, not hidden.
 - **Bounded mutation:** the prototype focuses on serial insert chains, not full-session autonomy.
-- **Preserve user intent:** manual changes, user-added slots, and bypass states should survive AI actions.
+- **Preserve user intent:** manual changes, user-added slots, and bypass states should survive AI actions; this is a prototype behavior that still needs broader host validation.
 - **Explain degraded states:** backend and inventory problems are reported through health diagnostics.
 - **Avoid silent overwrite:** AI-generated changes should not pretend to be user decisions.
 
@@ -157,7 +159,7 @@ Suggested demo flow:
 4. Ask: "Build a clean vocal chain using what is installed on this machine."
 5. Show the AI response and the resulting chain payload.
 6. Manually tweak or bypass one slot.
-7. Ask for a revision and show that user-owned state is preserved.
+7. Ask for a revision and show that user-owned state is preserved or explicitly reported.
 8. Open `/api/diag` to show track and slot diagnostics.
 
 ## Setup Instructions
@@ -216,7 +218,7 @@ cmake -S plugin -B plugin/build
 cmake --build plugin/build --config Release
 ```
 
-Load the generated VST3, AU, or Standalone build depending on your platform and host. Compatibility testing is still pending and should be verified per DAW.
+Load the generated VST3, AU, or Standalone build depending on your platform and host. VST3 is the current primary path; AU and Standalone targets are configured but not feature-validated across hosts yet.
 
 ### 7. Run backend tests
 
@@ -266,7 +268,8 @@ Later:
 - Sends, returns, sidechain routing, and session-wide autonomy are out of scope.
 - Plugin support is not universal.
 - Metadata support is strongest where local metadata exists.
-- Real-time audio-thread safety still needs a focused audit, pluginval checks, and host profiling.
+- AU and Standalone targets are configured but not yet feature-validated across a host matrix.
+- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, pluginval checks, and host profiling still need a focused audit.
 - Current scanner and metadata extraction paths still include Waves-specific and Windows-specific assumptions.
 - Trust UX is not yet product-ready.
 - Commercial release readiness would require much deeper QA, signing, packaging, privacy review, and host compatibility testing.

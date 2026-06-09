@@ -39,4 +39,4 @@ When release work becomes active, focus on:
 ## 5. Practical Rule
 Sprint acceptance is not release readiness.
 
-Treat this file as future planning context only, not as mandatory reading for normal Analyst or Coder runs.
+Treat this file as future planning context only, not as mandatory reading for normal maintainer runs.

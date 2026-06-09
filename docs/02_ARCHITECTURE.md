@@ -91,7 +91,7 @@ plugin_catalog.py:
   4. Build _uid_format_map (mono/stereo swap)
   5. Build _NORMALIZED_VARIANTS (fuzzy name resolution)
   6. Load metadata envelopes (HighRes parameter maps)
-  7. Build filtered catalogs (FX-eligible + installed + format-aware)
+  7. Build filtered catalogs (chain-eligible + installed + format-aware)
   ↓
 unified_agent.py: cached system prompt + catalog → LLM
 ```
