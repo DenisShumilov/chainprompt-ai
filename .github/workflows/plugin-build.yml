@@ -1,0 +1,65 @@
+name: Plugin build
+
+# Compile check for the JUCE plugin on a clean Linux runner.
+# Honest scope: this validates VST3 + Standalone compilation only — AU requires
+# macOS and real host behavior still needs manual validation (see VALIDATION_PLAN).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-compile-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # lfs intentionally off: the C++ build never reads the catalog data.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install JUCE Linux dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            ccache \
+            libasound2-dev \
+            libfreetype-dev \
+            libfontconfig1-dev \
+            libx11-dev \
+            libxcomposite-dev \
+            libxcursor-dev \
+            libxext-dev \
+            libxinerama-dev \
+            libxrandr-dev \
+            libxrender-dev \
+            mesa-common-dev \
+            libglu1-mesa-dev
+
+      - name: Cache JUCE sources
+        uses: actions/cache@v4
+        with:
+          path: plugin/build/_deps
+          key: juce-src-${{ hashFiles('plugin/CMakeLists.txt') }}
+
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-${{ github.sha }}
+          restore-keys: ccache-
+
+      - name: Configure
+        run: >
+          cmake -S plugin -B plugin/build
+          -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_C_COMPILER_LAUNCHER=ccache
+          -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+
+      - name: Build
+        run: cmake --build plugin/build --parallel

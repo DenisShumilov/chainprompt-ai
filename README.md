@@ -1,5 +1,8 @@
 # ChainPrompt AI
 
+![Backend tests](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/backend-tests.yml/badge.svg)
+![Plugin build](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/plugin-build.yml/badge.svg)
+
 Portfolio prototype: a JUCE plugin plus local Python backend for AI-assisted DAW insert-chain building.
 
 It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and attempts to preserve tracked user edits such as bypassed or manually touched slots.
@@ -185,7 +188,7 @@ cd chainprompt-ai
 ### 2. Configure environment
 
 ```bash
-cp .env.example .env
+cp .env.example .env        # Windows (PowerShell): Copy-Item .env.example .env
 ```
 
 Edit `.env` and add your Gemini key:
