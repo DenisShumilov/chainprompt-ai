@@ -6,7 +6,7 @@ This file is the short operational snapshot of the project.
 It should answer:
 1. what is strong enough to build on
 2. what is still risky
-3. what kind of phase-scoped cycle should come next
+3. what kind of phase-scoped work should come next
 4. what maintainers should read first
 
 ## 2. Current Status
@@ -40,25 +40,25 @@ Phase 1 is not complete until all of these are true:
 - remaining machine-specific runtime path assumptions are removed from canonical bring-up
 - backend startup and failure states are understandable without hidden local knowledge
 - startup, scan, and restore behavior are stable enough to support later UX work
-- another developer can bring the system up from canon without relying on legacy machine rituals
+- another developer can bring the system up from the documentation alone without relying on legacy machine rituals
 
 This means:
 - Phase 2 trust UX work is still blocked by the current stabilization gate
 - Phase 5 productization work is still future-only unless it directly removes a Phase 1 blocker
 
-## 6. Recommended Cycle Mode
+## 6. Current Focus
 Current default:
 
-**Phase 1 stabilization cycle**
+**Phase 1 stabilization work**
 
 Choose roadmap expansion only when Phase 1 exit criteria are no longer the dominant risk.
 
-## 7. Nearest Correct Cycles
+## 7. Nearest Tasks
 - remove remaining legacy Desktop or legacy-root path assumptions in the C++ runtime and scanner
-- ~~make backend unavailable state explicit in the plugin/server contract without jumping early into full auto-launch~~ (DONE: cycle-002)
-- ~~define and document one canonical manual startup and health-check path~~ (DONE: cycle-002)
+- ~~make backend unavailable state explicit in the plugin/server contract without jumping early into full auto-launch~~ (done)
+- ~~define and document one canonical manual startup and health-check path~~ (done)
 - add regression checks around startup, rescan, restore, and backend reachability for the new bring-up path
-- verify that a non-author developer can boot and diagnose the system from canon alone
+- verify that a non-author developer can boot and diagnose the system from the documentation alone
 
 ## 8. Top Immediate Problem
 Backend diagnostics are now explicit and the canonical manual startup path is documented. Phase 1 exit is still blocked by remaining legacy path assumptions and developer-only bring-up verification.
@@ -80,18 +80,17 @@ Default recommended reading order:
 3. `docs/DEMO_PLAN.md`
 4. `docs/VALIDATION_PLAN.md`
 5. `SECURITY.md`
-6. `docs/03_EXECUTION_ROADMAP.md`
-7. `docs/05_SPRINT_BASELINE.md`
-8. `docs/12_RISK_REGISTER.md`
-9. `docs/02_ARCHITECTURE.md`
-10. `docs/01_PRODUCT_VISION.md`
+6. `docs/EXECUTION_ROADMAP.md`
+7. `docs/SPRINT_BASELINE.md`
+8. `docs/RISK_REGISTER.md`
+9. `docs/ARCHITECTURE.md`
+10. `docs/PRODUCT_VISION.md`
 
 Optional:
-- `plugin/docs/02_ARCHITECTURE.md`
+- `plugin/docs/ARCHITECTURE.md`
 
 Do not read by default:
-- `docs/reference/*`
-- `docs/future/*`
+- `docs/future/*` (future posture only, not current behavior)
 
 ## 11. Practical Summary
 The project has a strong core and a cleaner documentation surface than before, but the roadmap is still in Phase 1.

@@ -1,22 +1,23 @@
-# ChainPrompt AI — Architecture Design & Memory
+# ChainPrompt AI — Plugin Architecture Notes
 
-Цей файл описує "як і що працює під капотом", щоб розробник швидко зрозумів загальну структуру і не дублював уже наявні рішення.
+This file describes how the plugin side works under the hood, so a developer can quickly understand the structure and avoid duplicating existing decisions.
 
 ## 1. 5-Layer Pattern (Architectural Boundaries)
-Проєкт розділено на жорсткі шари (заборони на прямі виклики):
-1. **Presentation Layer (UI):** `PluginEditor`, `PromptView`, Macro Knobs.
-2. **Application Layer (Core):** `ChainPromptAudioProcessor` (APVTS, Save/Load).
-3. **IPC / Async Layer:** `LLMCoordinator`, HTTP REST Client, Thread Workers.
-4. **State Management:** `AbstractFifo`, Lock-Free Queues для передачі JSON/String.
-5. **DSP Core:** `AudioProcessorGraph`, Plugin Instances (vendor-neutral VST3), Smoothers.
+The plugin is split into strict layers (no direct cross-layer calls):
+1. **Presentation Layer (GUI):** `ChainPromptAudioProcessorEditor` (composition root), `SidebarPresenter`, `HostedEditorController`, `RescanWorkflowController`, `UIRefreshController`.
+2. **Application Layer (Core):** `ChainPromptAudioProcessor` (thin coordinator), `ChainStateSerializer` (DAW save/load), `AIIntentTracker`, `AutomationPoolRouter`, `StudioTelemetryBridge`.
+3. **IPC / Async Layer:** `LLMCoordinator` (HTTP client thread), `BackendHealthChecker`, `GlobalPluginCache` scanner thread.
+4. **State Handoff:** `AbstractFifo` carrying POD-only `ParamPreset` structs (LLM thread → audio thread); atomics for metrics and flags. No strings or JSON cross the FIFO.
+5. **DSP Core:** `AudioProcessorGraph` hosting plugin instances (vendor-neutral VST3), `PerceptualAutoGain`, metric taps, crossfade ramp.
 
 ## 2. Signal Flow
-`Audio In` → `Pre-Trim` → `Plugin Nodes (AudioProcessorGraph)` → `Post-Trim` → `Meters` → `Audio Out`
+`Audio In` → `dry metrics / capture taps` → `Plugin Nodes (AudioProcessorGraph)` → `post metrics / capture taps` → `PerceptualAutoGain` → `crossfade ramp` → `Audio Out`
 
 ## 3. Communication Rules (Golden Rules)
-- **UI → DSP:** Only via `APVTS` parameters (Sliders → Attachments).
-- **DSP → UI:** Only via `APVTS` (Listener) or lock-free polling in `timerCallback` if transferring Strings.
-- **LLM Thread → DSP:** Worker Thread makes HTTP API call → gets formatted JSON → pushes struct into `AbstractFifo` → `processBlock` pops data and updates graph/parameters → returns processing.
+- **UI → Processor:** Direct calls on the message thread (topology, bypass, undo); no parameter attachments are used.
+- **Processor → UI:** Atomics polled by `UIRefreshController` at 15 Hz (capture state, AI thinking, undo/redo availability); no string transfer on the audio thread.
+- **LLM Thread → DSP:** Worker thread makes HTTP API call → parses JSON on the worker thread → pushes a POD `ParamPreset` struct into `AbstractFifo` → `processBlock` pops it and applies parameter values only. All topology changes happen on the message thread, never in `processBlock`.
+- **Parameters:** A preallocated pool of 1024 `DynamicSlotParameter` instances registered via `addParameter` (no APVTS); `AutomationPoolRouter` keeps a stable `{slotId, paramIndex}` → pool-slot mapping across topology changes.
 
 ## 4. Metadata Control Plane (Sprint 11)
 
@@ -64,15 +65,15 @@ Each installed UID has a status (in `config.py:MetadataStatus`):
 - **stale** — Has metadata but `scan_timestamp` older than `METADATA_STALE_HOURS`
 - **failed** — Extraction was attempted but failed
 
-### 4.4 Capability Tiers (db.py)
+### 4.4 Capability Tiers (inventory_manifest.py)
 - **configurable** — installed + metadata ready/stale → full LLM parameter tuning
 - **hostable** — installed + needs_extract/failed → instantiate with factory defaults
 - **unavailable** — not in manifest → rejected
 
 ### 4.5 Pipeline Integration
-1. `db.py:_load_metadata_envelopes()` loads ALL provider files at startup
-2. `db.py:_recompute_metadata_status()` classifies every installed UID
-3. `db.py:get_metadata_backlog()` returns actionable state for diagnostics
+1. `plugin_catalog.py:reload_metadata_envelopes()` loads ALL provider files at startup and on `/api/rescan`
+2. `inventory_manifest.py:recompute_metadata_status()` classifies every installed UID
+3. `inventory_manifest.py:get_metadata_backlog()` returns actionable state for diagnostics
 4. `stage2_engineer.py` uses `get_uid_metadata(uid)` accessor — provider-agnostic
 5. Catalog and prompts rank plugins by capability, not by vendor
 6. `/api/rescan` reloads manifest + recomputes backlog + rebuilds caches
@@ -80,14 +81,14 @@ Each installed UID has a status (in `config.py:MetadataStatus`):
 ### 4.6 Adding a New Metadata Provider
 1. Add entry to `config.py:KNOWN_PROVIDERS` and `METADATA_DB_PATHS`
 2. Write extractor that outputs envelope contract JSON
-3. `db.py:_load_metadata_envelopes()` automatically picks it up
+3. `plugin_catalog.py:reload_metadata_envelopes()` automatically picks it up
 4. No changes needed in Stage 2 or Unified Agent — they're provider-agnostic
 
 ## 5. Inventory Gate (FAIL-CLOSED)
 - No manifest → no plugins available (BUILD route blocked)
 - Manifest is written by C++ `GlobalPluginCache.h` after vendor-neutral VST3 scan
-- `db.py` refuses to allow-all when manifest is missing — this is by design
-- Never re-add allow-all fallback
+- `inventory_manifest.py` refuses to allow-all when manifest is missing — this is by design
+- There is intentionally no allow-all fallback
 
 ## 6. Slot-State Contract
 - `PresetData.h:ChainPreset` carries per-slot identity (`slotId`), ownership (`userOwned`), bypass state, and transient actions

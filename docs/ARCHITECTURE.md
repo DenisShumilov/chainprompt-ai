@@ -1,6 +1,7 @@
 # ChainPrompt AI — Architecture (Sprint 14 Baseline)
 
 > Last updated: 2026-03-10 — Universal Scanner-to-Catalog Spine
+> Sprint numbers refer to internal development iterations; earlier sprint notes are not part of this repository.
 
 ## System Overview
 
@@ -32,7 +33,7 @@ DAW Host
   |
   Python Backend (Flask/Waitress) — Sprint 14: manifest-first catalog
       TRANSPORT LAYER:
-      - app.py               → Thin HTTP routes (194 lines)
+      - app.py               → Thin HTTP routes (~200 lines)
 
       ORCHESTRATION:
       - chat_pipeline.py     → Chat/Build pipeline (early fail-closed gate)
@@ -345,7 +346,7 @@ User clicks Rescan → GlobalPluginCache.requestRescan()
 
 ## Key Constraints
 
-- **Zero-alloc audio thread**: processBlock uses no heap, no locks, no strings
+- **Audio-thread discipline**: the plugin's own DSP, metrics, and capture code in processBlock is allocation-free and lock-free (preallocated buffers, atomics, AbstractFifo). Known exception under audit: applying FIFO presets and forwarding pool automation calls `setValueNotifyingHost` on hosted plugin parameters from the audio thread, which takes JUCE's parameter-listener lock and runs listener code. Flagged in README limitations and the validation plan.
 - **Lock-free FIFO**: ParamPreset (POD-only) transfers LLM→audio thread
 - **Message thread**: All topology changes, undo/redo, state save/load
 - **Flat chain only**: No sends, no sidechain routing
@@ -388,7 +389,7 @@ User clicks Rescan → GlobalPluginCache.requestRescan()
 
 ### Python Backend (Sprint 14: manifest-first catalog)
 - `config.py` — API keys, schemas, paths, MANIFEST_VERSION, metadata provider registry
-- `app.py` — **Thin HTTP transport** (194 lines)
+- `app.py` — **Thin HTTP transport** (~200 lines)
 - `chat_pipeline.py` — Chat/Build orchestration (early fail-closed gate)
 - `inventory_manifest.py` — Manifest authority (fail-closed + FX eligibility + capability tiers)
 - `plugin_catalog.py` — Manifest-first catalog, optional master DB enrichment, metadata envelopes
@@ -405,4 +406,5 @@ User clicks Rescan → GlobalPluginCache.requestRescan()
 ### Tests
 - `server/tests/test_chat_pipeline.py` — 3 tests: early fail-closed gate (zero LLM tokens)
 - `server/tests/test_chain_diff.py` — 20 tests: identity, add/remove, reorder, duplicates, bypass, merge
+- `server/tests/test_inventory_manifest.py` — 6 tests: fail-closed gate, UID validation, FX eligibility, capability tiers
 - `server/tests/test_iron_dome.py` — 26 tests: value translation, safety filter, anti-bloat

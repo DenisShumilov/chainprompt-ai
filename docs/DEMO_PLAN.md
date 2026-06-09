@@ -1,8 +1,8 @@
 # Demo Plan
 
-This is the recommended live-demo path for a 60-90 second walkthrough.
+This plan describes a 60-90 second live screen-recording walkthrough: backend terminal, `/health`, plugin or standalone UI, prompt, payload/diff, manual bypass/tweak, revision, and `/api/diag`.
 
-The current slide-based explainer can support context, but the hiring/outreach demo should mostly use live screen recording: backend terminal, `/health`, plugin or standalone UI, prompt, payload/diff, manual bypass/tweak, revision, and `/api/diag`.
+A slide-based overview video exists as supporting context (shared separately; media is not tracked in this repository), but the primary demo is the live recording described below.
 
 ## Demo Goal
 

@@ -10,12 +10,15 @@ Declarative Chain Architecture:
 
 import json
 import logging
+import os
 import traceback
 
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s [%(name)s] %(levelname)s %(message)s')
+# Debug logging may include prompt snippets, track names, and audio paths.
+# Keep it opt-in: set CHAINPROMPT_DEBUG=1 to enable.
+_LOG_LEVEL = logging.DEBUG if os.environ.get("CHAINPROMPT_DEBUG") else logging.INFO
+logging.basicConfig(level=_LOG_LEVEL, format='%(asctime)s [%(name)s] %(levelname)s %(message)s')
 logger = logging.getLogger(__name__)
 
 from .config import GEMINI_MODEL, GEMINI_API_KEYS
@@ -33,8 +36,10 @@ from .studio_memory import (init_db, upsert_mix_state, get_all_tracks,
                              normalize_chain,
                              CROSS_TRACK_TTL_MINUTES)
 
+# No CORS layer on purpose: the only client is the local C++ plugin (not a
+# browser), and leaving CORS open would let any web page the user visits read
+# the unauthenticated localhost endpoints cross-origin.
 app = Flask(__name__)
-CORS(app)
 init_db()
 
 
@@ -56,8 +61,9 @@ def api_chat():
 
     except Exception as e:
         logger.error(f"Request failed: {e}", exc_info=True)
+        # Keep exception detail (paths, usernames) in server logs only.
         return jsonify({
-            "reply": f"[Server error: {str(e)}]",
+            "reply": "[Server error] See backend logs for details.",
             "preset": None,
         }), 500
 

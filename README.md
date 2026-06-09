@@ -4,7 +4,7 @@ Portfolio prototype: a JUCE plugin plus local Python backend for AI-assisted DAW
 
 It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and attempts to preserve tracked user edits such as bypassed or manually touched slots.
 
-**Status:** working developer prototype, not production-ready. Manual backend startup, limited metadata coverage, packaging, and trust UX are still in progress.
+**Status:** working developer prototype, not production-ready. Known gaps: manual backend startup, limited metadata coverage, no release packaging, incomplete trust UX.
 
 **Demo path:** scan inventory -> build vocal chain -> inspect chain payload -> revise while preserving a manual change.
 
@@ -16,6 +16,7 @@ Recommended reviewer path: README -> Case Study -> Demo Plan -> Validation Plan 
 - [Demo Plan](docs/DEMO_PLAN.md)
 - [Validation Plan](docs/VALIDATION_PLAN.md)
 - [Security and Privacy Notes](SECURITY.md)
+- [Architecture](docs/ARCHITECTURE.md) — fail-closed gate, capability tiers, chain-diff and rescan contracts
 
 ## What This Demonstrates
 
@@ -95,7 +96,7 @@ The system is intentionally local-first. The DAW/plugin side owns host state and
 
 - **Audio/plugin:** JUCE 8, C++20, AudioProcessorGraph
 - **Plugin formats:** VST3, AU, and Standalone targets configured; current validation is VST3-first
-- **Backend:** Python, Flask, Waitress, Flask-CORS
+- **Backend:** Python, Flask, Waitress (localhost-only, no CORS layer)
 - **AI:** Google Gemini via `google-genai`
 - **State:** JSON manifests, SQLite studio memory
 - **Build:** CMake
@@ -164,9 +165,19 @@ Suggested demo flow:
 
 ## Setup Instructions
 
+### Prerequisites
+
+- Windows 10/11 (the current scan path is Windows/VST3-first; macOS targets are configured but unvalidated)
+- Python 3.10 or newer (CI runs 3.11)
+- git with git-lfs (`git lfs install` before cloning — the catalog files are stored in LFS)
+- CMake 3.24+ and a C++20 compiler (Visual Studio 2022 on Windows) for the plugin build
+- A Google Gemini API key
+- For full AI parameter generation, Waves VST3 plugins are required; other vendors currently load as host-only with factory defaults
+
 ### 1. Clone the repository
 
 ```bash
+git lfs install
 git clone https://github.com/DenisShumilov/chainprompt-ai.git
 cd chainprompt-ai
 ```
@@ -217,6 +228,8 @@ If `inventory.available` is false, load the plugin and run a scan/rescan.
 cmake -S plugin -B plugin/build
 cmake --build plugin/build --config Release
 ```
+
+The first configure downloads JUCE 8.0.12 via CMake FetchContent (network required). Built binaries resolve the repository's `data/` directory from the configure-time location, so rebuild after moving the repo.
 
 Load the generated VST3, AU, or Standalone build depending on your platform and host. VST3 is the current primary path; AU and Standalone targets are configured but not feature-validated across hosts yet.
 
@@ -269,7 +282,9 @@ Later:
 - Plugin support is not universal.
 - Metadata support is strongest where local metadata exists.
 - AU and Standalone targets are configured but not yet feature-validated across a host matrix.
-- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, pluginval checks, and host profiling still need a focused audit.
+- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, pluginval checks, and host profiling still need a focused audit. Known specifics: preset application notifies hosted plugin parameters from the audio thread, and bypass rewiring relies on a flag check at block start.
+- Hosted-chain latency is not aggregated or reported to the host (no plugin delay compensation); lookahead or linear-phase plugins in the chain will introduce uncompensated delay.
+- The internal graph is stereo-only; mono insert configurations are unvalidated.
 - Current scanner and metadata extraction paths still include Waves-specific and Windows-specific assumptions.
 - Trust UX is not yet product-ready.
 - Commercial release readiness would require much deeper QA, signing, packaging, privacy review, and host compatibility testing.
@@ -298,6 +313,6 @@ The project is intentionally narrow, but that is the point: one trustworthy work
 
 ## Contact
 
-Denis Shumilov
+Denis Shumilov — shumilov1999@gmail.com
 
-For private review, share the cleaned repository link, demo video, and portfolio case study directly.
+Demo video and extended case study are available on request. This repository is shared for private portfolio review; all rights reserved.

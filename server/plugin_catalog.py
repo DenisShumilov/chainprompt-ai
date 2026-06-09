@@ -40,14 +40,21 @@ PLUGIN_DESCRIPTIONS: dict[str, str] = {}
 META_BY_NAME: dict[str, dict] = {}
 
 if os.path.isfile(META_GT_PATH):
-    with open(META_GT_PATH, "r", encoding="utf-8") as f:
-        META_GROUNDTRUTH = json.load(f)
-    for entry in META_GROUNDTRUTH:
-        name = entry.get("name", "")
-        if name:
-            META_BY_NAME[name] = entry
-            PLUGIN_DESCRIPTIONS[name] = entry.get("description", "")
-    logger.info(f"Loaded {len(META_GROUNDTRUTH)} Meta GroundTruth entries")
+    try:
+        with open(META_GT_PATH, "r", encoding="utf-8") as f:
+            META_GROUNDTRUTH = json.load(f)
+        for entry in META_GROUNDTRUTH:
+            name = entry.get("name", "")
+            if name:
+                META_BY_NAME[name] = entry
+                PLUGIN_DESCRIPTIONS[name] = entry.get("description", "")
+        logger.info(f"Loaded {len(META_GROUNDTRUTH)} Meta GroundTruth entries")
+    except (json.JSONDecodeError, OSError) as e:
+        # A git-lfs pointer file or unreadable file lands here; metadata is
+        # optional enrichment, so continue without it.
+        META_GROUNDTRUTH = []
+        logger.warning(f"Meta_GroundTruth unreadable ({e}) — continuing without it. "
+                       "If you cloned without git-lfs, run: git lfs install && git lfs pull")
 else:
     logger.warning(f"Meta_GroundTruth not found at {META_GT_PATH}!")
 
@@ -59,14 +66,23 @@ plugins_by_uid: dict[int, dict] = {}
 uid_to_base_name: dict[int, str] = {}
 
 if os.path.isfile(DB_PATH):
-    logger.info(f"Loading master DB from: {DB_PATH}")
-    with open(DB_PATH, "r", encoding="utf-8") as f:
-        master_db = json.load(f)
-    plugins_list = master_db["plugins"]
-    plugins_by_uid = {p["uid"]: p for p in plugins_list}
-    for p in plugins_list:
-        uid_to_base_name[p["uid"]] = get_base_name(p["name"])
-    logger.info(f"Master DB: {len(plugins_list)} plugins loaded (enrichment source)")
+    try:
+        logger.info(f"Loading master DB from: {DB_PATH}")
+        with open(DB_PATH, "r", encoding="utf-8") as f:
+            master_db = json.load(f)
+        plugins_list = master_db["plugins"]
+        plugins_by_uid = {p["uid"]: p for p in plugins_list}
+        for p in plugins_list:
+            uid_to_base_name[p["uid"]] = get_base_name(p["name"])
+        logger.info(f"Master DB: {len(plugins_list)} plugins loaded (enrichment source)")
+    except (json.JSONDecodeError, KeyError, OSError) as e:
+        # Master DB is optional enrichment; a git-lfs pointer file or corrupt
+        # file must not block startup — fall back to manifest-only catalog.
+        plugins_list = []
+        plugins_by_uid = {}
+        uid_to_base_name = {}
+        logger.warning(f"Master DB unreadable ({e}) — catalog runs from manifest only. "
+                       "If you cloned without git-lfs, run: git lfs install && git lfs pull")
 else:
     logger.warning(f"Master DB not found at {DB_PATH} — catalog runs from manifest only")
 
@@ -154,18 +170,20 @@ def get_uid_metadata(uid: int) -> dict | None:
 
 
 # ---------------------------------------------------------------------------
-# Initialize RAG Preset Retriever (SQLite-backed)
+# Initialize RAG Preset Retriever (SQLite-backed, optional local tool).
+# The retriever lives outside this repository; degrade to None when absent so
+# the backend boots without it (stage2_context already handles None).
 # ---------------------------------------------------------------------------
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'tools'))
-from rag_retriever import PresetRetriever
-
-logger.info("Initializing RAG PresetRetriever...")
+preset_retriever = None
 try:
+    from rag_retriever import PresetRetriever
     preset_retriever = PresetRetriever()
     logger.info("PresetRetriever ready")
+except ImportError:
+    logger.warning("rag_retriever not present — preset RAG disabled")
 except Exception as e:
-    logger.warning(f"PresetRetriever init failed: {e}")
-    preset_retriever = None
+    logger.warning(f"PresetRetriever init failed: {e} — preset RAG disabled")
 
 # ---------------------------------------------------------------------------
 # Build Preset-Richness Index

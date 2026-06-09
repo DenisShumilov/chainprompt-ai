@@ -6,22 +6,22 @@ This document turns the approved roadmap into the canonical phase and gate model
 It answers:
 - which phase is active now
 - what is blocked until later
-- what a loop cycle is allowed to do
+- what a single work increment is allowed to do
 - what evidence is required to move to the next phase
 
 ## 2. Roadmap Authority
-Use the roadmap together with the rest of the canon:
+Use the roadmap together with the rest of the core docs:
 
-- `docs/01_PRODUCT_VISION.md` defines product truth and the trust-first product boundary.
-- `docs/02_ARCHITECTURE.md` defines the current technical nucleus and real runtime shape.
-- `docs/03_EXECUTION_ROADMAP.md` defines phase order, active phase, gate criteria, and loop-cycle meaning.
-- `docs/05_SPRINT_BASELINE.md` is the short operational snapshot of the current phase.
-- `docs/12_RISK_REGISTER.md` records the active risks that can block a phase gate.
+- `docs/PRODUCT_VISION.md` defines product truth and the trust-first product boundary.
+- `docs/ARCHITECTURE.md` defines the current technical nucleus and real runtime shape.
+- `docs/EXECUTION_ROADMAP.md` defines phase order, active phase, gate criteria, and what a valid work increment looks like.
+- `docs/SPRINT_BASELINE.md` is the short operational snapshot of the current phase.
+- `docs/RISK_REGISTER.md` records the active risks that can block a phase gate.
 
-This repository must have one roadmap document only. Do not create parallel phase trackers, release plans, or alternate roadmap canon.
+This file is the single roadmap document for the repository.
 
 ## 3. Current Roadmap Status
-- Phase 0 `Product Truth Lock` is locked enough to operate from canon.
+- Phase 0 `Product Truth Lock` is locked enough to operate from the core docs.
 - Active phase: Phase 1 `Prototype Stabilization`.
 - Next phase: Phase 2 `Trust UX Foundation`.
 - Later phases remain blocked until the current phase exits cleanly.
@@ -44,20 +44,20 @@ While Phase 1 is active, the following stay future-only by default:
 
 ## 4. Phase Gate Rules
 - Phase order is strict. Do not start a later phase because it looks attractive.
-- One loop cycle equals one narrow, reviewable increment inside the active phase.
-- A valid cycle must close one explicit gap in the active phase exit criteria, or fix a regression that blocks the active phase.
+- One work increment equals one narrow, reviewable change inside the active phase.
+- A valid increment must close one explicit gap in the active phase exit criteria, or fix a regression that blocks the active phase.
 - Planning work should stay limited to:
   - active-phase work
   - bugfix work
   - direct prerequisite work needed to verify an active-phase exit criterion
-- Implementation work should stay limited to the approved cycle inside the active phase.
-- Bugfix cycles are allowed at any time, but they do not advance the roadmap unless they close a named exit criterion.
+- Implementation work should stay limited to the approved scope inside the active phase.
+- Bugfix work is allowed at any time, but it does not advance the roadmap unless it closes a named exit criterion.
 - A phase gate passes only when:
   - every exit criterion in this file is satisfied
-  - blocking risks in `docs/12_RISK_REGISTER.md` are reduced enough for honest forward movement
+  - blocking risks in `docs/RISK_REGISTER.md` are reduced enough for honest forward movement
   - QA or validation evidence exists for the changed behavior
-  - the human explicitly approves the phase-status change
-- Current phase status is updated only by editing this file and `docs/05_SPRINT_BASELINE.md` together.
+  - the maintainer signs off on the phase-status change
+- Current phase status is updated only by editing this file and `docs/SPRINT_BASELINE.md` together.
 
 ## 5. MVP Honesty Gate
 The project must not be described as a product-facing MVP until all of these are true:
@@ -83,7 +83,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: prototype exists but product truth is still soft or contradictory.
 - Exit criteria: core docs clearly define product boundary, trust contract, and non-goals.
 - Dependency: none.
-- Loop-cycle output: truth-lock doc updates or scope cuts, not runtime feature work.
+- Typical increment: truth-lock doc updates or scope cuts, not runtime feature work.
 - Main risks: narrative drift, overstated product claims, undefined MVP boundary.
 
 ### Phase 1 - Prototype Stabilization
@@ -93,9 +93,9 @@ Before that point, the honest label remains: strong internal prototype.
 - Out of scope: preview/confirm UX, confidence UX, auto-launch packaging, beginner UX, multi-vendor promises.
 - Key deliverables: no known machine-specific runtime path assumptions in the canonical startup flow, a documented bring-up contract, explicit backend failure states, regression-safe startup and restore behavior.
 - Entry criteria: product truth is locked and the technical nucleus already exists.
-- Exit criteria: a non-author developer can boot the system from canon without hidden path rituals; critical startup/scan/restore flows are stable enough to build on; unresolved blockers no longer force "developer-operated only" as the startup model.
+- Exit criteria: a non-author developer can boot the system from the documentation without hidden path rituals; critical startup/scan/restore flows are stable enough to build on; unresolved blockers no longer force "developer-operated only" as the startup model.
 - Dependency: Phase 0.
-- Loop-cycle output: one hardening increment, one startup contract improvement, or one regression-proofing increment tied to path, startup, scan, or restore.
+- Typical increment: one hardening increment, one startup contract improvement, or one regression-proofing increment tied to path, startup, scan, or restore.
 - Main risks: legacy path dependencies, lifecycle regressions, hidden bootstrap assumptions, manual backend fragility.
 
 ### Phase 2 - Trust UX Foundation
@@ -107,7 +107,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: Phase 1 is stable enough that UX work is not sitting on broken startup assumptions.
 - Exit criteria: AI changes are reviewable before apply; low-confidence behavior is visible; rollback works; the trust contract is observable in the UI.
 - Dependency: Phase 1.
-- Loop-cycle output: one trust-critical user action path closed end to end, or one safety/visibility increment with QA coverage.
+- Typical increment: one trust-critical user action path closed end to end, or one safety/visibility increment with QA coverage.
 - Main risks: silent mutation, user confusion, apply-time regressions, hidden uncertainty.
 
 ### Phase 3 - MVP Vertical Slice
@@ -119,7 +119,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: Phase 2 trust UX exists in a real, testable form.
 - Exit criteria: one-track end-to-end loop is coherent and stable under the approved MVP contract, even if broader productization work remains.
 - Dependency: Phase 2.
-- Loop-cycle output: one completed user-loop segment or one integration-gap closure inside the vertical slice.
+- Typical increment: one completed user-loop segment or one integration-gap closure inside the vertical slice.
 - Main risks: partial workflow masquerading as MVP, hidden operator intervention, brittle end-to-end coupling.
 
 ### Phase 4 - Plugin Intelligence V1
@@ -131,7 +131,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: Phase 3 proves one real user loop already works.
 - Exit criteria: plugin support limits are visible and enforced; confidence logic influences behavior honestly; unsupported cases degrade clearly.
 - Dependency: Phase 3.
-- Loop-cycle output: one support-tier rule, one capability surface, or one metadata/control contract increment.
+- Typical increment: one support-tier rule, one capability surface, or one metadata/control contract increment.
 - Main risks: fake universality, hidden degraded behavior, vendor bias disguised as general support.
 
 ### Phase 5 - Productization Layer
@@ -143,7 +143,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: the vertical slice exists and trust UX is already real.
 - Exit criteria: the one-track workflow starts and runs without hidden operator rituals; local service lifecycle is stable; setup is repeatable enough for honest MVP exposure.
 - Dependency: Phases 1 through 4.
-- Loop-cycle output: one startup/lifecycle increment, one config hardening increment, or one packaging-basics step tied to MVP readiness.
+- Typical increment: one startup/lifecycle increment, one config hardening increment, or one packaging-basics step tied to MVP readiness.
 - Main risks: background-service flakiness, startup race conditions, config drift, packaging overreach.
 
 ### Phase 6 - Evaluation System
@@ -155,7 +155,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: there is a stable product loop worth measuring.
 - Exit criteria: the team can detect quality regressions and defend "strong result" with evidence instead of anecdotes.
 - Dependency: Phase 5.
-- Loop-cycle output: one benchmark slice, one regression harness increment, or one validation rule tied to user-visible quality.
+- Typical increment: one benchmark slice, one regression harness increment, or one validation rule tied to user-visible quality.
 - Main risks: subjective success criteria, untracked regressions, overclaiming result quality.
 
 ### Phase 7 - Beginner-First UX Intelligence
@@ -167,7 +167,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: trust, product loop, and evaluation foundations already exist.
 - Exit criteria: a non-expert can reach a useful first result through guided clarification without losing visibility or approval control.
 - Dependency: Phase 6.
-- Loop-cycle output: one clarification path, one guided-question pattern, or one beginner-friction removal tied to the active workflow.
+- Typical increment: one clarification path, one guided-question pattern, or one beginner-friction removal tied to the active workflow.
 - Main risks: over-simplification, hidden autonomy, confusing the user about what the system can actually do.
 
 ### Phase 8 - Honest Multi-Vendor Expansion
@@ -179,7 +179,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: Phase 4 support model and Phase 6 evaluation system are both real.
 - Exit criteria: broader support is demonstrably working, clearly bounded, and measured; vendor-neutrality is confirmed in behavior, not only aspiration.
 - Dependency: Phases 4 and 6.
-- Loop-cycle output: one vendor-support increment with evidence, one capability-contract update, or one regression-backed expansion step.
+- Typical increment: one vendor-support increment with evidence, one capability-contract update, or one regression-backed expansion step.
 - Main risks: fake universality, metadata gaps, support claims outrunning validation.
 
 ### Phase 9 - Bounded Automation Mode
@@ -191,7 +191,7 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: trust UX, productization, evaluation, and honest support boundaries are already mature.
 - Exit criteria: the system can act with limited autonomy inside explicit guardrails, with visible boundaries and safe rollback.
 - Dependency: Phases 2, 5, 6, and 8.
-- Loop-cycle output: one bounded automation capability or one guardrail-contract increment.
+- Typical increment: one bounded automation capability or one guardrail-contract increment.
 - Main risks: overreach, broken trust, unclear authority boundaries, unsafe silent behavior.
 
 ### Phase 10 - Product-Grade Release Candidate
@@ -203,5 +203,5 @@ Before that point, the honest label remains: strong internal prototype.
 - Entry criteria: phases 1 through 9 are complete enough that only release-grade hardening remains.
 - Exit criteria: the product can honestly be called a release candidate without hiding prototype caveats.
 - Dependency: Phases 1 through 9.
-- Loop-cycle output: one RC blocker removed, one release-validation increment, or one honesty-gap closure.
+- Typical increment: one RC blocker removed, one release-validation increment, or one honesty-gap closure.
 - Main risks: premature release claims, packaging instability, unclosed trust or quality gaps.

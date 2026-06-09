@@ -1,7 +1,7 @@
 # Risk Register
 
 ## 1. Purpose
-This document records the active risks that should influence cycle priority right now.
+This document records the active risks that should influence work priority right now.
 
 If a risk does not change planning, QA emphasis, phase-gate judgment, or release honesty, it does not belong here.
 
@@ -15,14 +15,14 @@ If a risk does not change planning, QA emphasis, phase-gate judgment, or release
 - Category: Repository / Path / Bootstrap
 - Severity: Critical
 - Status: Open
-- Description: parts of the C++ runtime still depend on legacy machine-specific path assumptions.
-- Why it matters: the repository is not fully self-contained while runtime behavior can still depend on old locations.
+- Description: parts of the C++ runtime still depend on build-time or platform-specific path assumptions.
+- Why it matters: the repository is not fully self-contained while runtime behavior can still depend on the configure-time repo location or fixed OS paths.
 - Roadmap impact: blocks Phase 1 exit and weakens later Phase 5 productization credibility.
 - Known examples:
-  - `plugin/src/Core/LLMCoordinator.cpp`
-  - `plugin/src/Scanner/WavesScanner.cpp`
+  - `plugin/src/Scanner/WavesScanner.cpp` hardcodes the standard Windows VST3 directory instead of using JUCE default search locations
+  - the data directory is baked into the binary at configure time (`CHAINPROMPT_DATA_DIR` in `plugin/CMakeLists.txt`), so moving the repo requires a rebuild
 - Mitigation direction:
-  - remove Desktop and legacy-root assumptions
+  - use host-discovered or config-driven runtime paths
   - use stable documented runtime paths
 - QA emphasis: verify the repo still works when legacy locations are hidden or renamed
 
@@ -80,7 +80,7 @@ If a risk does not change planning, QA emphasis, phase-gate judgment, or release
 - Roadmap impact: blocks honest Phase 10 release-candidate language until earlier gates are actually closed.
 - Mitigation direction:
   - keep release language honest
-  - treat `docs/future/11_RELEASE_POLICY.md` as future posture, not present reality
+  - treat `docs/future/RELEASE_POLICY.md` as future posture, not present reality
 
 ## 4. Current Phase Gate Pressure
 - Phase 1 is blocked primarily by R-001, R-002, and R-004.
@@ -97,7 +97,7 @@ If a risk does not change planning, QA emphasis, phase-gate judgment, or release
 These should normally outrank broad roadmap expansion while Phase 1 is still active.
 
 ## 6. Planning Rule
-If a cycle touches:
+If a change touches:
 - startup
 - path/bootstrap
 - restore

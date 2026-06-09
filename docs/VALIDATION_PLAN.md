@@ -18,7 +18,7 @@ python -m pytest server/tests
 Last observed local result on 2026-06-09:
 
 ```text
-49 passed
+55 passed
 ```
 
 ## Audio Plugin Validation Needed
@@ -30,7 +30,10 @@ Last observed local result on 2026-06-09:
 - Test offline render or bounce behavior.
 - Test plugin scan failure behavior.
 - Confirm HTTP, scanning, file I/O, and model calls are off the real-time audio callback.
-- Review host notification behavior such as parameter updates from runtime queues.
+- Review host notification behavior such as parameter updates from runtime queues (known: FIFO preset application calls `setValueNotifyingHost` on hosted parameters from the audio thread).
+- Add latency aggregation/reporting for hosted chains (no plugin delay compensation today).
+- Validate mono insert configurations (the internal graph is currently stereo-only).
+- Expected failure to document: restoring a session that references an uninstalled plugin currently rejects the whole chain; re-saving in that state writes an empty chain.
 
 ## Host Compatibility Matrix
 
@@ -69,8 +72,8 @@ Use this table for each tested host:
 
 - Confirm `.env` is ignored.
 - Confirm no API keys appear in logs, screenshots, or history.
-- Review debug logging for prompt snippets, model output snippets, track names, and audio paths.
-- Restrict or remove `audioPath` before broader testing.
+- Review debug logging for prompt snippets, model output snippets, and track names (debug logging is opt-in via `CHAINPROMPT_DEBUG=1`).
+- Confirm `audioPath` stays restricted to the plugin capture directory (`<temp>/ChainPromptAI/`).
 - Keep backend bound to localhost unless authentication and transport security are added.
 
 ## Release Readiness Gate

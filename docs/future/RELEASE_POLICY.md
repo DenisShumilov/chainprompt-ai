@@ -1,7 +1,7 @@
 # Release Policy
 
 ## 1. Purpose
-This is a future-only posture note, not part of the hard canon.
+This is a future-only posture note, not a description of current behavior.
 
 Its job is to keep release language honest once the project moves beyond internal development use.
 

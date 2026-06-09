@@ -8,6 +8,8 @@ Flask app.py becomes a thin transport layer; all orchestration lives here.
 import base64
 import json
 import logging
+import os
+import tempfile
 
 from google.genai import types as genai_types
 
@@ -29,6 +31,21 @@ from .studio_memory import (upsert_track, log_chat, get_chat_history,
                              CROSS_TRACK_TTL_MINUTES)
 
 logger = logging.getLogger(__name__)
+
+# The plugin writes audio captures to <temp>/ChainPromptAI/ (AudioCaptureManager).
+# Restrict client-supplied audioPath to that directory so a request cannot make
+# the backend read arbitrary local files.
+_AUDIO_CAPTURE_DIR = os.path.realpath(
+    os.path.join(tempfile.gettempdir(), "ChainPromptAI"))
+
+
+def _is_allowed_audio_path(audio_path: str) -> bool:
+    try:
+        resolved = os.path.realpath(audio_path)
+        return os.path.commonpath([resolved, _AUDIO_CAPTURE_DIR]) == _AUDIO_CAPTURE_DIR
+    except ValueError:
+        # Different drive or malformed path — never allowed.
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -233,15 +250,19 @@ def run_chat_pipeline(data: dict) -> dict:
     # Build multimodal audio parts
     audio_parts: list | None = None
     if audio_path:
-        try:
-            with open(audio_path, "rb") as f:
-                audio_bytes = f.read()
-            audio_parts = [
-                genai_types.Part.from_bytes(data=audio_bytes, mime_type=audio_mime)
-            ]
-            logger.info(f"Read {len(audio_bytes)} bytes from {audio_path}")
-        except Exception as e:
-            logger.error(f"Failed to read audio file: {e}")
+        if not _is_allowed_audio_path(audio_path):
+            logger.warning("audioPath outside the capture directory rejected — "
+                           "continuing without audio context")
+        else:
+            try:
+                with open(audio_path, "rb") as f:
+                    audio_bytes = f.read()
+                audio_parts = [
+                    genai_types.Part.from_bytes(data=audio_bytes, mime_type=audio_mime)
+                ]
+                logger.info(f"Read {len(audio_bytes)} bytes from {os.path.basename(audio_path)}")
+            except Exception as e:
+                logger.error(f"Failed to read audio file: {e}")
     elif audio_b64:
         try:
             audio_bytes = base64.b64decode(audio_b64)

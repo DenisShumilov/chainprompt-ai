@@ -9,7 +9,9 @@
  * juce::SharedResourcePointer.
  *
  * Scans ALL VST3 plugins in standard directories (vendor-neutral).
- * Uses JUCE PluginDirectoryScanner with dead-man's-pedal for crash safety.
+ * In-process scan with JUCE PluginDirectoryScanner and dead-man's-pedal:
+ * a crashing plugin can still take the host down once, then is skipped on
+ * subsequent scans. Out-of-process scanning is future work.
  *
  * After scan/load, exports installed_plugins.json v2 — the single source
  * of truth for what the Python backend is allowed to route.

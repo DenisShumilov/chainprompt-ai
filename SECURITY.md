@@ -25,13 +25,12 @@ http://127.0.0.1:5000
 
 It is intended for local development and demo use. It has not been hardened as a network-exposed service.
 
-Current security caveats:
+Current posture:
 
-- The Flask app currently enables broad CORS for local development.
-- `/api/chat` can accept an `audioPath` and read audio from disk.
-- Debug logs may include prompt snippets, model-output snippets, track names, audio paths, and analysis context.
-
-Before public or broader internal testing, add a path allowlist or remove `audioPath`, gate debug logging, and keep the backend bound to localhost unless a proper auth and transport model exists.
+- The backend binds to `127.0.0.1` only and does not enable CORS, so browser pages cannot read the unauthenticated local endpoints cross-origin.
+- `/api/chat` accepts an `audioPath`, restricted to the plugin's capture directory (`<temp>/ChainPromptAI/`); paths outside it are rejected and the request continues without audio context.
+- Debug logging is opt-in (`CHAINPROMPT_DEBUG=1`). When enabled, logs may include prompt snippets, model-output snippets, and track names.
+- Local endpoints remain unauthenticated. Before broader internal testing, add an auth/transport model and review logging again.
 
 ## Data Sent to the Model
 
@@ -47,14 +46,10 @@ Before public release, the project would need:
 
 ## Repository Hygiene
 
-Before uploading this project to another GitHub account:
-
-- run a secret scan on the working tree
-- run a secret scan on git history
-- confirm `.env` is absent from git
-- confirm local assistant/tool settings are not tracked
-- review screenshots and demo videos for exposed API keys, local usernames, private file paths, and licensed plugin serial data
-- if creating a new GitHub repository, prefer a fresh clean repo or history rewrite so local-only files such as `.claude/` never existed in reachable history
+- `.env` is git-ignored; no API keys or secrets are tracked in this repository.
+- A secret scan of the working tree and full git history was run before sharing (Gemini/OpenAI/GitHub token patterns, `.env` files).
+- Demo media, local captures, and other generated artifacts are excluded from version control.
+- Large catalog files are stored via Git LFS.
 
 ## Reporting
 

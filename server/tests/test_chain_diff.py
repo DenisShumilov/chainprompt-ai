@@ -27,6 +27,11 @@ _project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 if _project_root not in sys.path:
     sys.path.insert(0, _project_root)
 
+# test_chat_pipeline stubs server.chain_diff during collection. Remove that fake
+# module here so this test imports the real implementation.
+if "server.chain_diff" in sys.modules:
+    del sys.modules["server.chain_diff"]
+
 from server.chain_diff import compute_chain_diff, build_merged_preset, _make_entry
 
 
