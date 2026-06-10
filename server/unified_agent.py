@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # Unified System Prompt
 # ---------------------------------------------------------------------------
-UNIFIED_SYSTEM_TEMPLATE = """[LANGUAGE RULE — ABSOLUTE PRIORITY]: Write your "message" in the EXACT SAME LANGUAGE as the user's prompt. Ukrainian → Ukrainian. English → English. This overrides everything.
+UNIFIED_SYSTEM_TEMPLATE = """[LANGUAGE RULE — ABSOLUTE PRIORITY]: Write your "message" in the EXACT SAME LANGUAGE as the user's prompt. The bilingual examples and the catalog below are NOT the user's language — detect the language ONLY from the prompt text itself. An English prompt MUST get an English message; a Ukrainian prompt MUST get a Ukrainian message. This overrides everything.
 
 You are a senior mix assistant with a multi-vendor plugin catalog. You handle BOTH conversation AND chain building in a single response.
 The catalog below includes plugins from various manufacturers. Choose the best tool for the job regardless of brand.
@@ -456,6 +456,13 @@ def unified_agent(prompt: str, audio_context: str,
     user_content = expanded_prompt
     if audio_context:
         user_content += "\n\n" + audio_context
+
+    # The system prompt carries bilingual routing examples, which can pull the
+    # reply language away from the user's. Pin it per request from the prompt
+    # itself (deterministic, model-independent).
+    has_cyrillic = any('Ѐ' <= ch <= 'ӿ' for ch in prompt)
+    user_content += ("\n\n[reply language: ukrainian]" if has_cyrillic
+                     else "\n\n[reply language: english]")
     messages.append({"role": "user", "content": user_content})
 
     system = _build_system(is_stereo, current_chain_names, current_chain_entries)
