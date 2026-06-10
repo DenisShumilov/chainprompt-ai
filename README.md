@@ -1,19 +1,26 @@
 # ChainPrompt AI
 
+![Status: working prototype](https://img.shields.io/badge/status-working%20prototype%20·%20in%20active%20development-2ea043)
 ![Backend tests](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/backend-tests.yml/badge.svg)
 ![Plugin build](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/plugin-build.yml/badge.svg)
 
-Portfolio prototype: a JUCE plugin plus local Python backend for AI-assisted DAW insert-chain building.
+**A safety-scaffolded AI copilot for serial insert chains in a DAW.** It analyzes the material, proposes a chain in plain language, and builds it from the plugins you actually have installed — while keeping every change inspectable and reversible.
 
-It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and attempts to preserve tracked user edits such as bypassed or manually touched slots.
+## Demo
+
+The AI hears a boxy, dull drum bus, explains the problem, builds a fix, then re-shapes the EQ on request — live in REAPER:
+
+![ChainPrompt AI live demo: the EQ responds to a plain-language request](docs/images/demo.gif)
+
+▶ **[Watch the full 50-second demo with narration](docs/images/chainprompt-ai-demo.mp4)** · [UI screenshot](docs/images/standalone-ui.png)
+
+> **Status — working prototype, in active development.** This is a portfolio proof-of-direction, not a finished product. It runs end-to-end on the developer's machine; setup is manual and a few subsystems are still being hardened (see [Limitations](#limitations)). Shared for private review — please don't redistribute.
+
+## What it does
+
+It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and preserves tracked user edits such as bypassed or manually touched slots.
 
 **Works with:** Waves VST3 plugins end-to-end today — extracted parameter metadata (1001-point maps) enables full AI parameter generation. Plugins from other vendors are inventoried and can be hosted in the chain, but load with factory defaults (host-only tier) until metadata coverage expands.
-
-**Status:** working developer prototype, not production-ready. Known gaps: manual backend startup, limited metadata coverage, no release packaging, incomplete trust UX.
-
-**Demo path:** scan inventory -> build vocal chain -> inspect chain payload -> revise while preserving a manual change.
-
-![Standalone build: chain sidebar, hosted-editor area, chat panel reporting "Backend connected and ready", and the live metrics strip](docs/images/standalone-ui.png)
 
 ## Review Materials
 
@@ -324,4 +331,8 @@ The project is intentionally narrow, but that is the point: one trustworthy work
 
 Denis Shumilov — shumilov1999@gmail.com
 
-Demo video and extended case study are available on request. This repository is shared for private portfolio review; all rights reserved.
+Demo video and extended case study are available on request.
+
+## License
+
+All rights reserved. This is a private portfolio prototype shared for review, not an open-source project — see [LICENSE](LICENSE). Please don't redistribute or reuse the code, designs, or concept without permission.
