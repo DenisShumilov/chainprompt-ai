@@ -45,7 +45,7 @@ Use this table for each tested host:
 
 | Host | Version | OS | Format | Loads | Scan Works | Chat Works | Apply Works | Save/Reopen | Known Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| REAPER | TBD | Windows | VST3 | TBD | TBD | TBD | TBD | TBD | TBD |
+| REAPER | 7.73 | Windows 11 | VST3 | Yes (2026-06-10) | TBD | partial: backend-offline diagnostics render in chat | TBD | TBD | none observed at load |
 | Studio One / Fender Studio Pro | TBD | Windows | VST3 | TBD | TBD | TBD | TBD | TBD | TBD |
 | Ableton Live | TBD | Windows | VST3 | TBD | TBD | TBD | TBD | TBD | TBD |
 | Logic Pro | TBD | macOS | AU | TBD | TBD | TBD | TBD | TBD | TBD |
