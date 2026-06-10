@@ -1,4 +1,5 @@
 #include "SidebarPresenter.h"
+#include "ChainPromptLookAndFeel.h"
 #include "../Core/ChainPromptAudioProcessor.h"
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -12,14 +13,13 @@ ChainSlotComponent::ChainSlotComponent (int index, const juce::String& name, boo
                                        : juce::String (index + 1) + ". ";
     nameLabel.setText (prefix + name, juce::dontSendNotification);
     nameLabel.setColour (juce::Label::textColourId,
-                         userTouched ? juce::Colour (0xFFFFB74D)
-                                     : juce::Colour (0xFFE0E0E0));
+                         userTouched ? cp_theme::amber : cp_theme::textHi);
     nameLabel.setFont (juce::FontOptions (13.0f));
     nameLabel.setInterceptsMouseClicks (false, false);
     addAndMakeVisible (nameLabel);
 
     deleteBtn.setWantsKeyboardFocus (false);
-    deleteBtn.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF8B0000));
+    deleteBtn.setColour (juce::TextButton::buttonColourId, cp_theme::danger);
     deleteBtn.setColour (juce::TextButton::textColourOffId, juce::Colours::white);
     deleteBtn.onClick = [this] {
         if (onDeleteClicked)
@@ -28,7 +28,7 @@ ChainSlotComponent::ChainSlotComponent (int index, const juce::String& name, boo
     addAndMakeVisible (deleteBtn);
 
     bypassBtn.setWantsKeyboardFocus (false);
-    bypassBtn.setColour (juce::ToggleButton::textColourId, juce::Colour (0xFF999999));
+    bypassBtn.setColour (juce::ToggleButton::textColourId, cp_theme::textLo);
     bypassBtn.setColour (juce::ToggleButton::tickColourId, juce::Colour (0xFFFF6B6B));
     bypassBtn.setToggleState (bypassed, juce::dontSendNotification);
     bypassBtn.onClick = [this] {
@@ -40,22 +40,27 @@ ChainSlotComponent::ChainSlotComponent (int index, const juce::String& name, boo
 
 void ChainSlotComponent::paint (juce::Graphics& g)
 {
+    auto card = getLocalBounds().toFloat().reduced (1.5f);
+    constexpr float corner = 5.0f;
+
     if (dragOver)
     {
-        g.setColour (juce::Colour (0xFF7C5CFC).withAlpha (0.3f));
-        g.fillRect (getLocalBounds());
-        g.setColour (juce::Colour (0xFF7C5CFC));
-        g.drawRect (getLocalBounds(), 2);
+        g.setColour (cp_theme::purple.withAlpha (0.3f));
+        g.fillRoundedRectangle (card, corner);
+        g.setColour (cp_theme::purple);
+        g.drawRoundedRectangle (card, corner, 2.0f);
     }
     else
     {
-        g.setColour (juce::Colour (0xFF2A2D32));
-        g.fillRect (getLocalBounds().reduced (1));
+        g.setColour (cp_theme::surface);
+        g.fillRoundedRectangle (card, corner);
+        g.setColour (cp_theme::hairline);
+        g.drawRoundedRectangle (card, corner, 1.0f);
 
         if (isUserTouched)
         {
-            g.setColour (juce::Colour (0xFFFFB74D));
-            g.fillRect (0, 1, 3, getHeight() - 2);
+            g.setColour (cp_theme::amber);
+            g.fillRoundedRectangle (card.removeFromLeft (3.0f), 1.5f);
         }
     }
 }

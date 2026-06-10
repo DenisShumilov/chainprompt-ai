@@ -63,7 +63,7 @@ public:
             if (btnAnalyze.getButtonText() != "1. Analyze Audio")
             {
                 btnAnalyze.setButtonText ("Analyze Audio");
-                btnAnalyze.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF3A3D44));
+                btnAnalyze.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF1D2733));
             }
         }
 
@@ -85,7 +85,7 @@ public:
             {
                 btnSend.setEnabled (false);
                 btnSend.setButtonText ("Thinking...");
-                btnSend.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF4A4D54));
+                btnSend.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF26323F));
             }
         }
         else if (backendDown)

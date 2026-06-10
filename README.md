@@ -13,7 +13,7 @@ It scans installed VST3 plugins, routes requests through Gemini, proposes bounde
 
 **Demo path:** scan inventory -> build vocal chain -> inspect chain payload -> revise while preserving a manual change.
 
-![Standalone build after a full plugin scan: the chat surfaces the degraded state first (inventory unavailable), then the recovered state (backend connected and ready)](docs/images/standalone-ui.png)
+![Standalone build: chain sidebar, hosted-editor area, chat panel reporting "Backend connected and ready", and the live metrics strip](docs/images/standalone-ui.png)
 
 ## Review Materials
 

@@ -2,6 +2,7 @@
 
 #include <JuceHeader.h>
 #include "../Core/ChainPromptAudioProcessor.h"
+#include "ChainPromptLookAndFeel.h"
 #include "SidebarPresenter.h"
 #include "RescanWorkflowController.h"
 #include "HostedEditorController.h"
@@ -25,6 +26,10 @@ public:
     void clearHostedEditor();
 
 private:
+    // Declared first so it is destroyed last; the destructor clears the
+    // editor's LookAndFeel pointer before this object goes away.
+    ChainPromptLookAndFeel lookAndFeel;
+
     ChainPromptAudioProcessor& audioProcessor;
 
     // ── Chat & prompt controls ──

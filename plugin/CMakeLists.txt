@@ -67,6 +67,7 @@ target_sources(ChainPromptAI PRIVATE
     src/Core/ChainGraphRebuilder.h
     src/Core/ChainGraphRebuilder.cpp
     src/Core/ChainPromptAudioProcessor.cpp
+    src/GUI/ChainPromptLookAndFeel.h
     src/GUI/SidebarPresenter.h
     src/GUI/SidebarPresenter.cpp
     src/GUI/RescanWorkflowController.h

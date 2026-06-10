@@ -14,6 +14,8 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
       rescanController (p),
       uiRefreshCtrl (p, btnAnalyze, btnSend, btnUndo, btnRedo, btnRescan, chatDisplay)
 {
+    setLookAndFeel (&lookAndFeel);
+
     setSize (1400, 900);
     setResizable (true, true);
     setResizeLimits (1000, 600, 2400, 1600);
@@ -35,23 +37,19 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
     promptBox.setReturnKeyStartsNewLine (false);
     promptBox.setWantsKeyboardFocus (true);
     promptBox.setTextToShowWhenEmpty ("Describe what you want for your mix...",
-                                      juce::Colour (0xFF6B6B6B));
-    promptBox.setColour (juce::TextEditor::backgroundColourId, juce::Colour (0xFF2A2D32));
-    promptBox.setColour (juce::TextEditor::textColourId, juce::Colour (0xFFE0E0E0));
-    promptBox.setColour (juce::TextEditor::outlineColourId, juce::Colour (0xFF3A3D44));
-    promptBox.setColour (juce::TextEditor::focusedOutlineColourId, juce::Colour (0xFF7C5CFC));
+                                      cp_theme::textLo);
     promptBox.setFont (juce::FontOptions (15.0f));
 
     auto styleButton = [] (juce::TextButton& btn, juce::Colour bgColour)
     {
         btn.setWantsKeyboardFocus (false);
         btn.setColour (juce::TextButton::buttonColourId, bgColour);
-        btn.setColour (juce::TextButton::textColourOffId, juce::Colours::white);
+        btn.setColour (juce::TextButton::textColourOffId, cp_theme::textHi);
     };
 
     // ── Analyze Audio button ──
     addAndMakeVisible (btnAnalyze);
-    styleButton (btnAnalyze, juce::Colour (0xFF3A3D44));
+    styleButton (btnAnalyze, cp_theme::surface);
     btnAnalyze.onClick = [this] {
         auto state = audioProcessor.captureManager.captureState.load (std::memory_order_relaxed);
 
@@ -81,13 +79,13 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
             audioProcessor.captureManager.capturedAudioMimeType = {};
             captureNotified = false;
             btnAnalyze.setButtonText ("Analyze Audio");
-            btnAnalyze.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF3A3D44));
+            btnAnalyze.setColour (juce::TextButton::buttonColourId, cp_theme::surface);
         }
     };
 
     // ── Send button ──
     addAndMakeVisible (btnSend);
-    styleButton (btnSend, juce::Colour (0xFF7C5CFC));
+    styleButton (btnSend, cp_theme::purple);
     btnSend.onClick = [this] {
         juce::String userText = promptBox.getText().trim();
         if (userText.isEmpty())
@@ -159,8 +157,8 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
     // ── New Chat button ──
     addAndMakeVisible (btnNewChat);
     btnNewChat.setWantsKeyboardFocus (false);
-    btnNewChat.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF3A3D44));
-    btnNewChat.setColour (juce::TextButton::textColourOffId, juce::Colour (0xFFE0E0E0));
+    btnNewChat.setColour (juce::TextButton::buttonColourId, cp_theme::surface);
+    btnNewChat.setColour (juce::TextButton::textColourOffId, cp_theme::textHi);
     btnNewChat.onClick = [this] {
         chatDisplay.clear();
         audioProcessor.saveStateToUndo();
@@ -173,19 +171,19 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
         audioProcessor.captureManager.capturedAudioPath = {};
         captureNotified = false;
         btnAnalyze.setButtonText ("Analyze Audio");
-        btnAnalyze.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF3A3D44));
+        btnAnalyze.setColour (juce::TextButton::buttonColourId, cp_theme::surface);
 
         audioProcessor.llmCoordinator.clearChatHistory();
     };
 
     // ── Undo / Redo buttons ──
     addAndMakeVisible (btnUndo);
-    styleButton (btnUndo, juce::Colour (0xFF3A3D44));
+    styleButton (btnUndo, cp_theme::surface);
     btnUndo.setEnabled (false);
     btnUndo.onClick = [this] { audioProcessor.undo(); };
 
     addAndMakeVisible (btnRedo);
-    styleButton (btnRedo, juce::Colour (0xFF3A3D44));
+    styleButton (btnRedo, cp_theme::surface);
     btnRedo.setEnabled (false);
     btnRedo.onClick = [this] { audioProcessor.redo(); };
 
@@ -200,8 +198,8 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
     // ── Auto-Gain Match toggle ──
     addAndMakeVisible (btnAutoGain);
     btnAutoGain.setWantsKeyboardFocus (false);
-    btnAutoGain.setColour (juce::ToggleButton::textColourId, juce::Colour (0xFFE0E0E0));
-    btnAutoGain.setColour (juce::ToggleButton::tickColourId, juce::Colour (0xFF7C5CFC));
+    btnAutoGain.setColour (juce::ToggleButton::textColourId, cp_theme::textHi);
+    btnAutoGain.setColour (juce::ToggleButton::tickColourId, cp_theme::teal);
     btnAutoGain.setToggleState (audioProcessor.autoGainEnabled.load(), juce::dontSendNotification);
     btnAutoGain.onClick = [this] {
         audioProcessor.autoGainEnabled.store (btnAutoGain.getToggleState());
@@ -212,23 +210,23 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
     chatDisplay.setMultiLine (true);
     chatDisplay.setReadOnly (true);
     chatDisplay.setScrollbarsShown (true);
-    chatDisplay.setColour (juce::TextEditor::backgroundColourId, juce::Colour (0xFF1E2024));
-    chatDisplay.setColour (juce::TextEditor::textColourId, juce::Colour (0xFFD0D0D0));
+    chatDisplay.setColour (juce::TextEditor::backgroundColourId, cp_theme::field);
+    chatDisplay.setColour (juce::TextEditor::textColourId, juce::Colour (0xFFCBD5DF));
     chatDisplay.setColour (juce::TextEditor::outlineColourId, juce::Colours::transparentBlack);
     chatDisplay.setFont (juce::FontOptions (14.0f));
     chatDisplay.setWantsKeyboardFocus (false);
 
     // ── Add Plugin button (styling; logic wired via SidebarPresenter) ──
     btnAddPlugin.setWantsKeyboardFocus (false);
-    btnAddPlugin.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF2E7D32));
-    btnAddPlugin.setColour (juce::TextButton::textColourOffId, juce::Colours::white);
+    btnAddPlugin.setColour (juce::TextButton::buttonColourId, cp_theme::teal);
+    btnAddPlugin.setColour (juce::TextButton::textColourOffId, cp_theme::bgDeep);
     btnAddPlugin.onClick = [this] { sidebarPresenter.showAddPluginMenu(); };
 
     // ── Rescan button (delegates to RescanWorkflowController) ──
     addAndMakeVisible (btnRescan);
     btnRescan.setWantsKeyboardFocus (false);
-    btnRescan.setColour (juce::TextButton::buttonColourId, juce::Colour (0xFF3A3D44));
-    btnRescan.setColour (juce::TextButton::textColourOffId, juce::Colour (0xFFE0E0E0));
+    btnRescan.setColour (juce::TextButton::buttonColourId, cp_theme::surface);
+    btnRescan.setColour (juce::TextButton::textColourOffId, cp_theme::textHi);
     btnRescan.onClick = [this] { rescanController.startRescan(); };
 
     // ── Wire controller callbacks ──
@@ -263,6 +261,8 @@ ChainPromptAudioProcessorEditor::ChainPromptAudioProcessorEditor (
 
 ChainPromptAudioProcessorEditor::~ChainPromptAudioProcessorEditor()
 {
+    setLookAndFeel (nullptr);
+
     audioProcessor.onChainRebuilt = nullptr;
     audioProcessor.llmCoordinator.onChatMessage = nullptr;
 
@@ -305,33 +305,48 @@ void ChainPromptAudioProcessorEditor::paint (juce::Graphics& g)
     const int analyzerH = 32;
     const int bottomY = getHeight() - analyzerH;
 
-    g.fillAll (juce::Colour (0xFF1A1C20));
+    // Subtle vertical gradient matching the brand deck background
+    {
+        juce::ColourGradient bg (cp_theme::bgDeep.brighter (0.04f), 0.0f, 0.0f,
+                                 cp_theme::bgDeep, 0.0f, static_cast<float> (getHeight()), false);
+        g.setGradientFill (bg);
+        g.fillAll();
+    }
 
     // Header bar
-    g.setColour (juce::Colour (0xFF222529));
+    g.setColour (cp_theme::bgPanel);
     g.fillRect (0, 0, getWidth(), 60);
+    g.setColour (cp_theme::hairline);
+    g.drawHorizontalLine (60, 0.0f, static_cast<float> (getWidth()));
 
-    g.setColour (juce::Colour (0xFFE0E0E0));
-    g.setFont (juce::FontOptions (20.0f));
-    g.drawText ("ChainPrompt AI", 20, 8, 250, 24, juce::Justification::centredLeft);
+    // Brand title: "ChainPrompt" in white, "AI" in teal, kicker underneath
+    g.setFont (juce::FontOptions (19.0f, juce::Font::bold));
+    g.setColour (cp_theme::textHi);
+    g.drawText ("ChainPrompt", 20, 10, 130, 22, juce::Justification::centredLeft);
+    g.setColour (cp_theme::teal);
+    g.drawText ("AI", 148, 10, 40, 22, juce::Justification::centredLeft);
+
+    g.setFont (juce::FontOptions (10.5f));
+    g.setColour (cp_theme::textLo);
+    g.drawText ("SERIAL CHAIN COPILOT", 21, 33, 220, 14, juce::Justification::centredLeft);
 
     // Left sidebar background
-    g.setColour (juce::Colour (0xFF222529));
+    g.setColour (cp_theme::bgPanel);
     g.fillRect (0, 60, 160, bottomY - 60);
-    g.setColour (juce::Colour (0xFF3A3D44));
+    g.setColour (cp_theme::hairline);
     g.drawVerticalLine (160, 60.0f, static_cast<float> (bottomY));
 
     // Right sidebar background (chat panel)
     int rightSidebarX = getWidth() - 300;
-    g.setColour (juce::Colour (0xFF222529));
+    g.setColour (cp_theme::bgPanel);
     g.fillRect (rightSidebarX, 60, 300, bottomY - 60);
-    g.setColour (juce::Colour (0xFF3A3D44));
+    g.setColour (cp_theme::hairline);
     g.drawVerticalLine (rightSidebarX, 60.0f, static_cast<float> (bottomY));
 
     // Analyzer strip at bottom
-    g.setColour (juce::Colour (0xFF16181B));
+    g.setColour (cp_theme::bgStrip);
     g.fillRect (0, bottomY, getWidth(), analyzerH);
-    g.setColour (juce::Colour (0xFF3A3D44));
+    g.setColour (cp_theme::hairline);
     g.drawHorizontalLine (bottomY, 0.0f, static_cast<float> (getWidth()));
 
     const float rms   = audioProcessor.currentMetrics.rmsDB.load (std::memory_order_relaxed);
@@ -351,9 +366,9 @@ void ChainPromptAudioProcessorEditor::paint (juce::Graphics& g)
     auto drawMetric = [&] (const juce::String& label, const juce::String& value, int width)
     {
         auto cell = stripBounds.removeFromLeft (width);
-        g.setColour (juce::Colour (0xFF6B6B6B));
+        g.setColour (cp_theme::textLo);
         g.drawText (label, cell.removeFromLeft (cell.getWidth() / 2), juce::Justification::centredRight);
-        g.setColour (juce::Colour (0xFF7C5CFC));
+        g.setColour (cp_theme::teal);
         g.drawText (value, cell, juce::Justification::centredLeft);
     };
 
@@ -363,7 +378,7 @@ void ChainPromptAudioProcessorEditor::paint (juce::Graphics& g)
     drawMetric ("ZCR ", juce::String (zcr, 3), 90);
 
     stripBounds.removeFromLeft (8);
-    g.setColour (juce::Colour (0xFF3A3D44));
+    g.setColour (cp_theme::hairline);
     g.drawVerticalLine (stripBounds.getX(), static_cast<float> (bottomY + 6),
                         static_cast<float> (bottomY + analyzerH - 6));
     stripBounds.removeFromLeft (8);
@@ -377,13 +392,19 @@ void ChainPromptAudioProcessorEditor::paint (juce::Graphics& g)
     // Loading overlay
     if (! audioProcessor.isPluginCacheReady())
     {
-        g.setColour (juce::Colour (0xFF1A1C20).withAlpha (0.92f));
+        g.setColour (cp_theme::bgDeep.withAlpha (0.93f));
         g.fillAll();
 
-        g.setColour (juce::Colour (0xFF7C5CFC));
-        g.setFont (juce::FontOptions (22.0f));
-        g.drawFittedText ("Scanning Waves Ecosystem...\nPlease wait.",
-                          getLocalBounds(), juce::Justification::centred, 2);
+        g.setColour (cp_theme::teal);
+        g.setFont (juce::FontOptions (22.0f, juce::Font::bold));
+        g.drawFittedText ("Scanning plugin inventory...",
+                          getLocalBounds().withTrimmedBottom (24),
+                          juce::Justification::centred, 1);
+        g.setColour (cp_theme::textLo);
+        g.setFont (juce::FontOptions (14.0f));
+        g.drawFittedText ("Host truth first: the assistant only plans with plugins that really exist.",
+                          getLocalBounds().withTrimmedTop (28),
+                          juce::Justification::centred, 1);
     }
 }
 
