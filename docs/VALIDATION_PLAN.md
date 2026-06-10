@@ -10,7 +10,8 @@ This document lists the validation work needed before ChainPrompt AI should be t
 - Local plugin inventory and rescan flow represented in architecture docs.
 - Windows Release build of the VST3/Standalone targets from the documented CMake steps (2026-06-10).
 - pluginval 1.0.4 (Windows x64, VST3, strictness level 5): all tests pass, clean exit.
-- pluginval strictness level 10: all 25 test sections pass and the run reports SUCCESS; with GUI tests enabled the validator child process then exits nonzero at teardown (reproducible; a third-party control plugin exits cleanly on the same machine; with `--skip-gui-tests` the exit is clean). Editor-related teardown residue under GUI stress is on the audit list.
+- pluginval strictness level 10: all 25 test sections pass and the run reports SUCCESS; with GUI tests enabled the validator child process then exits nonzero at teardown (reproducible; a third-party control plugin exits cleanly on the same machine; with `--skip-gui-tests` the exit is clean). Bisection with `--disabled-tests` narrowed it down: each of the two editor-opening tests ("Editor", "Open editor whilst processing") reproduces the nonzero exit on its own, while runs without any editor open exit cleanly — the residue comes from the editor open/close cycle itself. No crash is recorded in Windows Error Reporting, so this is exit-time residue rather than an unhandled exception. On the audit list.
+- Real-manifest inventory flow verified end-to-end on the dev machine (2026-06-10): Standalone full VST3 scan (731 plugins, 728 Waves "configurable", 3 host-only, 0 failed files) → manifest v2 export → `POST /api/rescan` hot-reload → `/health` reports `inventory.available: true`. The fail-closed gate opens with real host truth; LLM steps were not exercised in this environment (no API key).
 
 ## Test Command
 

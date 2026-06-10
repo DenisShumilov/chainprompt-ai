@@ -7,9 +7,13 @@ Portfolio prototype: a JUCE plugin plus local Python backend for AI-assisted DAW
 
 It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and attempts to preserve tracked user edits such as bypassed or manually touched slots.
 
+**Works with:** Waves VST3 plugins end-to-end today — extracted parameter metadata (1001-point maps) enables full AI parameter generation. Plugins from other vendors are inventoried and can be hosted in the chain, but load with factory defaults (host-only tier) until metadata coverage expands.
+
 **Status:** working developer prototype, not production-ready. Known gaps: manual backend startup, limited metadata coverage, no release packaging, incomplete trust UX.
 
 **Demo path:** scan inventory -> build vocal chain -> inspect chain payload -> revise while preserving a manual change.
+
+![Standalone build after a full plugin scan: the chat surfaces the degraded state first (inventory unavailable), then the recovered state (backend connected and ready)](docs/images/standalone-ui.png)
 
 ## Review Materials
 
@@ -101,6 +105,7 @@ The system is intentionally local-first. The DAW/plugin side owns host state and
 - **Plugin formats:** VST3, AU, and Standalone targets configured; current validation is VST3-first
 - **Backend:** Python, Flask, Waitress (localhost-only, no CORS layer)
 - **AI:** Google Gemini via `google-genai`
+- **Plugin metadata:** Waves VST3 coverage today (1001-point parameter maps via the `waves_truescan` provider); provider-neutral envelope contract for adding other vendors
 - **State:** JSON manifests, SQLite studio memory
 - **Build:** CMake
 - **Tests:** pytest for backend logic

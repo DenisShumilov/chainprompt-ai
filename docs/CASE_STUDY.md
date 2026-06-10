@@ -8,6 +8,8 @@ The project combines a JUCE C++ audio plugin, configured VST3/AU/Standalone targ
 
 The current scope is intentionally narrow: serial insert-chain work on the current track.
 
+Vendor coverage is Waves-first: Waves VST3 plugins get full AI parameter generation through extracted 1001-point parameter metadata, while plugins from other vendors are inventoried and hostable but load with factory defaults until metadata coverage expands.
+
 ## Problem
 
 AI can generate chain ideas easily, but a DAW workflow needs more than a plausible answer.
