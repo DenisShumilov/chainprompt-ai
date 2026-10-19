@@ -211,6 +211,8 @@ python -m pytest server/tests
 
 **shmlv. systems — Денис Шумілов**
 
+Інженерний стек автора: C++17/20 · Python · TypeScript. Реалізація ChainPrompt AI: C++20 / JUCE 8 та Python.
+
 Запити щодо технічної оцінки та B2B R&D-співпраці: [shmlvofficial@gmail.com](mailto:shmlvofficial@gmail.com).
 
 Усі права захищено. Умови перегляду та використання матеріалів визначено у [LICENSE](LICENSE). Поширення, повторне використання й модифікація потребують попереднього письмового дозволу правовласника.
