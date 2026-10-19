@@ -211,6 +211,6 @@ python -m pytest server/tests
 
 **shmlv. systems — Денис Шумілов**
 
-Запити щодо технічної оцінки та B2B R&D-співпраці: [shumilov1999@gmail.com](mailto:shumilov1999@gmail.com).
+Запити щодо технічної оцінки та B2B R&D-співпраці: [shmlvofficial@gmail.com](mailto:shmlvofficial@gmail.com).
 
 Усі права захищено. Умови перегляду та використання матеріалів визначено у [LICENSE](LICENSE). Поширення, повторне використання й модифікація потребують попереднього письмового дозволу правовласника.
