@@ -1,338 +1,216 @@
-# ChainPrompt AI
+# ChainPrompt AI — shmlv. systems
 
-![Status: working prototype](https://img.shields.io/badge/status-working%20prototype%20·%20in%20active%20development-2ea043)
-![Backend tests](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/backend-tests.yml/badge.svg)
-![Plugin build](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/plugin-build.yml/badge.svg)
+**Дослідження та розробка (R&D) для B2B-аудіосистем: C++20 / JUCE 8 / VST3 DSP та детермінований Fail-Closed конвеєр валідації плагінів.**
 
-**A safety-scaffolded AI copilot for serial insert chains in a DAW.** It analyzes the material, proposes a chain in plain language, and builds it from the plugins you actually have installed — while keeping every change inspectable and reversible.
+[![Тести серверної частини](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/backend-tests.yml)
+[![Збирання плагіна](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/plugin-build.yml/badge.svg)](https://github.com/DenisShumilov/chainprompt-ai/actions/workflows/plugin-build.yml)
 
-## Demo
+ChainPrompt AI — інженерний прототип керованого формування послідовних ланцюгів аудіоефектів у цифровій звуковій робочій станції (DAW). Система поєднує локальний вузол цифрової обробки сигналу (DSP), облік установлених VST3-плагінів і мовну модель для планування змін. Застосування пропозицій проходить через програмні перевірки доступності плагінів, ідентифікаторів, параметрів і стану ланцюга.
 
-The AI hears a boxy, dull drum bus, explains the problem, builds a fix, then re-shapes the EQ on request — live in REAPER:
+**Статус:** активна R&D-розробка з ручним розгортанням. Репозиторій призначений для технічної оцінки архітектури та інтеграційних сценаріїв. Промислова експлуатація потребує завершення перевірок реального часу, сумісності з DAW, пакування та керування життєвим циклом серверної частини.
 
-![ChainPrompt AI live demo: the EQ responds to a plain-language request](docs/images/demo.gif)
+## Призначення для B2B-інтеграцій
 
-▶ **[Watch the full 50-second demo with narration](docs/images/chainprompt-ai-demo.mp4)** · [UI screenshot](docs/images/standalone-ui.png)
+Проєкт досліджує контрольоване використання ШІ в аудіопродуктах, де рішення залежать від фактично встановлених інструментів і поточного стану сесії. Основний сценарій — побудова або коригування послідовного ланцюга ефектів на одному треку за текстовим запитом та аудіоконтекстом.
 
-> **Status — working prototype, in active development.** This is a portfolio proof-of-direction, not a finished product. It runs end-to-end on the developer's machine; setup is manual and a few subsystems are still being hardened (see [Limitations](#limitations)). Shared for private review — please don't redistribute.
+Для технічних команд виробників аудіоплагінів, DAW та студійних систем репозиторій надає основу для оцінки:
 
-## What it does
+- інтеграції C++20 / JUCE 8 з локальним сервісом оркестрації ШІ;
+- обліку VST3-плагінів через маніфест як авторитетне джерело доступності;
+- детермінованих правил допуску пропозицій моделі до зміни ланцюга;
+- обчислення різниці між поточним і бажаним станами зі збереженням ідентичності слотів;
+- діагностики, регресійних перевірок та розширення підтримки метаданих різних виробників.
 
-It scans installed VST3 plugins, routes requests through Gemini, proposes bounded chain changes, and preserves tracked user edits such as bypassed or manually touched slots.
+## Архітектура
 
-**Works with:** Waves VST3 plugins end-to-end today — extracted parameter metadata (1001-point maps) enables full AI parameter generation. Plugins from other vendors are inventoried and can be hosted in the chain, but load with factory defaults (host-only tier) until metadata coverage expands.
-
-## Review Materials
-
-Recommended reviewer path: README -> Case Study -> Demo Plan -> Validation Plan -> Security Notes.
-
-- [Case Study](docs/CASE_STUDY.md)
-- [Demo Plan](docs/DEMO_PLAN.md)
-- [Validation Plan](docs/VALIDATION_PLAN.md)
-- [Security and Privacy Notes](SECURITY.md)
-- [Architecture](docs/ARCHITECTURE.md) — fail-closed gate, capability tiers, chain-diff and rescan contracts
-
-## What This Demonstrates
-
-- Refuses to build when installed plugin inventory is unavailable.
-- Validates build payloads against a local installed-plugin manifest instead of trusting hallucinated tools.
-- Computes chain diffs instead of blindly replacing the current chain.
-- Attempts to preserve user-touched, user-owned, and bypassed slot state.
-- Exposes backend, inventory, and track diagnostics through local endpoints.
-
-## Product Philosophy: Scaffold Over Magic
-
-The LLM is not the product. The product is the rule-bound workflow around it: inventory authority, fail-closed gates, UID validation, chain diffing, user-state preservation, diagnostics, and review boundaries.
-
-ChainPrompt AI treats the model as one component inside a larger safety scaffold. That scaffold is what makes AI useful in a DAW context, where host state, installed tools, recovery paths, and user intent matter as much as the generated answer.
-
-## Problem
-
-Music producers often know the result they want, but building a useful insert chain still requires plugin knowledge, routing decisions, gain staging awareness, and many small repetitive choices.
-
-Generic AI chat tools can suggest "a vocal chain" or "a mastering chain", but they usually do not know:
-
-- which plugins are actually installed on the user's machine
-- whether a plugin can be safely instantiated by the host
-- what the current chain already contains
-- which settings or bypass states were manually chosen by the user
-- when the system should refuse to act instead of hallucinating tools
-
-In a DAW, this matters. Bad automation is not just a wrong answer. It can interrupt a session, overwrite work, or create a chain the user cannot reproduce.
-
-## Solution
-
-ChainPrompt AI explores a narrower and safer direction: AI assistance for **serial insert-chain mutation** on the current track.
-
-The prototype connects a JUCE audio plugin to a local Python backend. The plugin scans the local VST3 inventory, exports an installed plugin manifest, reports health and track state, and sends bounded requests to the backend. The backend uses Gemini to route intent, validate plugin choices, compute a chain diff, generate parameter suggestions for only the plugins that need them, and return a preset payload to the plugin.
-
-The core idea is simple: the AI may assist, but the host, inventory, audio context, and user-owned state remain the source of truth.
-
-## Why Now
-
-Recent DAW releases are beginning to add assistant-style features. Fender Studio Pro 8.1, announced on June 9, 2026, is one reference point, with an in-DAW Studio Assistant for real-time answers and technical direction.
-
-ChainPrompt AI is not trying to copy a full DAW assistant. It focuses on one adjacent execution problem: how an AI system can propose bounded insert-chain changes using real host state.
-
-Reference: [Fender Studio Pro 8.1 announcement](https://www.prnewswire.com/news-releases/introducing-fender-studio-pro-8-1-keeping-artists-at-the-core-of-the-creative-process-302794510.html)
-
-## Key Features / Technical Proof Points
-
-- **JUCE plugin:** C++20 audio plugin with VST3, AU, and Standalone targets configured. The current inventory/hosting path is VST3-first, and broad host compatibility testing is still pending.
-- **Local backend:** Python Flask/Waitress service with Gemini orchestration, retry, and fallback support.
-- **Manifest-first inventory:** local VST3 scan exports an installed-plugin manifest; the backend filters for chain-eligible effects where metadata exists.
-- **Bounded chain planning:** Stage 1 intent routing, UID validation, chain diffing, targeted Stage 2 parameter generation, and safety filters.
-- **Diagnostics and tests:** `/health`, `/api/chat`, `/api/rescan`, `/api/diag`, `/api/ping`, plus backend regression tests for chain diff, inventory gating, and safety filters.
-
-## Architecture Overview
+Система складається з двох процесів. Плагін JUCE відповідає за аудіограф, сканування, стан слотів та взаємодію з DAW. Локальний Python-сервіс відповідає за каталог, запити до Gemini, планування змін і валідацію результатів.
 
 ```mermaid
-flowchart LR
-    DAW[DAW Host] --> Plugin[JUCE Plugin]
-    Plugin --> Scanner[Local Plugin Scanner]
-    Scanner --> Manifest[VST3 Installed Plugin Manifest]
-    Plugin --> Health[Backend Health Check]
-    Plugin --> Chat[LLMCoordinator HTTP Client]
-    Chat --> API[Python Flask / Waitress Backend]
-    Manifest --> Catalog[Manifest-First Catalog]
-    API --> Gate[Fail-Closed Inventory Gate]
-    Gate --> Stage1[Stage 1 Intent Router]
-    Stage1 --> Diff[Chain Diff Engine]
-    Diff --> Stage2[Stage 2 Parameter Engineer]
-    Stage2 --> Safety[Safety Filters]
-    Safety --> Preset[Preset / Chain Payload]
-    Preset --> Plugin
+flowchart TD
+    DAW["DAW"] --> Plugin["Плагін C++20 / JUCE 8"]
+    Plugin --> Scanner["Локальний сканер VST3"]
+    Scanner --> Manifest["Маніфест установлених плагінів"]
+    Manifest --> Catalog["Каталог і рівні підтримки"]
+    Plugin --> API["Локальний сервіс Python / HTTP"]
+    Catalog --> Gate["Fail-Closed перевірка доступності"]
+    API --> Gate
+    Gate --> Plan["Етап 1: визначення наміру та вибір плагінів"]
+    Plan --> Validate["Перевірка UID і обмежень ланцюга"]
+    Validate --> Diff["Обчислення змін стану слотів"]
+    Diff --> Params["Етап 2: формування потрібних параметрів"]
+    Params --> Filters["Фільтрація параметрів і формування пресета"]
+    Filters --> Plugin
 ```
 
-The system is intentionally local-first. The DAW/plugin side owns host state and installed inventory. The backend owns orchestration, AI calls, catalog loading, diagnostics, and chain planning.
+Локальна архітектура зберігає стан DAW та облік установлених плагінів на машині користувача. Запити до Gemini виконуються через зовнішній API; склад переданих даних описано нижче.
 
-## Tech Stack
+## Детермінований Fail-Closed конвеєр валідації плагінів
 
-- **Audio/plugin:** JUCE 8, C++20, AudioProcessorGraph
-- **Plugin formats:** VST3, AU, and Standalone targets configured; current validation is VST3-first
-- **Backend:** Python, Flask, Waitress (localhost-only, no CORS layer)
-- **AI:** Google Gemini via `google-genai`
-- **Plugin metadata:** Waves VST3 coverage today (1001-point parameter maps via the `waves_truescan` provider); provider-neutral envelope contract for adding other vendors
-- **State:** JSON manifests, SQLite studio memory
-- **Build:** CMake
-- **Tests:** pytest for backend logic
+Детермінованість стосується програмних правил перевірки за однакових вхідних даних і стану каталогу. Генерація відповідей мовною моделлю залишається ймовірнісною. Валідація доступності та параметрів не замінює перевірку стабільності сторонніх плагінів у конкретній DAW.
 
-## How It Works
+1. **Фіксація локального інвентарю.** Сканер формує `installed_plugins.json` із UID, виробником, форматом, версією та характеристиками каналів. Маніфест є основою каталогу; додаткові бази збагачують його метаданими.
+2. **Рання перевірка Fail-Closed.** Якщо маніфест відсутній або не завантажується, конвеєр зупиняється до виклику мовної моделі та повертає повідомлення про необхідність сканування.
+3. **Відбір допустимих ефектів.** Каталог враховує ознаки інструментів і кількість вихідних каналів, щоб виключати непридатні для поточного сценарію інструменти та багатоканальні конфігурації.
+4. **Перевірка ідентифікаторів.** Запропоновані UID звіряються з установленими плагінами. Наявність недоступних UID блокує формування ланцюга.
+5. **Обмеження структури.** Програмні правила узгоджують формат, прибирають сусідні дублікати та обмежують ланцюг 16 плагінами.
+6. **Обчислення змін.** Модуль порівняння визначає вставлення, збереження, видалення, перестановку та зміну стану обходу ефекту. Слоти мають стійкі ідентифікатори `slot_id`; логіка враховує ручні зміни та походження слотів.
+7. **Кероване налаштування.** Другий етап генерує параметри лише для слотів, що потребують налаштування. Фільтри перевіряють параметри та переводять значення у формат VST.
+8. **Повернення результату.** Плагін отримує структурований пресет для застосування. Стан інвентарю, треків і слотів доступний через локальні діагностичні маршрути.
 
-1. The user loads ChainPrompt AI in a DAW.
-2. The plugin scans installed VST3 plugins and writes an installed plugin manifest.
-3. The backend hot-reloads that manifest through `/api/rescan`.
-4. The user asks for a chain, for example: "Build a clean modern vocal chain."
-5. The backend checks that plugin inventory is available before spending LLM tokens.
-6. Stage 1 routes the request as chat or build and selects real installed plugins.
-7. The diff engine compares the current chain with the desired chain.
-8. Stage 2 generates parameter suggestions only where needed.
-9. Safety logic trims excessive chains, validates UIDs, and attempts to preserve user-owned state.
-10. The plugin receives a bounded preset payload and updates the insert chain.
+Збереження ручних змін, стану обходу та автоматизації реалізовано на рівні логіки прототипу; наскрізні гарантії потребують розширеної перевірки в цільових DAW.
 
-## Safety Principles
+## Технологічна основа
 
-- **Host truth first:** real installed plugins and current chain state are authoritative.
-- **Fail closed:** if inventory is unavailable, the system refuses to build.
-- **Scaffold the model:** schemas, validators, diagnostics, and state checks matter as much as the model call.
-- **No fake universality:** unsupported or missing plugins should be visible, not hidden.
-- **Bounded mutation:** the prototype focuses on serial insert chains, not full-session autonomy.
-- **Preserve user intent:** manual changes, user-added slots, and bypass states should survive AI actions; this is a prototype behavior that still needs broader host validation.
-- **Explain degraded states:** backend and inventory problems are reported through health diagnostics.
-- **Avoid silent overwrite:** AI-generated changes should not pretend to be user decisions.
+| Підсистема | Реалізація |
+| --- | --- |
+| Аудіоядро та DSP | C++20, JUCE 8.0.12, `AudioProcessorGraph`, модуль `juce_dsp` |
+| Формати збирання | VST3, AU та окремий застосунок; основний шлях перевірки — Windows / VST3 |
+| Керування графом | Послідовний стереоланцюг, стан слотів, маршрутизація автоматизації, серіалізація стану |
+| Серверна частина | Python, Flask, Waitress; прослуховування `127.0.0.1:5000` |
+| Мовна модель | Google Gemini через `google-genai` |
+| Дані | JSON-маніфести та метадані, SQLite для контексту студійної роботи |
+| Метадані параметрів | Покриття Waves VST3, карти на 1001 точку, розширюваний контракт постачальників метаданих |
+| Збирання та перевірки | CMake, Git LFS, pytest, робочі процеси GitHub Actions |
 
-## Current Status
+## Рівні підтримки плагінів
 
-This is a developer-operated prototype with working backend orchestration, inventory gating, chain diff logic, diagnostics, and regression tests.
+| Рівень | Умова | Поведінка |
+| --- | --- | --- |
+| Налаштовуваний (`configurable`) | Плагін установлено, карти параметрів доступні | Генерація параметрів із використанням метаданих |
+| Доступний для завантаження (`hostable`) | Плагін установлено, карти параметрів відсутні | Завантаження із заводськими параметрами |
+| Недоступний (`unavailable`) | UID відсутній у маніфесті | Відхилення під час перевірки доступності |
 
-What works now:
+Найповніше покриття метаданих наразі має Waves VST3. Інші виробники можуть бути представлені в інвентарі та завантажуватися без генерації параметрів. Рівень у каталозі не є підтвердженням сумісності з усіма DAW.
 
-- Local backend startup and health endpoint
-- Manual plugin scan and manifest reload flow
-- Chat/build request pipeline
-- Installed inventory gate
-- Chain diff and merge model
-- User-touched and bypass preservation logic
-- Backend diagnostics for unreachable backend and unavailable inventory
-- Backend regression tests for critical orchestration paths
+## Локальне розгортання
 
-Still in progress:
+### Передумови
 
-- Removing remaining machine-specific path assumptions
-- Making setup easier for someone who is not the original developer
-- Release packaging
-- Trust-critical UI around preview, approve, rollback, and confidence
-- Broader non-Waves metadata coverage
-- Product-level QA across DAWs, OS versions, and plugin vendors
+- Windows 10/11 для поточного основного сценарію сканування та VST3; конфігурація AU для macOS потребує окремої перевірки.
+- Python 3.11 — версія, що використовується в CI.
+- Git і Git LFS для завантаження каталогів.
+- CMake 3.24 або новіший та компілятор C++20; для Windows — Visual Studio 2022.
+- Ключ Google Gemini API.
+- Установлені VST3-плагіни; для поточного повного налаштування через ШІ — відповідні плагіни Waves.
 
-## Demo Scenario
-
-Suggested demo flow:
-
-1. Start the Python backend and show `/health`.
-2. Load ChainPrompt AI as a plugin or standalone build.
-3. Trigger a plugin rescan and show the backend inventory changing from unavailable to ready.
-4. Ask: "Build a clean vocal chain using what is installed on this machine."
-5. Show the AI response and the resulting chain payload.
-6. Manually tweak or bypass one slot.
-7. Ask for a revision and show that user-owned state is preserved or explicitly reported.
-8. Open `/api/diag` to show track and slot diagnostics.
-
-## Setup Instructions
-
-### Prerequisites
-
-- Windows 10/11 (the current scan path is Windows/VST3-first; macOS targets are configured but unvalidated)
-- Python 3.10 or newer (CI runs 3.11)
-- git with git-lfs (`git lfs install` before cloning — the catalog files are stored in LFS)
-- CMake 3.24+ and a C++20 compiler (Visual Studio 2022 on Windows) for the plugin build
-- A Google Gemini API key
-- For full AI parameter generation, Waves VST3 plugins are required; other vendors currently load as host-only with factory defaults
-
-### 1. Clone the repository
+### Отримання репозиторію
 
 ```bash
 git lfs install
 git clone https://github.com/DenisShumilov/chainprompt-ai.git
 cd chainprompt-ai
+git lfs pull
 ```
 
-### 2. Configure environment
+### Налаштування середовища
 
-```bash
-cp .env.example .env        # Windows (PowerShell): Copy-Item .env.example .env
+Створіть `.env` із шаблону. У PowerShell:
+
+```powershell
+Copy-Item .env.example .env
 ```
 
-Edit `.env` and add your Gemini key:
+У середовищі з оболонкою Bash:
 
 ```bash
-GEMINI_API_KEYS=your_gemini_api_key_here
+cp .env.example .env
 ```
 
-Do not commit `.env`.
+Укажіть власний ключ у `.env`:
 
-### 3. Install Python dependencies
-
-```bash
-pip install -r requirements.txt
+```dotenv
+GEMINI_API_KEYS=ваш_ключ_Gemini_API
 ```
 
-### 4. Start the backend
+Файл `.env` має залишатися локальним і не потрапляти до комітів.
+
+### Запуск серверної частини
 
 ```bash
+python -m pip install -r requirements.txt
 python server.py
 ```
 
-The backend runs on:
-
-```text
-http://127.0.0.1:5000
-```
-
-### 5. Verify backend health
+В окремому терміналі перевірте стан сервісу:
 
 ```bash
 curl http://127.0.0.1:5000/health
 ```
 
-If `inventory.available` is false, load the plugin and run a scan/rescan.
+Значення `inventory.available: false` означає, що потрібно завантажити плагін і виконати сканування. Команда повторного сканування в інтерфейсі має назву `Rescan`; після сканування сервер оновлює маніфест і метадані через `/api/rescan`.
 
-### 6. Build the plugin
+### Збирання плагіна
 
 ```bash
 cmake -S plugin -B plugin/build
 cmake --build plugin/build --config Release
 ```
 
-The first configure downloads JUCE 8.0.12 via CMake FetchContent (network required). Built binaries resolve the repository's `data/` directory from the configure-time location, so rebuild after moving the repo.
+Під час першої конфігурації CMake завантажує JUCE 8.0.12 через `FetchContent`, тому потрібне мережеве з'єднання. Шлях до `data/` визначається під час конфігурації; після переміщення репозиторію слід повторити конфігурацію та збирання.
 
-Load the generated VST3, AU, or Standalone build depending on your platform and host. VST3 is the current primary path; AU and Standalone targets are configured but not feature-validated across hosts yet.
+Завантажте отриманий VST3 у DAW або запустіть окремий застосунок для перевірки локального інвентарю. Серверна частина має працювати окремим процесом.
 
-### 7. Run backend tests
+### Регресійні перевірки
 
 ```bash
 python -m pytest server/tests
 ```
 
-## Useful Endpoints
+Набір перевіряє логіку порівняння ланцюгів, блокування конвеєра без інвентарю, валідацію UID та фільтри параметрів. Перевірки Python не замінюють аудіотестування, перевірку потоків виконання та випробування в DAW.
 
-| Endpoint | Method | Purpose |
+## Діагностичні маршрути
+
+| Маршрут | Метод | Призначення |
 | --- | --- | --- |
-| `/health` | GET | Backend health, model, inventory, and catalog state |
-| `/api/chat` | POST | Main chat/build pipeline |
-| `/api/rescan` | POST | Hot-reload manifest and metadata after plugin scan |
-| `/api/diag` | GET | Per-track diagnostics and slot-state visibility |
-| `/api/ping` | POST | Background telemetry from the plugin |
-| `/api/tracks` | GET | Stored track-state view |
+| `/health` | GET | Стан сервісу, моделі, інвентарю та каталогу |
+| `/api/chat` | POST | Обробка запиту та формування пропозиції зміни ланцюга |
+| `/api/rescan` | POST | Оновлення маніфесту й метаданих без перезапуску сервісу |
+| `/api/diag` | GET | Діагностика треків і слотів |
+| `/api/ping` | POST | Фонова передача стану з плагіна |
+| `/api/tracks` | GET | Перегляд збереженого стану треків |
 
-## Roadmap
+## Стан валідації та інженерні обмеження
 
-Near-term:
+У [плані валідації](docs/VALIDATION_PLAN.md) зафіксовано результати попередніх перевірок Windows VST3: pluginval із рівнем суворості 5 завершувався успішно. На рівні 10 тестові секції проходили, проте за ввімкнених перевірок графічного інтерфейсу процес завершувався з ненульовим кодом. Проблема завершення роботи редактора залишається відкритою.
 
-- Remove remaining legacy path assumptions in C++ runtime and scanner
-- Add reproducible startup and rescan regression checks
-- Make another developer able to boot the system from documentation alone
-- Improve demo reliability and record a short walkthrough
+До промислового впровадження необхідно врахувати такі обмеження:
 
-Next:
+- Аудіограф підтримує стерео; монофонічні конфігурації не пройшли повну перевірку. Посили, повернення та бічні керувальні входи не входять до поточного сценарію.
+- Сумарна затримка вкладених плагінів не передається DAW; компенсацію затримки ланцюга не реалізовано.
+- Застосування пресетів може викликати сповіщення параметрів вкладених плагінів з аудіопотоку. Зміни графа, обхід ефектів і сканування в процесі хоста потребують цільового аудиту безпеки реального часу.
+- Відновлення сесії з відсутнім плагіном може відхилити весь ланцюг; повторне збереження в такому стані записує порожній ланцюг.
+- Матриця сумісності з DAW, версіями ОС і виробниками плагінів неповна. AU потребує перевірки на macOS.
+- Залишаються платформні припущення у шляхах сканування та вилученні метаданих, а також залежності від поточного покриття Waves.
+- Розгортання й запуск сервера виконуються вручну. Інтерфейс попереднього перегляду, погодження та відкату змін потребує доопрацювання.
 
-- Add trust UX for preview, approve, rollback, and confidence
-- Make supported vs. unsupported plugin behavior visible
-- Improve metadata extraction beyond the current Waves-heavy path
-- Package backend startup more cleanly
+## Дані та безпека інтеграції
 
-Later:
+Сервіс прив'язаний до `127.0.0.1`; локальні маршрути не мають автентифікації. Поточна конфігурація призначена для роботи на машині розробника. Мережеве розгортання потребує окремої моделі доступу й захисту транспорту.
 
-- Build one polished single-track vertical slice
-- Add evaluation cases for vocal, guitar, drum, and mastering chains
-- Explore multi-vendor support tiers
-- Investigate deeper host integration only after the one-track workflow is reliable
+Залежно від сценарію до Gemini можуть передаватися текст запиту, контекст ланцюга, метадані плагінів, аудіометрики та аудіодані. Налагоджувальне журналювання вмикається через `CHAINPROMPT_DEBUG=1` і може містити фрагменти запитів, відповідей та назви треків. Докладні правила наведено в [описі безпеки та приватності](SECURITY.md).
 
-## Limitations
+## Пріоритети R&D
 
-- Prototype is developer-operated and not packaged as a consumer installer.
-- The backend must be started manually.
-- Current workflow is focused on serial insert chains on the current track.
-- Sends, returns, sidechain routing, and session-wide autonomy are out of scope.
-- Plugin support is not universal.
-- Metadata support is strongest where local metadata exists.
-- AU and Standalone targets are configured but not yet feature-validated across a host matrix.
-- Real-time audio-thread safety, graph mutation, host notification behavior, in-process plugin scanning, and host profiling still need a focused audit. Known specifics: preset application notifies hosted plugin parameters from the audio thread, and bypass rewiring relies on a flag check at block start.
-- pluginval (Windows x64, VST3): strictness 5 passes with a clean exit; at strictness 10 all test sections pass but with GUI tests enabled the validator process exits nonzero at teardown — an editor-related shutdown issue on the audit list. See the [Validation Plan](docs/VALIDATION_PLAN.md).
-- Hosted-chain latency is not aggregated or reported to the host (no plugin delay compensation); lookahead or linear-phase plugins in the chain will introduce uncompensated delay.
-- The internal graph is stereo-only; mono insert configurations are unvalidated.
-- Current scanner and metadata extraction paths still include Waves-specific and Windows-specific assumptions.
-- Trust UX is not yet product-ready.
-- Commercial release readiness would require much deeper QA, signing, packaging, privacy review, and host compatibility testing.
+1. Усунути проблему завершення роботи редактора в pluginval і перевірити зміни графа та параметрів щодо вимог реального часу.
+2. Реалізувати облік затримки вкладених плагінів і перевірити збереження, відновлення та автоматизацію в цільових DAW.
+3. Забезпечити відтворюване розгортання на чистому середовищі та керований запуск серверної частини.
+4. Розширити покриття метаданих виробників і зробити рівні підтримки видимими в інтерфейсі.
+5. Завершити попередній перегляд, погодження й відкат змін та сформувати критерії приймання для B2B-інтеграцій.
 
-## What I Learned
+## Технічні матеріали
 
-- Audio AI features need host truth, not only good prompts.
-- Plugin inventory must be treated as a safety boundary.
-- A useful DAW copilot should degrade honestly when local state is missing.
-- The hardest part is not generating a chain idea. It is preserving user work while applying bounded changes.
-- Product strategy matters as much as model output when the tool lives inside a creative session.
+- [Архітектура системи та контракти даних](docs/ARCHITECTURE.md)
+- [Архітектура плагіна](plugin/docs/ARCHITECTURE.md)
+- [План валідації та матриця сумісності](docs/VALIDATION_PLAN.md)
+- [Інженерний розбір проєкту](docs/CASE_STUDY.md)
+- [План виконання](docs/EXECUTION_ROADMAP.md)
+- [Реєстр ризиків](docs/RISK_REGISTER.md)
+- [Безпека та приватність](SECURITY.md)
 
-## Why This Project Matters
+## Контакт і права
 
-ChainPrompt AI is a proof of direction for safety-oriented AI assistance inside music production tools.
+**shmlv. systems — Денис Шумілов**
 
-It shows how a developer coming from web and full-stack systems can build toward audio software by combining:
+Запити щодо технічної оцінки та B2B R&D-співпраці: [shumilov1999@gmail.com](mailto:shumilov1999@gmail.com).
 
-- C++ plugin development
-- local backend orchestration
-- AI tool integration
-- product safety thinking
-- DAW workflow empathy
-
-The project is intentionally narrow, but that is the point: one trustworthy workflow is more valuable than a broad AI demo that cannot respect the session.
-
-## Contact
-
-Denis Shumilov — shumilov1999@gmail.com
-
-Demo video and extended case study are available on request.
-
-## License
-
-All rights reserved. This is a private portfolio prototype shared for review, not an open-source project — see [LICENSE](LICENSE). Please don't redistribute or reuse the code, designs, or concept without permission.
+Усі права захищено. Умови перегляду та використання матеріалів визначено у [LICENSE](LICENSE). Поширення, повторне використання й модифікація потребують попереднього письмового дозволу правовласника.
