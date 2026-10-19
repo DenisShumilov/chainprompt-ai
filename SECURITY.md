@@ -1,6 +1,6 @@
 # Security and Privacy Notes
 
-ChainPrompt AI is a developer-operated portfolio prototype, not a production-ready product. This file documents the current security posture and the rules for handling local secrets and user data.
+ChainPrompt AI is a developer-operated R&D prototype, not a production-ready product. This file documents the current security posture and the rules for handling local secrets and user data.
 
 ## API Keys
 
@@ -23,7 +23,7 @@ The Python backend runs locally on:
 http://127.0.0.1:5000
 ```
 
-It is intended for local development and demo use. It has not been hardened as a network-exposed service.
+It is intended for local development and technical evaluation. It has not been hardened as a network-exposed service.
 
 Current posture:
 
@@ -48,9 +48,9 @@ Before public release, the project would need:
 
 - `.env` is git-ignored; no API keys or secrets are tracked in this repository.
 - A secret scan of the working tree and full git history was run before sharing (Gemini/OpenAI/GitHub token patterns, `.env` files).
-- Demo media, local captures, and other generated artifacts are excluded from version control.
+- Local captures and other generated artifacts are excluded from version control.
 - Large catalog files are stored via Git LFS.
 
 ## Reporting
 
-For now, this is a private portfolio prototype. If the repository becomes public, add a clear vulnerability reporting contact before accepting external users or issues.
+Report security concerns privately to [shmlvofficial@gmail.com](mailto:shmlvofficial@gmail.com). Include the affected component, reproduction steps, and potential impact; omit API keys, private audio, and other sensitive session data.

@@ -1,10 +1,8 @@
-# Demo Plan
+# Technical Walkthrough
 
-This plan describes a 60-90 second live screen-recording walkthrough: backend terminal, `/health`, plugin or standalone UI, prompt, payload/diff, manual bypass/tweak, revision, and `/api/diag`.
+This plan describes a live technical walkthrough: backend terminal, `/health`, plugin or standalone UI, prompt, payload/diff, manual bypass/tweak, revision, and `/api/diag`.
 
-A slide-based overview video exists as supporting context (shared separately; media is not tracked in this repository), but the primary demo is the live recording described below.
-
-## Demo Goal
+## Evaluation Goal
 
 Show that ChainPrompt AI is not just a chat UI. It is a local, host-aware prototype that uses plugin inventory, health diagnostics, and bounded chain planning.
 
@@ -12,7 +10,7 @@ Show that ChainPrompt AI is not just a chat UI. It is a local, host-aware protot
 
 **Prompt:** "Build a clean modern vocal chain using installed plugins."
 
-The strongest demo moment is not the first generated chain. It is the revision step where a user manually tweaks or bypasses a slot, asks for a change, and the system preserves or explicitly reports tracked user state.
+The key evaluation step is not the first generated chain. It is the revision step where a user manually tweaks or bypasses a slot, asks for a change, and the system preserves or explicitly reports tracked user state.
 
 ## Screen Flow
 
@@ -92,11 +90,11 @@ Show:
 
 Voice:
 
-"This is a portfolio prototype, not a finished product. It explores how AI assistance inside DAWs can be scaffolded by host truth, validation, diagnostics, and user-state preservation."
+"This is an R&D prototype, not a finished product. It explores how AI assistance inside DAWs can be scaffolded by host truth, validation, diagnostics, and user-state preservation."
 
 ## Captions
 
-- "Portfolio prototype, not production-ready"
+- "R&D prototype; production validation remains open"
 - "Local plugin inventory"
 - "Fail-closed if inventory is missing"
 - "Chain diff instead of overwrite"

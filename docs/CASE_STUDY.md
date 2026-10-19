@@ -2,7 +2,7 @@
 
 ## Context
 
-ChainPrompt AI is a portfolio prototype exploring host-aware AI assistance for music production workflows.
+ChainPrompt AI is an R&D prototype exploring host-aware AI assistance for music production workflows.
 
 The project combines a JUCE C++ audio plugin, configured VST3/AU/Standalone targets, a local Python Flask/Waitress backend, Gemini API orchestration, local plugin inventory scanning, and diagnostics endpoints. The current implementation is VST3-first and not broadly host-validated yet.
 
@@ -97,7 +97,7 @@ This is the product thesis: AI becomes more useful inside a DAW when it is const
 ## What I Would Improve Next
 
 - Remove remaining machine-specific path assumptions.
-- Add a reproducible demo fixture for reviewers.
+- Add a reproducible evaluation fixture for integration teams.
 - Add preview, approve, and rollback UX.
 - Package backend startup instead of requiring manual Python startup.
 - Add plugin support tiers: configurable metadata, host-only, unsupported, excluded non-FX.
